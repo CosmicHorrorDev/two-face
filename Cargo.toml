@@ -1,0 +1,38 @@
+[workspace]
+members = [
+    ".",
+    "xtask",
+]
+
+[workspace.dependencies]
+once_cell = "1.18.0"
+serde = { version = "1.0.100", features = ["derive"] }
+syntect = { version = "5.0.0", default-features = false }
+
+[package]
+name = "two-face"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+rust-version = "1.64"
+exclude = [
+    # We generate some large markdown files that are only linked by URL
+    "generated/*.md",
+]
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
+
+[dependencies]
+once_cell.workspace = true
+serde.workspace = true
+
+[dependencies.syntect]
+workspace = true
+features = ["dump-load", "parsing", "regex-onig"]
+
+[features]
+extra-syntax = []
+extra-theme = ["syntect/dump-create"]
+acknowledgement = []

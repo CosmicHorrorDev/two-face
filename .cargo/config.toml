@@ -1,0 +1,3 @@
+# TODO: selectively bump dev opt level of deps instead of using `--release`?
+[alias]
+xtask = "run --release --package xtask --"
