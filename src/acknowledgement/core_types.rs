@@ -83,15 +83,11 @@ impl Acknowledgements {
 
         md.write_str("\n# Syntaxes\n\n").expect("Infallible");
         for license in &self.for_syntaxes {
-            if license.ty.needs_acknowledgement() {
-                license.write_md(&mut md);
-            }
+            license.write_md(&mut md);
         }
         md.write_str("# Themes\n\n").expect("Infallible");
         for license in &self.for_themes {
-            if license.ty.needs_acknowledgement() {
-                license.write_md(&mut md);
-            }
+            license.write_md(&mut md);
         }
 
         md
