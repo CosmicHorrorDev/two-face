@@ -19,10 +19,17 @@ exclude = [
     # We generate some large markdown files that are only linked by URL
     "generated/*.md",
 ]
+keywords = ["syntect", "extra", "syntaxes", "themes"]
 
 [package.metadata.docs.rs]
 all-features = true
 rustdoc-args = ["--cfg", "docsrs"]
+
+[features]
+default = ["extra-syntax", "extra-theme"]
+extra-syntax = []
+extra-theme = ["syntect/dump-create"]
+acknowledgement = []
 
 [dependencies]
 once_cell.workspace = true
@@ -32,7 +39,5 @@ serde.workspace = true
 workspace = true
 features = ["dump-load", "parsing", "regex-onig"]
 
-[features]
-extra-syntax = []
-extra-theme = ["syntect/dump-create"]
-acknowledgement = []
+[dev-dependencies]
+syntect = { workspace = true, features = ["html"] }

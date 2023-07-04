@@ -2,6 +2,7 @@ use std::{fmt::Write, path::PathBuf};
 
 use serde::{Deserialize, Serialize};
 
+/// Holds the license type, text, and relative path for a syntax or theme definition
 #[derive(Deserialize, Serialize)]
 pub struct License {
     pub ty: LicenseType,
@@ -65,6 +66,7 @@ impl LicenseType {
     }
 }
 
+/// Holds all the license information for embedded syntaxes and themes
 #[derive(Deserialize, Serialize)]
 pub struct Acknowledgements {
     pub(crate) for_syntaxes: Vec<License>,
@@ -78,16 +80,48 @@ curation of said themes and syntaxes is taken from the
 ";
 
 impl Acknowledgements {
+    /// Display the license information as Markdown
+    ///
+    /// The output is roughly as follows
+    ///
+    /// ```md
+    /// Most of the code for generating both theme and syntax dumps along with the
+    /// curation of said themes and syntaxes is taken from the
+    /// [`bat` project](https://github.com/sharkdp/bat).
+    ///
+    /// # Syntaxes
+    ///
+    /// ## syntaxes/01_Packages/Rust/LICENSE.txt
+    ///
+    /// <details>
+    /// <summary>License text</summary>
+    /// ...Elided license text...
+    /// </details>
+    ///
+    /// # Themes
+    ///
+    /// ## themes/1337-Scheme/LICENSE
+    ///
+    /// <details>
+    /// <summary>License text</summary>
+    /// ...Elided license text...
+    /// </details>
+    /// ```
     pub fn to_md(&self) -> String {
         let mut md = String::from(BAT_ACK);
 
-        md.write_str("\n# Syntaxes\n\n").expect("Infallible");
-        for license in &self.for_syntaxes {
-            license.write_md(&mut md);
+        if !self.for_syntaxes.is_empty() {
+            md.write_str("\n# Syntaxes\n\n").expect("Infallible");
+            for license in &self.for_syntaxes {
+                license.write_md(&mut md);
+            }
         }
-        md.write_str("# Themes\n\n").expect("Infallible");
-        for license in &self.for_themes {
-            license.write_md(&mut md);
+
+        if !self.for_themes.is_empty() {
+            md.write_str("# Themes\n\n").expect("Infallible");
+            for license in &self.for_themes {
+                license.write_md(&mut md);
+            }
         }
 
         md

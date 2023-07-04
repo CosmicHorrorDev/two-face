@@ -7,6 +7,21 @@ use syntect::{
     highlighting::{Theme, ThemeSet},
 };
 
+/// A [`ThemeSet`] that lazily deserializes/decompresses a single theme at a time
+///
+/// This pattern is already actually used by [`syntect::parsing::SyntaxSet`] which
+/// deserializes/decompresses syntaxes on demand. Doing this has the benefit of lowering load times
+/// when you're only using a few themes at the expense of slightly larger embedded size due to
+/// worse compression
+///
+/// # Example
+///
+/// For convenience you can easily convert between a [`LazyThemeSet`] and a [`ThemeSet`]
+///
+/// ```
+/// let theme_set = two_face::theme::extra();
+/// let syntect_theme_set = syntect::highlighting::ThemeSet::from(&theme_set);
+/// ```
 #[derive(Serialize, Deserialize)]
 pub struct LazyThemeSet {
     // Can't be public since people can tweak `LazyTheme`'s internal data to get deserialization to
@@ -15,6 +30,20 @@ pub struct LazyThemeSet {
 }
 
 impl LazyThemeSet {
+    /// Access a single theme from the set
+    ///
+    /// Calling this multiple times for the same theme will only deserialize and decompress the
+    /// theme once
+    ///
+    /// # Example
+    ///
+    /// ```
+    /// let theme_set = two_face::theme::extra();
+    /// // Loads the theme
+    /// let nord = theme_set.get("Nord").unwrap();
+    /// // Reuses the same loaded theme
+    /// let nord_again = theme_set.get("Nord").unwrap();
+    /// ```
     pub fn get(&self, name: &str) -> Option<&Theme> {
         self.themes.get(name).map(|lazy_theme| {
             lazy_theme
@@ -23,6 +52,15 @@ impl LazyThemeSet {
         })
     }
 
+    /// Iterate over all the theme names included in the set
+    ///
+    /// # Example
+    ///
+    /// ```
+    /// let theme_set = two_face::theme::extra();
+    /// // Nord should be included
+    /// assert!(theme_set.theme_names().find(|&name| name == "Nord").is_some());
+    /// ```
     pub fn theme_names(&self) -> impl Iterator<Item = &str> {
         self.themes.keys().map(|name| name.as_str())
     }
