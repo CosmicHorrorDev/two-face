@@ -53,7 +53,7 @@
 //!
 //! | Flag | Description |
 //! | :---: | :--- |
-//! | `default` | Enables the `extra-syntax` and `extra-theme` features (akin to `syntect`'s default |
+//! | `default` | Enables the `extra-syntax` and `extra-theme` features (akin to `syntect`'s default) |
 //! | `extra-syntax` | Provides extra syntax definitions including `syntect`s default (no need to worry about juggling both). Currently this contains 196 definitions including some exotic ones |
 //! | `extra-theme` | Provides extra theme definitions and the [`LazyThemeSet`][theme::LazyThemeSet] type |
 //! | `acknowledgement` | Includes license acknowledgements for all the embedded content that requires acknowledgement. [`acknowledgement_url()`], which is always included in the library, includes all license acknowledgements whether they are required or not (because we don't have to care about bloating binary sizes) |
