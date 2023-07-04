@@ -14,7 +14,11 @@
 //! two-face = "0.1.0"
 //! ```
 //!
-//! ```
+#![cfg_attr(all(feature = "extra-syntax", feature = "extra-theme"), doc = "```")]
+#![cfg_attr(
+    not(all(feature = "extra-syntax", feature = "extra-theme")),
+    doc = "```ignore"
+)]
 //! const TOML_TEXT: &str = "\
 //! [section]
 //! key = 123
