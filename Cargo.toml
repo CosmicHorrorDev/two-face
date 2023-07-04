@@ -20,6 +20,9 @@ exclude = [
     "generated/*.md",
 ]
 keywords = ["syntect", "extra", "syntaxes", "themes"]
+description = "Extra syntax and theme definitions for syntect"
+repository = "https://github.com/CosmicHorrorDev/two-face"
+homepage = "https://github.com/CosmicHorrorDev/two-face"
 
 [package.metadata.docs.rs]
 all-features = true
