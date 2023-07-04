@@ -31,11 +31,11 @@ rustdoc-args = ["--cfg", "docsrs"]
 [features]
 default = ["extra-syntax", "extra-theme"]
 extra-syntax = []
-extra-theme = ["syntect/dump-create"]
+extra-theme = ["syntect/dump-create", "once_cell"]
 acknowledgement = []
 
 [dependencies]
-once_cell.workspace = true
+once_cell = { workspace = true, optional = true }
 serde.workspace = true
 
 [dependencies.syntect]
