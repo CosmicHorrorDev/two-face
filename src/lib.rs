@@ -87,7 +87,7 @@ pub mod theme;
 /// Available regardless of the `acknowledgement` feature, so that you can give credit without
 /// needing to embed more assets
 pub fn acknowledgement_url() -> &'static str {
-    "https://github.com/CosmicHorrorDev/two-face/blob/v0.1.0/generated/acknowledgements_full.md"
+    "https://github.com/CosmicHorrorDev/two-face/blob/v0.1.1/generated/acknowledgements_full.md"
 }
 
 // TODO: add more extensive tests later
