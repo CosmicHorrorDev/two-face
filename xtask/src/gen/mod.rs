@@ -75,6 +75,7 @@ impl AssetsDir {
         log::debug!("Loading syntax set");
         let syn_dir = self.tempdir.path().join("syntaxes");
         let mut builder = SyntaxSetBuilder::new();
+        builder.add_plain_text_syntax();
         for file in utils::walk_files(&syn_dir)? {
             if file.extension().and_then(OsStr::to_str) == Some("sublime-syntax") {
                 let syntax = utils::load_syntax_file(&file)?;
