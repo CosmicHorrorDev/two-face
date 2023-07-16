@@ -72,6 +72,11 @@
 
 #![cfg_attr(docsrs, feature(doc_cfg))]
 
+// Run doctest for the README
+#[doc = include_str!("../README.md")]
+#[cfg(doctest)]
+pub struct ReadmeDoctests;
+
 #[cfg_attr(docsrs, doc(cfg(feature = "acknowledgement")))]
 #[cfg(feature = "acknowledgement")]
 pub mod acknowledgement;

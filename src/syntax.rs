@@ -16,5 +16,6 @@ use syntect::parsing::SyntaxSet;
 /// let dockerfile = syn_set.find_syntax_by_name("Dockerfile").unwrap();
 /// ```
 pub fn extra() -> SyntaxSet {
+    // TODO: expose newlines and no newlines variants through separate feature flags
     syntect::dumps::from_uncompressed_data(include_bytes!("../generated/syntaxes.bin")).unwrap()
 }
