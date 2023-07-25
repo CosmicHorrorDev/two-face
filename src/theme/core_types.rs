@@ -26,7 +26,7 @@ use syntect::{
 pub struct LazyThemeSet {
     // Can't be public since people can tweak `LazyTheme`'s internal data to get deserialization to
     // fail
-    themes: BTreeMap<String, LazyTheme>,
+    pub(crate) themes: BTreeMap<String, LazyTheme>,
 }
 
 impl LazyThemeSet {
@@ -89,7 +89,7 @@ impl From<&LazyThemeSet> for ThemeSet {
 }
 
 #[derive(Serialize, Deserialize)]
-struct LazyTheme {
+pub(crate) struct LazyTheme {
     serialized: Vec<u8>,
 
     #[serde(skip, default)]

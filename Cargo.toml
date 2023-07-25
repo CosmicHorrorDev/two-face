@@ -43,4 +43,5 @@ workspace = true
 features = ["dump-load", "parsing", "regex-onig"]
 
 [dev-dependencies]
+strum = { version = "0.25.0", features = ["derive"] }
 syntect = { workspace = true, features = ["html"] }
