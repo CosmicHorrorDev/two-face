@@ -1,0 +1,43 @@
+name: CI
+
+on: [push, pull_request]
+
+env:
+  CARGO_TERM_COLOR: always
+  RUSTFLAGS: "-C debuginfo=0"
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        toolchain: [stable, beta]
+        features: ['--no-default-features', '', '--all-features']
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install ${{ matrix.toolchain }} toolchain
+        uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: ${{ matrix.toolchain }}
+          components: clippy, rustfmt
+
+      - name: Restore cache
+        uses: Swatinem/rust-cache@v2
+
+      - name: Formatting
+        run: cargo fmt --all -- --check
+
+      # Don't include the `xtask` when running tests to avoid feature
+      # unification toggling things on
+      - name: Test
+        run: cargo test --package two-face ${{ matrix.features }}
+
+      - name: Clippy
+        run: cargo clippy --workspace ${{ matrix.features }} -- -D warnings
+
+      - name: Docs
+        env:
+          RUSTDOCFLAGS: -D warnings
+        run: cargo doc --no-deps --package two-face --all-features
