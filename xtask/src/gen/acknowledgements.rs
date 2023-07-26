@@ -30,7 +30,7 @@ impl LicenseType {
         if text == SUBLIME_LICENSE {
             Ok(Self::Sublime)
         } else {
-            let text_data = askalono::TextData::from(&*text);
+            let text_data = askalono::TextData::from(text);
             let askalono::Match { score, name, .. } = store.analyze(&text_data);
             anyhow::ensure!(score > 0.9, "Detection score is too low");
             let ty = match name {
@@ -81,7 +81,7 @@ fn load_acknowledgements(
             let rel_path = file
                 .strip_prefix(base_dir)
                 .expect("Entry should always be prefixed by base dir");
-            let license = License::new(store, base_dir, &rel_path)
+            let license = License::new(store, base_dir, rel_path)
                 .with_context(|| format!("Failed detecting license: {}", rel_path.display()))?;
             licenses.push(license);
         }

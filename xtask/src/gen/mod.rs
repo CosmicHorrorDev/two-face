@@ -143,7 +143,7 @@ pub fn gen() -> anyhow::Result<()> {
 
     log::info!("Copying output data");
     let generated_dir = Path::new("generated");
-    fs::create_dir_all(&generated_dir)?;
+    fs::create_dir_all(generated_dir)?;
     for file in utils::walk_files(&output_dir)? {
         fs::copy(&file, generated_dir.join(file.file_name().unwrap()))?;
     }
