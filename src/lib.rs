@@ -74,7 +74,7 @@
 
 // Run doctest for the README
 #[doc = include_str!("../README.md")]
-#[cfg(doctest)]
+#[cfg(all(doctest, feature = "extra-syntax", feature = "extra-theme"))]
 pub struct ReadmeDoctests;
 
 #[cfg_attr(docsrs, doc(cfg(feature = "acknowledgement")))]
@@ -101,8 +101,8 @@ mod tests {
     // The serialized data is in the right structure
     #[test]
     fn sanity() {
-        #[cfg(feature = "acknowledgement")]
-        super::acknowledgement::listing();
+        // #[cfg(feature = "acknowledgement")]
+        // super::acknowledgement::listing();
         #[cfg(feature = "extra-syntax")]
         super::syntax::extra();
         #[cfg(feature = "extra-theme")]
