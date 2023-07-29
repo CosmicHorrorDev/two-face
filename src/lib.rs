@@ -29,7 +29,7 @@
 //!     let theme_set = two_face::theme::extra();
 //!
 //!     let syn_ref = syn_set.find_syntax_by_extension("toml").unwrap();
-//!     let theme = theme_set.get("Nord").unwrap();
+//!     let theme = theme_set.get(two_face::theme::ThemeName::Nord);
 //!     let htmlified = syntect::html::highlighted_html_for_string(
 //!         TOML_TEXT,
 //!         &syn_set,

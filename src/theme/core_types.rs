@@ -19,7 +19,9 @@ use syntect::{
 /// For convenience you can easily convert between a [`LazyThemeSet`] and a [`ThemeSet`]
 ///
 /// ```
-/// let theme_set = two_face::theme::extra();
+/// use two_face::theme::{extra, LazyThemeSet};
+///
+/// let theme_set: LazyThemeSet = LazyThemeSet::from(extra());
 /// let syntect_theme_set = syntect::highlighting::ThemeSet::from(&theme_set);
 /// ```
 #[derive(Serialize, Deserialize)]
@@ -38,11 +40,13 @@ impl LazyThemeSet {
     /// # Example
     ///
     /// ```
-    /// let theme_set = two_face::theme::extra();
+    /// use two_face::theme::{extra, ThemeName};
+    ///
+    /// let theme_set = extra();
     /// // Loads the theme
-    /// let nord = theme_set.get("Nord").unwrap();
+    /// let nord1 = theme_set.get(ThemeName::Nord);
     /// // Reuses the same loaded theme
-    /// let nord_again = theme_set.get("Nord").unwrap();
+    /// let nord2 = theme_set.get(ThemeName::Nord);
     /// ```
     pub fn get(&self, name: &str) -> Option<&Theme> {
         self.themes.get(name).map(|lazy_theme| {
@@ -57,7 +61,9 @@ impl LazyThemeSet {
     /// # Example
     ///
     /// ```
-    /// let theme_set = two_face::theme::extra();
+    /// use two_face::theme::{extra, LazyThemeSet};
+    ///
+    /// let theme_set = LazyThemeSet::from(extra());
     /// // Nord should be included
     /// assert!(theme_set.theme_names().find(|&name| name == "Nord").is_some());
     /// ```

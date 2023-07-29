@@ -14,18 +14,28 @@ use syntect::highlighting::Theme;
 /// # Example
 ///
 /// ```
-/// let theme_set = two_face::theme::extra();
-/// let nord = theme_set.get("Nord").unwrap();
+/// use two_face::theme;
+///
+/// let theme_set = theme::extra();
+/// let nord = theme_set.get(theme::ThemeName::Nord);
 /// ```
-pub fn extra() -> LazyThemeSet {
-    syntect::dumps::from_binary(include_bytes!("../../generated/themes.bin"))
+pub fn extra() -> EmbeddedLazyThemeSet {
+    let theme_set = syntect::dumps::from_binary(include_bytes!("../../generated/themes.bin"));
+    EmbeddedLazyThemeSet(theme_set)
 }
 
-impl LazyThemeSet {
-    // TODO: rename
-    // TODO: Maybe don't need regular `.get()` anymore
-    pub fn get_theme(&self, name: ThemeName) -> &Theme {
-        self.get(name.as_name()).unwrap()
+// TODO: delegate from inner
+pub struct EmbeddedLazyThemeSet(LazyThemeSet);
+
+impl EmbeddedLazyThemeSet {
+    pub fn get(&self, name: ThemeName) -> &Theme {
+        self.0.get(name.as_name()).unwrap()
+    }
+}
+
+impl From<EmbeddedLazyThemeSet> for LazyThemeSet {
+    fn from(embedded: EmbeddedLazyThemeSet) -> Self {
+        embedded.0
     }
 }
 
@@ -38,7 +48,7 @@ pub enum ThemeName {
     ColdarkDark,
     DarkNeon,
     Dracula,
-    GitHub,
+    Github,
     MonokaiExtended,
     MonokaiExtendedBright,
     MonokaiExtendedLight,
@@ -67,7 +77,7 @@ impl ThemeName {
             Self::ColdarkDark => "Coldark-Dark",
             Self::DarkNeon => "DarkNeon",
             Self::Dracula => "Dracula",
-            Self::GitHub => "GitHub",
+            Self::Github => "GitHub",
             Self::MonokaiExtended => "Monokai Extended",
             Self::MonokaiExtendedBright => "Monokai Extended Bright",
             Self::MonokaiExtendedLight => "Monokai Extended Light",
@@ -101,9 +111,9 @@ mod tests {
         let theme_set = extra();
         for theme_name in ThemeName::iter() {
             println!("Getting: {:?}", theme_name);
-            let _ = theme_set.get_theme(theme_name);
+            let _ = theme_set.get(theme_name);
         }
 
-        assert_eq!(theme_set.themes.len(), ThemeName::iter().len());
+        assert_eq!(theme_set.0.themes.len(), ThemeName::iter().len());
     }
 }
