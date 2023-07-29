@@ -25,6 +25,8 @@ jobs:
 
       - name: Restore cache
         uses: Swatinem/rust-cache@v2
+        with:
+          prefix-key: ${{ matrix.features }}
 
       - name: Formatting
         run: cargo fmt --all -- --check
