@@ -17,7 +17,7 @@ jobs:
           '',
           # `--all-features` uses `syntect-onig`, so make sure to test
           # `syntect-fancy` too
-          '--features=syntect-fancy,extra-syntax-newlines,extra-theme'
+          '--features=syntect-fancy,extra-syntax-newlines,extra-theme',
           '--all-features'
         ]
     runs-on: ubuntu-latest
