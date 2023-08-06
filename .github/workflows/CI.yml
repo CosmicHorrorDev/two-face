@@ -36,7 +36,7 @@ jobs:
         with:
           # Can't have commas in cache key. There's probably a cleaner way to do
           # this
-          prefix-key: ${{ if matrix.features == '--features=syntect-fancy,extra-syntax-newlines,extra-theme' && 'fancy-regex' || matrix.features }}
+          prefix-key: ${{ matrix.features == '--features=syntect-fancy,extra-syntax-newlines,extra-theme' && 'fancy-regex' || matrix.features }}
 
       - name: Formatting
         run: cargo fmt --all -- --check
