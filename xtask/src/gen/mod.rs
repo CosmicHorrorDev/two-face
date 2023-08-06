@@ -71,15 +71,17 @@ impl AssetsDir {
         self.tempdir.path()
     }
 
-    fn load_syntax_set(&self) -> anyhow::Result<SyntaxSet> {
+    fn load_syntax_set(&self, newlines: utils::IncludeNewlines) -> anyhow::Result<SyntaxSet> {
         log::debug!("Loading syntax set");
         let syn_dir = self.tempdir.path().join("syntaxes");
         let mut builder = SyntaxSetBuilder::new();
         builder.add_plain_text_syntax();
         for file in utils::walk_files(&syn_dir)? {
             if file.extension().and_then(OsStr::to_str) == Some("sublime-syntax") {
-                let syntax = utils::load_syntax_file(&file)?;
-                builder.add(syntax);
+                match utils::load_syntax_file(&file, newlines) {
+                    Ok(syntax) => builder.add(syntax),
+                    Err(err) => log::warn!("Failed loading syntax from file. Skipping...\n{err}"),
+                }
             }
         }
         let syn_set = builder.build();
@@ -102,44 +104,53 @@ impl AssetsDir {
     }
 }
 
-pub fn gen() -> anyhow::Result<()> {
+pub fn gen(only_fancy_syntaxes: bool) -> anyhow::Result<()> {
     let assets_dir = AssetsDir::new(Path::new("bat/assets"))?;
-
-    log::info!("Loading assets");
-    let syn_set = assets_dir.load_syntax_set()?;
-    let theme_set = assets_dir.load_theme_set()?;
-    let acks = assets_dir.load_acknowledgements()?;
-
-    log::info!("Dumping into different formats");
     let output_dir = assets_dir.path().join("out");
-    let syn_name = "syntaxes.bin";
-    let theme_name = "themes.bin";
-    let ack_name = "acknowledgements_full.md";
-    let ack_syn_name = "acknowledgements_syntaxes.bin";
-    let ack_theme_name = "acknowledgements_theme.bin";
-    let ack_full_bin_name = "acknowledgements_full.bin";
     fs::create_dir_all(&output_dir)?;
-    syntect::dumps::dump_to_uncompressed_file(&syn_set, output_dir.join(syn_name))?;
-    syntect::dumps::dump_to_file(&theme_set, output_dir.join(theme_name))?;
-    fs::write(output_dir.join(ack_name), acks.to_md())?;
-    // The static markdown file will have _all_ the acknowledgements while the embedded data will
-    // only keep ones that require acknowledgement
-    // TODO: Maybe allow for providing all with a feature flag?
-    let needs_ack = Acknowledgements {
-        for_themes: acks
-            .for_themes
-            .into_iter()
-            .filter(|ack| ack.needs_acknowledgement())
-            .collect(),
-        for_syntaxes: acks
-            .for_syntaxes
-            .into_iter()
-            .filter(|ack| ack.needs_acknowledgement())
-            .collect(),
+
+    log::info!("Generating dumps for syntaxes with newlines");
+    let syn_set_newlines = assets_dir.load_syntax_set(utils::IncludeNewlines::Yes)?;
+    let syn_name = if only_fancy_syntaxes {
+        "syntaxes-fancy-newlines.bin"
+    } else {
+        "syntaxes-onig-newlines.bin"
     };
-    syntect::dumps::dump_to_file(&needs_ack.for_syntaxes, output_dir.join(ack_syn_name))?;
-    syntect::dumps::dump_to_file(&needs_ack.for_themes, output_dir.join(ack_theme_name))?;
-    syntect::dumps::dump_to_file(&needs_ack, output_dir.join(ack_full_bin_name))?;
+    syntect::dumps::dump_to_uncompressed_file(&syn_set_newlines, output_dir.join(syn_name))?;
+    log::info!("Again now with no newlines");
+    let syn_set_no_newlines = assets_dir.load_syntax_set(utils::IncludeNewlines::No)?;
+    let syn_name = if only_fancy_syntaxes {
+        "syntaxes-fancy-no-newlines.bin"
+    } else {
+        "syntaxes-onig-no-newlines.bin"
+    };
+    syntect::dumps::dump_to_uncompressed_file(&syn_set_no_newlines, output_dir.join(syn_name))?;
+
+    if !only_fancy_syntaxes {
+        log::info!("Generating dumps for all other assets");
+        let theme_set = assets_dir.load_theme_set()?;
+        let acks = assets_dir.load_acknowledgements()?;
+        let theme_name = "themes.bin";
+        let ack_name = "acknowledgements_full.md";
+        let ack_full_bin_name = "acknowledgements_full.bin";
+        syntect::dumps::dump_to_uncompressed_file(&theme_set, output_dir.join(theme_name))?;
+        fs::write(output_dir.join(ack_name), acks.to_md())?;
+        // The static markdown file will have _all_ the acknowledgements while the embedded data
+        // will only keep ones that require acknowledgement
+        let needs_ack = Acknowledgements {
+            for_themes: acks
+                .for_themes
+                .into_iter()
+                .filter(|ack| ack.needs_acknowledgement())
+                .collect(),
+            for_syntaxes: acks
+                .for_syntaxes
+                .into_iter()
+                .filter(|ack| ack.needs_acknowledgement())
+                .collect(),
+        };
+        syntect::dumps::dump_to_file(&needs_ack, output_dir.join(ack_full_bin_name))?;
+    }
 
     log::info!("Copying output data");
     let generated_dir = Path::new("generated");

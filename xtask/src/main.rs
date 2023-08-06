@@ -17,14 +17,26 @@ struct Cli {
 #[derive(Subcommand, Debug)]
 enum Commands {
     Gen {
+        /// Update submodules while running (this is required)
         #[arg(short, long)]
         yes_update_submodules: bool,
+        /// Should only be set by `cargo xtask gen` running. Never set manually
+        ///
+        /// Only generate the syntax dumps for fancy-regex
+        #[arg(long)]
+        only_fancy_syntaxes: bool,
+        /// Should only be set by `cargo xtask gen` running. Never set manually
+        ///
+        /// Weird hack because `cargo xtask gen` calls back into itself to run. This is done, so
+        /// that we can have a single "run" that sets different features for `syntect`
+        #[arg(long)]
+        calling_self: bool,
     },
 }
 
 // TODO: add context everywhere
 fn main() -> anyhow::Result<()> {
-    let env = env_logger::Env::default().filter_or("LOG", "xtask=debug");
+    let env = env_logger::Env::default().filter_or("LOG", "xtask=info");
     env_logger::init_from_env(env);
 
     let cli = Cli::parse();
@@ -37,16 +49,34 @@ fn main() -> anyhow::Result<()> {
     match cli.command {
         Commands::Gen {
             yes_update_submodules,
+            only_fancy_syntaxes,
+            calling_self,
         } => {
-            anyhow::ensure!(
-                yes_update_submodules,
-                "You must pass `--yes-update-submodules` to generate assets",
-            );
-            log::info!("Attempting to init/update submodules");
-            let shell = Shell::new()?;
-            cmd!(shell, "git submodule update --init --recursive").run()?;
+            if calling_self {
+                gen::gen(only_fancy_syntaxes)?;
+            } else {
+                anyhow::ensure!(
+                    yes_update_submodules,
+                    "You must pass `--yes-update-submodules` to generate assets",
+                );
+                log::info!("Attempting to init/update submodules");
+                let shell = Shell::new()?;
+                cmd!(shell, "git submodule update --init --recursive").run()?;
 
-            gen::gen()?;
+                // We only want to keep newly generated artifacts
+                std::fs::remove_dir_all("generated")?;
+
+                // Call back into this xtask to generate new assets with multiple syntect features
+                let xtask_args = ["run", "--quiet", "--release", "--package", "xtask"];
+                let fancy_feature = ["--no-default-features", "--features", "syntect-fancy"];
+                let args = ["gen", "--calling-self"];
+                cmd!(shell, "cargo {xtask_args...} -- {args...}").run()?;
+                cmd!(
+                    shell,
+                    "cargo {xtask_args...} {fancy_feature...} -- {args...} --only-fancy-syntaxes"
+                )
+                .run()?;
+            }
         }
     }
 

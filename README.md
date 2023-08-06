@@ -16,7 +16,10 @@ The following
 ```toml
 [dependencies]
 syntect = { version = "0.5.0", default-features = false, features = ["html"] }
-two-face = "0.1.0"
+two-face = {
+    version = ...,
+    features = ["extra-syntax-newlines", "extra-theme"]
+}
 ```
 
 ```rust
@@ -26,7 +29,7 @@ key = 123
 ";
 
 fn main() {
-    let syn_set = two_face::syntax::extra();
+    let syn_set = two_face::syntax::extra_newlines();
     let theme_set = two_face::theme::extra();
 
     let syn_ref = syn_set.find_syntax_by_extension("toml").unwrap();

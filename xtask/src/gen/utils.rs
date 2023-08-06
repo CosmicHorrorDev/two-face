@@ -4,11 +4,18 @@ use anyhow::Context;
 use syntect::parsing::SyntaxDefinition;
 use walkdir::WalkDir;
 
+#[derive(Clone, Copy, PartialEq)]
+pub enum IncludeNewlines {
+    Yes,
+    No,
+}
+
 // Helper function copied from syntect internals
-pub fn load_syntax_file(p: &Path) -> anyhow::Result<SyntaxDefinition> {
+pub fn load_syntax_file(p: &Path, newlines: IncludeNewlines) -> anyhow::Result<SyntaxDefinition> {
     let s = std::fs::read_to_string(p)?;
 
-    SyntaxDefinition::load_from_str(&s, false, p.file_stem().and_then(|x| x.to_str()))
+    let include_newlines = newlines == IncludeNewlines::Yes;
+    SyntaxDefinition::load_from_str(&s, include_newlines, p.file_stem().and_then(|x| x.to_str()))
         .with_context(|| format!("Failed loading syntax from file: {}", p.display()))
 }
 

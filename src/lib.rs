@@ -11,12 +11,26 @@
 //! ```toml
 //! [dependencies]
 //! syntect = { version = "0.5.0", default-features = false, features = ["html"] }
-//! two-face = "0.1.0"
+//! two-face = {
+//!     version = ...,
+//!     features = ["extra-syntax-newlines", "extra-theme"]
+//! }
 //! ```
 //!
-#![cfg_attr(all(feature = "extra-syntax", feature = "extra-theme"), doc = "```")]
 #![cfg_attr(
-    not(all(feature = "extra-syntax", feature = "extra-theme")),
+    all(
+        feature = "extra-syntax-newlines",
+        feature = "extra-theme",
+        any(feature = "syntect-onig", feature = "syntect-fancy")
+    ),
+    doc = "```"
+)]
+#![cfg_attr(
+    not(all(
+        feature = "extra-syntax-newlines",
+        feature = "extra-theme",
+        any(feature = "syntect-onig", feature = "syntect-fancy")
+    )),
     doc = "```ignore"
 )]
 //! const TOML_TEXT: &str = "\
@@ -25,7 +39,7 @@
 //! ";
 //!
 //! fn main() {
-//!     let syn_set = two_face::syntax::extra();
+//!     let syn_set = two_face::syntax::extra_newlines();
 //!     let theme_set = two_face::theme::extra();
 //!
 //!     let syn_ref = syn_set.find_syntax_by_extension("toml").unwrap();
@@ -74,25 +88,64 @@
 
 // Run doctest for the README
 #[doc = include_str!("../README.md")]
-#[cfg(all(doctest, feature = "extra-syntax", feature = "extra-theme"))]
+#[cfg(all(
+    doctest,
+    feature = "extra-syntax-newlines",
+    feature = "extra-theme",
+    any(feature = "syntect-onig", feature = "syntect-fancy")
+))]
 pub struct ReadmeDoctests;
 
 #[cfg_attr(docsrs, doc(cfg(feature = "acknowledgement")))]
 #[cfg(feature = "acknowledgement")]
 pub mod acknowledgement;
-#[cfg_attr(docsrs, doc(cfg(feature = "extra-syntax")))]
-#[cfg(feature = "extra-syntax")]
+#[cfg(any(
+    feature = "extra-syntax-no-newlines",
+    feature = "extra-syntax-newlines"
+))]
 pub mod syntax;
 #[cfg_attr(docsrs, doc(cfg(feature = "extra-theme")))]
 #[cfg(feature = "extra-theme")]
 pub mod theme;
+
+// TODO: move the info from this notice into the crate's README and doc home page
+// Compile error if we're using syntaxes without setting fancy vs onig
+#[cfg(all(
+    any(
+        feature = "extra-syntax-no-newlines",
+        feature = "extra-syntax-newlines"
+    ),
+    not(any(feature = "syntect-onig", feature = "syntect-fancy"))
+))]
+compile_error!(
+    r#"You must set either the `syntect-onig` or `syntect-fancy` feature matching the regex
+implemetation that you're using for `syntect`. `syntect` and `two-face` both default to onig along
+with using it if both are present, so you have to use `default-features = false` if you want to use
+`fancy-regex`. E.g.
+
+# `onig` based
+[dependencies]
+syntect = ...
+two-face = { version = ..., features = ["extra-syntax-..."] }
+
+or
+
+# `fancy-regex` based
+[dependencies]
+syntect = { version = ..., default-features = false, features = ["default-fancy"]
+two-face = {
+    version = ...,
+    default-features = false,
+    features = ["syntect-fancy", "extra-syntax-..."]
+}"#
+);
 
 /// Returns a link to a page listing acknowledgements for all syntax and theme definitions
 ///
 /// Available regardless of the `acknowledgement` feature, so that you can give credit without
 /// needing to embed more assets
 pub fn acknowledgement_url() -> &'static str {
-    "https://github.com/CosmicHorrorDev/two-face/blob/v0.1.1/generated/acknowledgements_full.md"
+    "https://github.com/CosmicHorrorDev/two-face/blob/v0.2.0/generated/acknowledgements_full.md"
 }
 
 // TODO: add more extensive tests later
@@ -101,10 +154,12 @@ mod tests {
     // The serialized data is in the right structure
     #[test]
     fn sanity() {
-        // #[cfg(feature = "acknowledgement")]
-        // super::acknowledgement::listing();
-        #[cfg(feature = "extra-syntax")]
-        super::syntax::extra();
+        #[cfg(feature = "acknowledgement")]
+        super::acknowledgement::listing();
+        #[cfg(feature = "extra-syntax-newlines")]
+        super::syntax::extra_newlines();
+        #[cfg(feature = "extra-syntax-no-newlines")]
+        super::syntax::extra_no_newlines();
         #[cfg(feature = "extra-theme")]
         super::theme::extra();
     }

@@ -6,12 +6,20 @@ env:
   CARGO_TERM_COLOR: always
   RUSTFLAGS: "-C debuginfo=0"
 
+# TODO: split out jobs that run with specific features
+
 jobs:
   build:
     strategy:
       matrix:
         toolchain: [stable, beta]
-        features: ['--no-default-features', '', '--all-features']
+        features: [
+          '',
+          # `--all-features` uses `syntect-onig`, so make sure to test
+          # `syntect-fancy` too
+          '--features=syntect-fancy,extra-syntax-newlines,extra-theme'
+          '--all-features'
+        ]
     runs-on: ubuntu-latest
 
     steps:

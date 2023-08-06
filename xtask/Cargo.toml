@@ -13,6 +13,7 @@ flate2 = "1.0.26"
 log = "0.4.19"
 once_cell.workspace = true
 serde.workspace = true
+syntect.workspace = true
 tempfile = "3.6.0"
 walkdir = "2.3.3"
 xshell = "0.2.3"
@@ -21,6 +22,8 @@ xshell = "0.2.3"
 version = "4.3.9"
 features = ["derive"]
 
-[dependencies.syntect]
-workspace = true
-default-features = true
+[features]
+default = ["syntect-onig"]
+
+syntect-onig = ["syntect/default-onig"]
+syntect-fancy = ["syntect/default-fancy"]

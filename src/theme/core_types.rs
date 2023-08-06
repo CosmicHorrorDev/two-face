@@ -67,6 +67,7 @@ impl LazyThemeSet {
     /// // Nord should be included
     /// assert!(theme_set.theme_names().find(|&name| name == "Nord").is_some());
     /// ```
+    // TODO: use a nameable iterator here
     pub fn theme_names(&self) -> impl Iterator<Item = &str> {
         self.themes.keys().map(|name| name.as_str())
     }
