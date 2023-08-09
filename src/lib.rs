@@ -66,7 +66,7 @@
 //! | `acknowledgement` w/ `extra-theme` | `1.7` |
 //! | `acknowledgement` w/ both | `9.9` |
 
-// Run doctest for the README
+#[cfg(doctest)]
 #[doc = include_str!("../README.md")]
 pub struct ReadmeDoctests;
 
