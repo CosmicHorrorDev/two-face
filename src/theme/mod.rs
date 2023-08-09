@@ -32,6 +32,8 @@ impl EmbeddedLazyThemeSet {
         self.0.get(name.as_name()).unwrap()
     }
 
+    // TODO: have a test to ensure all values are unique
+    // TODO: have a test that ensures the length is the same as strum's enum iter length
     pub fn theme_names(&self) -> &'static [ThemeName] {
         &[
             ThemeName::Leet,

@@ -7,7 +7,7 @@ members = [
 [workspace.dependencies]
 once_cell = "1.18.0"
 serde = { version = "1.0.100", features = ["derive"] }
-syntect = { version = "5.0.0", default-features = false }
+syntect = { version = "5.1.0", default-features = false }
 
 [package]
 name = "two-face"
@@ -27,7 +27,6 @@ homepage = "https://github.com/CosmicHorrorDev/two-face"
 
 [package.metadata.docs.rs]
 all-features = true
-rustdoc-args = ["--cfg", "docsrs"]
 
 [features]
 # TODO: I don't like having to set this as a default, but `syntect` can't
@@ -37,20 +36,14 @@ default = ["syntect-onig"]
 syntect-onig = ["syntect/regex-onig"]
 syntect-fancy = ["syntect/regex-fancy"]
 
-extra-syntax-no-newlines = []
-extra-syntax-newlines = []
-
-extra-theme = ["syntect/dump-create", "once_cell"]
-
-acknowledgement = []
-
 [dependencies]
-onig = { version = "6.0", optional = true, default-features = false }
-once_cell = { workspace = true, optional = true }
+once_cell.workspace = true
 serde.workspace = true
 
 [dependencies.syntect]
 workspace = true
+# TODO: `SyntaxSet` should be available without `parsing`, but that's a change
+#       to make upstream
 features = ["dump-load", "parsing"]
 
 [dev-dependencies]

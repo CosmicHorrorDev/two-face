@@ -4,8 +4,6 @@ use syntect::{dumps, parsing::SyntaxSet};
 
 // TODO: can we rely on linker garbage collection to prune embedded data instead of features
 
-#[cfg_attr(docsrs, doc(cfg(feature = "extra-syntax-no-newlines")))]
-#[cfg(feature = "extra-syntax-no-newlines")]
 /// Returns a [`SyntaxSet`] with plenty of extra syntax definitions compared to the default
 ///
 /// Note: This includes all of `syntect`'s embedded syntax definitions
@@ -28,8 +26,6 @@ pub fn extra_no_newlines() -> SyntaxSet {
     dumps::from_uncompressed_data(bytes).unwrap()
 }
 
-#[cfg_attr(docsrs, doc(cfg(feature = "extra-syntax-newlines")))]
-#[cfg(feature = "extra-syntax-newlines")]
 pub fn extra_newlines() -> SyntaxSet {
     #[cfg(feature = "syntect-onig")]
     let bytes = include_bytes!("../generated/syntaxes-onig-newlines.bin");

@@ -19,3 +19,5 @@ presention before publishing a release
   Previously some of the extra syntaxes included would fail when using
   `fancy-regex`. Those problematic syntaxes aren't included when `syntect-fancy`
   is set
+- Ripped out the feature flags designed to keep embedded asset usage to a
+  minimum. It seems like the linker is smart enough to discard this unused data

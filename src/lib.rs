@@ -11,28 +11,10 @@
 //! ```toml
 //! [dependencies]
 //! syntect = { version = "0.5.0", default-features = false, features = ["html"] }
-//! two-face = {
-//!     version = ...,
-//!     features = ["extra-syntax-newlines", "extra-theme"]
-//! }
+//! two-face = "0.2.0"
 //! ```
 //!
-#![cfg_attr(
-    all(
-        feature = "extra-syntax-newlines",
-        feature = "extra-theme",
-        any(feature = "syntect-onig", feature = "syntect-fancy")
-    ),
-    doc = "```"
-)]
-#![cfg_attr(
-    not(all(
-        feature = "extra-syntax-newlines",
-        feature = "extra-theme",
-        any(feature = "syntect-onig", feature = "syntect-fancy")
-    )),
-    doc = "```ignore"
-)]
+//! ```
 //! const TOML_TEXT: &str = "\
 //! [section]
 //! key = 123
@@ -84,39 +66,17 @@
 //! | `acknowledgement` w/ `extra-theme` | `1.7` |
 //! | `acknowledgement` w/ both | `9.9` |
 
-#![cfg_attr(docsrs, feature(doc_cfg))]
-
 // Run doctest for the README
 #[doc = include_str!("../README.md")]
-#[cfg(all(
-    doctest,
-    feature = "extra-syntax-newlines",
-    feature = "extra-theme",
-    any(feature = "syntect-onig", feature = "syntect-fancy")
-))]
 pub struct ReadmeDoctests;
 
-#[cfg_attr(docsrs, doc(cfg(feature = "acknowledgement")))]
-#[cfg(feature = "acknowledgement")]
 pub mod acknowledgement;
-#[cfg(any(
-    feature = "extra-syntax-no-newlines",
-    feature = "extra-syntax-newlines"
-))]
 pub mod syntax;
-#[cfg_attr(docsrs, doc(cfg(feature = "extra-theme")))]
-#[cfg(feature = "extra-theme")]
 pub mod theme;
 
 // TODO: move the info from this notice into the crate's README and doc home page
 // Compile error if we're using syntaxes without setting fancy vs onig
-#[cfg(all(
-    any(
-        feature = "extra-syntax-no-newlines",
-        feature = "extra-syntax-newlines"
-    ),
-    not(any(feature = "syntect-onig", feature = "syntect-fancy"))
-))]
+#[cfg(not(any(feature = "syntect-onig", feature = "syntect-fancy")))]
 compile_error!(
     r#"You must set either the `syntect-onig` or `syntect-fancy` feature matching the regex
 implemetation that you're using for `syntect`. `syntect` and `two-face` both default to onig along
@@ -154,13 +114,9 @@ mod tests {
     // The serialized data is in the right structure
     #[test]
     fn sanity() {
-        #[cfg(feature = "acknowledgement")]
         super::acknowledgement::listing();
-        #[cfg(feature = "extra-syntax-newlines")]
         super::syntax::extra_newlines();
-        #[cfg(feature = "extra-syntax-no-newlines")]
         super::syntax::extra_no_newlines();
-        #[cfg(feature = "extra-theme")]
         super::theme::extra();
     }
 }

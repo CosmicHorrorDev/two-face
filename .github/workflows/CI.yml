@@ -15,9 +15,8 @@ jobs:
         toolchain: [stable, beta]
         features: [
           '',
-          # `--all-features` uses `syntect-onig`, so make sure to test
-          # `syntect-fancy` too
-          '--features=syntect-fancy,extra-syntax-newlines,extra-theme',
+          # Defaults to `syntect-onig`, so make sure to test `syntect-fancy` too
+          '--no-default-features --features=syntect-fancy',
           '--all-features'
         ]
     runs-on: ubuntu-latest
@@ -34,9 +33,9 @@ jobs:
       - name: Restore cache
         uses: Swatinem/rust-cache@v2
         with:
-          # Can't have commas in cache key. There's probably a cleaner way to do
+          # Can't have spaces in cache key. There's probably a cleaner way to do
           # this
-          prefix-key: ${{ matrix.features == '--features=syntect-fancy,extra-syntax-newlines,extra-theme' && 'fancy-regex' || matrix.features }}
+          prefix-key: ${{ matrix.features }}
 
       - name: Formatting
         run: cargo fmt --all -- --check

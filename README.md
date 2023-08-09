@@ -16,10 +16,7 @@ The following
 ```toml
 [dependencies]
 syntect = { version = "0.5.0", default-features = false, features = ["html"] }
-two-face = {
-    version = ...,
-    features = ["extra-syntax-newlines", "extra-theme"]
-}
+two-face = "0.2.0"
 ```
 
 ```rust
