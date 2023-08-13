@@ -36,14 +36,16 @@ default = ["syntect-onig"]
 syntect-onig = ["syntect/regex-onig"]
 syntect-fancy = ["syntect/regex-fancy"]
 
+# Don't like this, but I want to link to the functions provided by this from my
+# documentation
+unstable = ["syntect/default-syntaxes"]
+
 [dependencies]
 once_cell.workspace = true
 serde.workspace = true
 
 [dependencies.syntect]
 workspace = true
-# TODO: `SyntaxSet` should be available without `parsing`, but that's a change
-#       to make upstream
 features = ["dump-load", "parsing"]
 
 [dev-dependencies]

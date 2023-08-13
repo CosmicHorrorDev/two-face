@@ -11,6 +11,7 @@ pub struct License {
 }
 
 impl License {
+    /// Appends a section for this license to `md`
     pub fn write_md(&self, md: &mut String) {
         write!(
             md,
@@ -36,24 +37,38 @@ impl License {
         md.push_str("\n\n");
     }
 
+    /// Whether or not this type of license requires acknowledgement
     pub fn needs_acknowledgement(&self) -> bool {
         self.ty.needs_acknowledgement()
     }
 }
 
+/// The full range of included licenses
+///
+/// Disclaimer: I am not a lawyer
 #[derive(Deserialize, Serialize, Debug)]
+#[non_exhaustive]
 pub enum LicenseType {
+    /// Sublime's custom license
     Sublime,
+    /// [MIT License](https://choosealicense.com/licenses/mit/)
     Mit,
+    /// [BSD 2-Clause License](https://choosealicense.com/licenses/bsd-2-clause/)
     Bsd2Clause,
+    // TODO: what is the distinction here from the other BSD 2-Clause license?
     Bsd2ClauseFreeBsd,
+    /// [The Unlicense](https://choosealicense.com/licenses/unlicense/)
     Unlicense,
+    /// [BSD 3-Clause License](https://choosealicense.com/licenses/bsd-3-clause/)
     Bsd3Clause,
+    /// [Apache License 2.0](https://choosealicense.com/licenses/apache-2.0/)
     Apache2,
+    /// [Do What The F*ck You Want To Public License](https://choosealicense.com/licenses/wtfpl/)
     Wtfpl,
 }
 
 impl LicenseType {
+    /// Whether or not the license requires acknowledgement
     pub fn needs_acknowledgement(&self) -> bool {
         match self {
             Self::Mit

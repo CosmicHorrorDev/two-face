@@ -2,15 +2,13 @@
 //!
 //! Extra syntax and theme definitions for
 //! [`syntect`](https://docs.rs/syntect/latest/syntect/) including many common ones that are missing
-//! from the default set like TOML, TypeScript, and Dockerfile. `syntect` embeds ~0.5 MiB of static
-//! assets for the default themes and styles, so it's best to use `default-features = false` when
-//! using this crate to avoid pulling in unused embedded assets.
+//! from the default set like TOML, TypeScript, and Dockerfile
 //!
 //! # Example
 //!
 //! ```toml
 //! [dependencies]
-//! syntect = { version = "0.5.0", default-features = false, features = ["html"] }
+//! syntect = "0.5.1"
 //! two-face = "0.2.0"
 //! ```
 //!
@@ -25,7 +23,7 @@
 //!     let theme_set = two_face::theme::extra();
 //!
 //!     let syn_ref = syn_set.find_syntax_by_extension("toml").unwrap();
-//!     let theme = theme_set.get(two_face::theme::ThemeName::Nord);
+//!     let theme = theme_set.get(two_face::theme::EmbeddedThemeName::Nord);
 //!     let htmlified = syntect::html::highlighted_html_for_string(
 //!         TOML_TEXT,
 //!         &syn_set,
@@ -33,7 +31,7 @@
 //!         theme
 //!     ).unwrap();
 //!
-//!     // Creates HTML that displays as vv
+//!     // Where `htmlified` displays as vv
 //!     # assert_eq!(htmlified, "<pre style=\"background-color:#2e3440;\">\n<span style=\"color:#d8dee9;\">[section]\n</span><span style=\"color:#81a1c1;\">key </span><span style=\"color:#d8dee9;\">= </span><span style=\"color:#b48ead;\">123\n</span></pre>\n");
 //! }
 //! ```
@@ -45,26 +43,26 @@
 //!
 //! # Feature Flags
 //!
-//! This library makes heavy use of feature flags to keep embedded assets and dependencies slim
+//! Some embedded syntaxes use features that aren't available with `fancy-regex`. To keep regex
+//! compilation infallible it's important to match this library's regex implementation with the one
+//! you're using from syntect
 //!
-//! | Flag | Description |
-//! | :---: | :--- |
-//! | `default` | Enables the `extra-syntax` and `extra-theme` features (akin to `syntect`'s default) |
-//! | `extra-syntax` | Provides extra syntax definitions including `syntect`s default (no need to worry about juggling both). Currently this contains 196 definitions including some exotic ones |
-//! | `extra-theme` | Provides extra theme definitions and the [`LazyThemeSet`][theme::LazyThemeSet] type |
-//! | `acknowledgement` | Includes license acknowledgements for all the embedded content that requires acknowledgement. [`acknowledgement_url()`], which is always included in the library, includes all license acknowledgements whether they are required or not (because we don't have to care about bloating binary sizes) |
+//! To use [Oniguruma](https://github.com/kkos/oniguruma) aka `onig`
 //!
-//! # Sizes
+//! ```toml
+//! [dependencies]
+//! # `onig` is the default
+//! syntect = "0.5.1"
+//! two-face = "0.2.0"
+//! ```
 //!
-//! Embedding all assets can bulk up the size of your binary a bit of course
+//! To use [`fancy-regex`](https://github.com/fancy-regex/fancy-regex)
 //!
-//! | Feature Flag | Size (KiB) |
-//! | :---: | ---: |
-//! | `extra-syntax` | `865.2` |
-//! | `extra-theme` | `39.3` |
-//! | `acknowledgement` w/ `extra-syntax` | `8.9` |
-//! | `acknowledgement` w/ `extra-theme` | `1.7` |
-//! | `acknowledgement` w/ both | `9.9` |
+//! ```toml
+//! [dependencies]
+//! syntect = { version = "0.5.1", default-features = false, features = ["default-fancy"] }
+//! two-face = { version = "0.2.0", default-features = false, features = ["syntect-fancy"] }
+//! ```
 
 #[cfg(doctest)]
 #[doc = include_str!("../README.md")]
@@ -74,7 +72,6 @@ pub mod acknowledgement;
 pub mod syntax;
 pub mod theme;
 
-// TODO: move the info from this notice into the crate's README and doc home page
 // Compile error if we're using syntaxes without setting fancy vs onig
 #[cfg(not(any(feature = "syntect-onig", feature = "syntect-fancy")))]
 compile_error!(

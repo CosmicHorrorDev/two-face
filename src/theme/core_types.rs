@@ -40,13 +40,13 @@ impl LazyThemeSet {
     /// # Example
     ///
     /// ```
-    /// use two_face::theme::{extra, ThemeName};
+    /// use two_face::theme::{extra, LazyThemeSet};
     ///
-    /// let theme_set = extra();
+    /// let theme_set = LazyThemeSet::from(extra());
     /// // Loads the theme
-    /// let nord1 = theme_set.get(ThemeName::Nord);
+    /// let nord1 = theme_set.get("Nord").unwrap();
     /// // Reuses the same loaded theme
-    /// let nord2 = theme_set.get(ThemeName::Nord);
+    /// let nord2 = theme_set.get("Nord").unwrap();
     /// ```
     pub fn get(&self, name: &str) -> Option<&Theme> {
         self.themes.get(name).map(|lazy_theme| {
