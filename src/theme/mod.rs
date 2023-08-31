@@ -8,7 +8,11 @@ use syntect::highlighting::{Theme, ThemeSet};
 
 /// Returns an [`EmbeddedLazyThemeSet`] with more popular theme definitions
 ///
-/// Note: This includes all of `syntect`'s embedded theme definitions
+/// These themes cover a variety of use-cases, so it's very likely that you'll only want to expose
+/// a subset or tweak the values for specific themes depending on your usage. E.g.
+/// `EmbeddedThemeName::{Ansi, Base16, Base16_256}` are all terminal related themes,
+/// `EmbeddedThemeName::InspiredGithub` uses a full-white background which wouldn't be a good fit
+/// for a static site generator, etc.
 ///
 /// # Example
 ///
@@ -60,12 +64,22 @@ impl EmbeddedLazyThemeSet {
     /// ```
     pub fn theme_names() -> &'static [EmbeddedThemeName] {
         &[
-            EmbeddedThemeName::Leet,
+            EmbeddedThemeName::Ansi,
+            EmbeddedThemeName::Base16,
+            EmbeddedThemeName::Base16EightiesDark,
+            EmbeddedThemeName::Base16MochaDark,
+            EmbeddedThemeName::Base16OceanDark,
+            EmbeddedThemeName::Base16OceanLight,
+            EmbeddedThemeName::Base16_256,
             EmbeddedThemeName::ColdarkCold,
             EmbeddedThemeName::ColdarkDark,
             EmbeddedThemeName::DarkNeon,
             EmbeddedThemeName::Dracula,
             EmbeddedThemeName::Github,
+            EmbeddedThemeName::GruvboxDark,
+            EmbeddedThemeName::GruvboxLight,
+            EmbeddedThemeName::InspiredGithub,
+            EmbeddedThemeName::Leet,
             EmbeddedThemeName::MonokaiExtended,
             EmbeddedThemeName::MonokaiExtendedBright,
             EmbeddedThemeName::MonokaiExtendedLight,
@@ -78,11 +92,6 @@ impl EmbeddedLazyThemeSet {
             EmbeddedThemeName::SubmlimeSnazzy,
             EmbeddedThemeName::TwoDark,
             EmbeddedThemeName::VisualStudioDarkPlus,
-            EmbeddedThemeName::Ansi,
-            EmbeddedThemeName::Base16,
-            EmbeddedThemeName::Base16_256,
-            EmbeddedThemeName::GruvboxDark,
-            EmbeddedThemeName::GruvboxLight,
             EmbeddedThemeName::Zenburn,
         ]
     }
@@ -100,17 +109,26 @@ impl From<&EmbeddedLazyThemeSet> for ThemeSet {
     }
 }
 
-// TODO: include syntect's defaults in the dump too
 /// An enum that represents all themes included in [`EmbeddedLazyThemeSet`]
 #[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord)]
 #[cfg_attr(test, derive(strum::EnumIter))]
 pub enum EmbeddedThemeName {
-    Leet,
+    Ansi,
+    Base16,
+    Base16EightiesDark,
+    Base16MochaDark,
+    Base16OceanDark,
+    Base16OceanLight,
+    Base16_256,
     ColdarkCold,
     ColdarkDark,
     DarkNeon,
     Dracula,
     Github,
+    GruvboxDark,
+    GruvboxLight,
+    InspiredGithub,
+    Leet,
     MonokaiExtended,
     MonokaiExtendedBright,
     MonokaiExtendedLight,
@@ -123,23 +141,31 @@ pub enum EmbeddedThemeName {
     SubmlimeSnazzy,
     TwoDark,
     VisualStudioDarkPlus,
-    Ansi,
-    Base16,
-    Base16_256,
-    GruvboxDark,
-    GruvboxLight,
     Zenburn,
 }
 
 impl EmbeddedThemeName {
+    /// The name of each embedded theme
+    ///
+    /// This matches the key used for each theme in [`ThemeSet`]'s `themes`
     pub fn as_name(self) -> &'static str {
         match self {
-            Self::Leet => "1337",
+            Self::Ansi => "ansi",
+            Self::Base16 => "base16",
+            Self::Base16EightiesDark => "base16-eighties.dark",
+            Self::Base16MochaDark => "base16-mocha.dark",
+            Self::Base16OceanDark => "base16-ocean.dark",
+            Self::Base16OceanLight => "base16-ocean.light",
+            Self::Base16_256 => "base16-256",
             Self::ColdarkCold => "Coldark-Cold",
             Self::ColdarkDark => "Coldark-Dark",
             Self::DarkNeon => "DarkNeon",
             Self::Dracula => "Dracula",
             Self::Github => "GitHub",
+            Self::GruvboxDark => "gruvbox-dark",
+            Self::GruvboxLight => "gruvbox-light",
+            Self::InspiredGithub => "InspiredGitHub",
+            Self::Leet => "1337",
             Self::MonokaiExtended => "Monokai Extended",
             Self::MonokaiExtendedBright => "Monokai Extended Bright",
             Self::MonokaiExtendedLight => "Monokai Extended Light",
@@ -152,11 +178,6 @@ impl EmbeddedThemeName {
             Self::SubmlimeSnazzy => "Sublime Snazzy",
             Self::TwoDark => "TwoDark",
             Self::VisualStudioDarkPlus => "Visual Studio Dark+",
-            Self::Ansi => "ansi",
-            Self::Base16 => "base16",
-            Self::Base16_256 => "base16-256",
-            Self::GruvboxDark => "gruvbox-dark",
-            Self::GruvboxLight => "gruvbox-light",
             Self::Zenburn => "zenburn",
         }
     }

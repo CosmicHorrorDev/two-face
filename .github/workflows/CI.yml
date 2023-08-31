@@ -6,8 +6,6 @@ env:
   CARGO_TERM_COLOR: always
   RUSTFLAGS: "-C debuginfo=0"
 
-# TODO: split out jobs that run with specific features
-
 jobs:
   build:
     strategy:

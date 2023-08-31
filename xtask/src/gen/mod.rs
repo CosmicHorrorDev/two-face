@@ -92,8 +92,12 @@ impl AssetsDir {
         log::debug!("Loading theme set");
         let theme_dir = self.tempdir.path().join("themes");
         anyhow::ensure!(theme_dir.is_dir(), "Can't find themes dir at {theme_dir:?}",);
-        let theme_set = ThemeSet::load_from_folder(&theme_dir)?;
-        let lazy_theme_set = LazyThemeSet::from(&theme_set);
+        let mut theme_set = ThemeSet::load_from_folder(&theme_dir)?;
+
+        let mut full_set = ThemeSet::load_defaults();
+        full_set.themes.append(&mut theme_set.themes);
+
+        let lazy_theme_set = LazyThemeSet::from(&full_set);
         Ok(lazy_theme_set)
     }
 
