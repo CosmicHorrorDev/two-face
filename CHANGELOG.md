@@ -1,3 +1,12 @@
+# Version 0.3.0
+
+Only a couple of very small breaking changes:
+
+- The embedded theme set now includes all of syntect's default themes instead of
+  just bat's
+- The themes returned by `EmbeddedLazyThemeSet::theme_names()` are now
+  alphabetized
+
 # Version 0.2.0
 
 ## Feature Flags
