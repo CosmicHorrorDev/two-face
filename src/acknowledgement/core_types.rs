@@ -68,6 +68,13 @@ pub enum LicenseType {
 
 impl LicenseType {
     /// Whether or not the license requires acknowledgement
+    ///
+    /// ```
+    /// use two_face::acknowledgement::LicenseType;
+    ///
+    /// assert!(LicenseType::Mit.needs_acknowledgement());
+    /// assert!(!LicenseType::Wtfpl.needs_acknowledgement());
+    /// ```
     pub fn needs_acknowledgement(&self) -> bool {
         match self {
             Self::Mit
@@ -105,22 +112,24 @@ impl Acknowledgements {
     ///
     /// # Syntaxes
     ///
-    /// ## syntaxes/01_Packages/Rust/LICENSE.txt
-    ///
     /// <details>
-    /// <summary>License text</summary>
+    /// <summary>syntaxes/01_Packages/Rust/LICENSE.txt</summary>
+    ///
     /// ...Elided license text...
     /// </details>
+    ///
+    /// ...
     ///
     /// # Themes
     ///
-    /// ## themes/1337-Scheme/LICENSE
-    ///
     /// <details>
-    /// <summary>License text</summary>
+    /// <summary>themes/1337-Scheme/LICENSE</summary>
+    ///
     /// ...Elided license text...
     /// </details>
     /// ```
+    ///
+    /// ...
     pub fn to_md(&self) -> String {
         let mut md = String::from(BAT_ACK);
 
