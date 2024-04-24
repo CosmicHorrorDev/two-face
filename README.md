@@ -1,5 +1,10 @@
 # _two-face_
 
+[![build status](https://img.shields.io/github/actions/workflow/status/CosmicHorrorDev/two-face/CI.yml?branch=main)](https://github.com/CosmicHorrorDev/two-face/actions)
+[![Crates.io](https://img.shields.io/crates/v/two-face.svg)](https://crates.io/crates/two-face)
+[![codecov](https://codecov.io/gh/CosmicHorrorDev/two-face/graph/badge.svg?token=MUORSBCHF2)](https://codecov.io/gh/CosmicHorrorDev/two-face)
+
+
 Dedicated to chasing the [`bat` man](https://github.com/sharkdp)
 
 Extra syntax and theme definitions for
