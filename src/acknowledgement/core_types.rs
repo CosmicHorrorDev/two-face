@@ -16,10 +16,11 @@ impl License {
         write!(
             md,
             "\
-            ## {}\n\n\
             <details>\n\
-            <summary>License text</summary>\n\
+            <summary>{}</summary>\n\n\
+            ````text\n\
             {}\n\
+            ````\n\
             </details>\
             ",
             self.rel_path.display(),
@@ -32,9 +33,7 @@ impl License {
             md.push('\n')
         }
 
-        // Add two more newlines to make it easy to distinguish where this text ends and the next
-        // starts
-        md.push_str("\n\n");
+        md.push('\n');
     }
 
     /// Whether or not this type of license requires acknowledgement

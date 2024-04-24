@@ -83,18 +83,14 @@ with using it if both are present, so you have to use `default-features = false`
 # `onig` based
 [dependencies]
 syntect = ...
-two-face = { version = ..., features = ["extra-syntax-..."] }
+two-face = ...
 
 or
 
 # `fancy-regex` based
 [dependencies]
 syntect = { version = ..., default-features = false, features = ["default-fancy"]
-two-face = {
-    version = ...,
-    default-features = false,
-    features = ["syntect-fancy", "extra-syntax-..."]
-}"#
+two-face = { version = ..., default-features = false, features = ["syntect-fancy"] }"#
 );
 
 /// Returns a link to a page listing acknowledgements for all syntax and theme definitions

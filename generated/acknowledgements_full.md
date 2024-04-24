@@ -4,10 +4,10 @@ curation of said themes and syntaxes is taken from the
 
 # Syntaxes
 
-## syntaxes/01_Packages/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/01_Packages/LICENSE</summary>
+
+````text
 If not otherwise specified (see below), files in this repository fall under the following license:
 
     Permission to copy, use, modify, sell and distribute this
@@ -17,13 +17,13 @@ If not otherwise specified (see below), files in this repository fall under the 
 
 An exception is made for files in readable text which contain their own license information, or files where an accompanying file exists (in the same directory) with a “-license” suffix added to the base-name name of the original file, and an extension of txt, html, or similar. For example “tidy” is accompanied by “tidy-license.txt”.
 
+````
 </details>
 
-
-## syntaxes/01_Packages/Rust/LICENSE.txt
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/01_Packages/Rust/LICENSE.txt</summary>
+
+````text
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
@@ -42,13 +42,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/AWK/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/AWK/LICENSE</summary>
+
+````text
 The MIT License (MIT)
 
 Copyright (c) 2012-2014 John Nilsson
@@ -71,13 +71,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/Ada/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/Ada/LICENSE</summary>
+
+````text
 MIT License
 
 Copyright (c) 2020 Simon Rowe
@@ -100,13 +100,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/Apache/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/Apache/LICENSE</summary>
+
+````text
 Copyright (c) 2012, Colin T.A. Gray
 All rights reserved.
 
@@ -134,13 +134,13 @@ The views and conclusions contained in the software and documentation are those
 of the authors and should not be interpreted as representing official policies,
 either expressed or implied, of this project.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/AsciiDoc/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/AsciiDoc/LICENSE</summary>
+
+````text
 The MIT License
 
 Copyright 2014 Matt Neuburg <http://www.apeth.net/matt/default.html>
@@ -164,13 +164,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/CMake/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/CMake/LICENSE</summary>
+
+````text
 MIT License
 
 Copyright (c) 2012-2020 The Sublime CMake authors
@@ -193,13 +193,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/CoffeeScript/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/CoffeeScript/LICENSE</summary>
+
+````text
 MIT License
 
 Copyright (c) 2019 sustained
@@ -222,13 +222,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/Crontab/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/Crontab/LICENSE</summary>
+
+````text
 MIT License
 
 Copyright (c) 2018 Varun Nayyar
@@ -252,13 +252,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/Crontab/cron_descriptor/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/Crontab/cron_descriptor/LICENSE</summary>
+
+````text
 The MIT License (MIT)
 
 Copyright (c) 2016 Adam Schubert
@@ -281,13 +281,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/Crystal/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/Crystal/LICENSE</summary>
+
+````text
 Copyright 2014-2015 Manas Technology Solutions.
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -302,13 +302,13 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/Dart/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/Dart/LICENSE</summary>
+
+````text
 Copyright (c) 2020
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -329,13 +329,13 @@ DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
 OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
 OR OTHER DEALINGS IN THE SOFTWARE.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/Docker/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/Docker/LICENSE</summary>
+
+````text
 The MIT License (MIT)
 
 Copyright 2014 Asbjorn Enge
@@ -358,13 +358,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/DotENV/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/DotENV/LICENSE</summary>
+
+````text
 The MIT License (MIT)
 
 Copyright (c) 2016 Zayn Ali
@@ -388,13 +388,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
+````
 </details>
 
-
-## syntaxes/02_Extra/Elixir/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/Elixir/LICENSE</summary>
+
+````text
 MIT License
 
 Copyright (c) 2017 Po Chen
@@ -417,13 +417,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/Elm/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/Elm/LICENSE</summary>
+
+````text
 The MIT License (MIT)
 
 Copyright (c) 2013-2014 Alex Neslusan
@@ -445,13 +445,13 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/Email/LICENSE.md
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/Email/LICENSE.md</summary>
+
+````text
 The MIT License (MIT)
 
 Copyright (c) 2020 Mario Zaizar
@@ -462,13 +462,13 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/Fish/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/Fish/LICENSE</summary>
+
+````text
 MIT License
 
 Copyright (c) 2017 Phidica Veia
@@ -491,13 +491,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/GLSL/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/GLSL/LICENSE</summary>
+
+````text
 This is free and unencumbered software released into the public domain.
 
 Anyone is free to copy, modify, publish, use, compile, sell, or
@@ -523,13 +523,13 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 For more information, please refer to <http://unlicense.org/>
 
+````
 </details>
 
-
-## syntaxes/02_Extra/GraphQL/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/GraphQL/LICENSE</summary>
+
+````text
         DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
                     Version 2, December 2004
 
@@ -543,13 +543,13 @@ For more information, please refer to <http://unlicense.org/>
    TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 
   0. You just DO WHAT THE FUCK YOU WANT TO.
+````
 </details>
 
-
-## syntaxes/02_Extra/Groff/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/Groff/LICENSE</summary>
+
+````text
 The MIT License (MIT)
 
 Copyright (c) 2013 carsonoid
@@ -571,13 +571,13 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/HTML (Twig)/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/HTML (Twig)/LICENSE</summary>
+
+````text
 Copyright (c) 2014, Andrew Fricke
 All rights reserved.
 
@@ -605,13 +605,13 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/JavaScript (Babel)/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/JavaScript (Babel)/LICENSE</summary>
+
+````text
 Copyright (c) 2015 Andres Suarez
 
 MIT License
@@ -635,13 +635,13 @@ LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/Jsonnet/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/Jsonnet/LICENSE</summary>
+
+````text
                                  Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
@@ -844,13 +844,13 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    See the License for the specific language governing permissions and
    limitations under the License.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/Julia/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/Julia/LICENSE</summary>
+
+````text
 MIT License
 
 Copyright (c) 2016-2021 Viktor Qvarfordt and other contributors
@@ -874,13 +874,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/Kotlin/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/Kotlin/LICENSE</summary>
+
+````text
 
                                  Apache License
                            Version 2.0, January 2004
@@ -1084,13 +1084,13 @@ SOFTWARE.
    See the License for the specific language governing permissions and
    limitations under the License.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/LLVM/LICENSE.txt
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/LLVM/LICENSE.txt</summary>
+
+````text
 Copyright (c) 2013 Peter Zotov  <whitequark@whitequark.org>
 
 MIT License
@@ -1113,13 +1113,13 @@ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
 LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+````
 </details>
 
-
-## syntaxes/02_Extra/Lean/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/Lean/LICENSE</summary>
+
+````text
                                  Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
@@ -1298,13 +1298,13 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
    END OF TERMS AND CONDITIONS
 
 
+````
 </details>
 
-
-## syntaxes/02_Extra/LiveScript/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/LiveScript/LICENSE</summary>
+
+````text
 The MIT License (MIT)
 
 Copyright (c) 2012 Paul Miller (http://paulmillr.com/), Jeremy Ashkenas
@@ -1327,13 +1327,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/MediaWiki/license.md
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/MediaWiki/license.md</summary>
+
+````text
 ## License:
 Copyright (c) 2012 Anton S. Gnidenko (aka tosher)
 
@@ -1354,13 +1354,13 @@ DEALINGS IN THE SOFTWARE.
 ## External licenses
 This project uses code from other open source projects which may include licenses of their own.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/Nginx/LICENSE.md
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/Nginx/LICENSE.md</summary>
+
+````text
 The MIT License (MIT)
 =====================
 
@@ -1386,13 +1386,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/Ninja/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/Ninja/LICENSE</summary>
+
+````text
 The MIT License (MIT)
 
 Copyright (c) 2015 K. Adam Christensen
@@ -1414,13 +1414,13 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+````
 </details>
 
-
-## syntaxes/02_Extra/Nix/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/Nix/LICENSE</summary>
+
+````text
 The MIT License (MIT)
 Copyright (c) 2016 Wout Mertens
 
@@ -1430,13 +1430,13 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/Org mode/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/Org mode/LICENSE</summary>
+
+````text
 Copyright (c) 2014, Jez Cope
 All rights reserved.
 
@@ -1460,13 +1460,13 @@ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
 CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+````
 </details>
 
-
-## syntaxes/02_Extra/PowerShell/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/PowerShell/LICENSE</summary>
+
+````text
 Copyright (c) Microsoft Corporation
 
 All rights reserved.
@@ -1491,13 +1491,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/Protobuf/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/Protobuf/LICENSE</summary>
+
+````text
 The MIT License (MIT)
 
 Copyright (c) 2013-2014 Yuxi Evan You
@@ -1520,13 +1520,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/Puppet/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/Puppet/LICENSE</summary>
+
+````text
 The MIT License (MIT)
 
 Copyright (c) 2014 Peter Souter
@@ -1549,13 +1549,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/PureScript/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/PureScript/LICENSE</summary>
+
+````text
 This is free and unencumbered software released into the public domain.
 
 Anyone is free to copy, modify, publish, use, compile, sell, or
@@ -1581,13 +1581,13 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 For more information, please refer to <http://unlicense.org>
 
+````
 </details>
 
-
-## syntaxes/02_Extra/PureScript/NOTICE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/PureScript/NOTICE</summary>
+
+````text
 Copyright (c) 2017 b123400
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -1608,13 +1608,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/QML/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/QML/LICENSE</summary>
+
+````text
 The MIT License (MIT)
 
 Copyright (c) 2013 Sergey Kozlov
@@ -1636,13 +1636,13 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/Robot/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/Robot/LICENSE</summary>
+
+````text
 The MIT License (MIT)
 
 Copyright (c) 2016 Andriy Hrytskiv Tatu Aalto
@@ -1664,13 +1664,13 @@ COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/SCSS_Sass/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/SCSS_Sass/LICENSE</summary>
+
+````text
 MIT License
 
 Copyright (c) 2018 Koen Lageveen
@@ -1693,13 +1693,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/SLS/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/SLS/LICENSE</summary>
+
+````text
    Sublime Text - syntax highlighting and snippets
 
    Copyright 2014-2015 SaltStack Team
@@ -1717,13 +1717,13 @@ SOFTWARE.
    limitations under the License.
 
 
+````
 </details>
 
-
-## syntaxes/02_Extra/Slim/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/Slim/LICENSE</summary>
+
+````text
 The MIT License
 
 Copyright (c) 2014 Slim Team
@@ -1746,13 +1746,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/Stylus/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/Stylus/LICENSE</summary>
+
+````text
 Stylus Package for Sublime Text
 Copyright (c) 2011-2013 Billy Moon <billy@itaccess.org>
 
@@ -1780,13 +1780,13 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/SublimeEthereum/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/SublimeEthereum/LICENSE</summary>
+
+````text
 MIT License
 
 Copyright (c) 2015+ uniqpath
@@ -1809,13 +1809,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/Svelte/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/Svelte/LICENSE</summary>
+
+````text
 MIT License
 
 Copyright (c) 2018 Cornelius Ukena
@@ -1838,13 +1838,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/Swift/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/Swift/LICENSE</summary>
+
+````text
 The MIT License (MIT)
 
 Copyright (c) 2014 Matthew Alexander <matt@queg.net>
@@ -1867,13 +1867,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/SystemVerilog/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/SystemVerilog/LICENSE</summary>
+
+````text
 Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
@@ -2075,13 +2075,13 @@ Apache License
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
+````
 </details>
 
-
-## syntaxes/02_Extra/TOML/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/TOML/LICENSE</summary>
+
+````text
 MIT License
 
 Copyright (c) 2021 Jason Williams
@@ -2103,13 +2103,13 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+````
 </details>
 
-
-## syntaxes/02_Extra/Terraform/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/Terraform/LICENSE</summary>
+
+````text
 MIT License
 
 Copyright (c) 2016 Alex Louden
@@ -2131,13 +2131,13 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+````
 </details>
 
-
-## syntaxes/02_Extra/TypeScript/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/TypeScript/LICENSE</summary>
+
+````text
 Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
@@ -2341,13 +2341,13 @@ Apache License
    limitations under the License.
 
 
+````
 </details>
 
-
-## syntaxes/02_Extra/VimL/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/VimL/LICENSE</summary>
+
+````text
 The MIT License (MIT)
 
 Copyright (c) 2014 Salvatore Gentile
@@ -2370,13 +2370,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/Vue/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/Vue/LICENSE</summary>
+
+````text
 The MIT License (MIT)
 
 Copyright (c) 2013-2016 Evan You
@@ -2399,13 +2399,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/Zig/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/Zig/LICENSE</summary>
+
+````text
 The MIT License (Expat)
 
 Copyright (c) 2018 Jeff Fowler
@@ -2429,13 +2429,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
+````
 </details>
 
-
-## syntaxes/02_Extra/cmd-help/LICENSE.txt
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/cmd-help/LICENSE.txt</summary>
+
+````text
 MIT License
 
 Copyright (c) 2022 Víctor González Prieto
@@ -2458,13 +2458,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/gnuplot/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/gnuplot/LICENSE</summary>
+
+````text
 The MIT License (MIT)
 
 Copyright (c) 2014 hesstobi
@@ -2487,13 +2487,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/hosts/LICENSE.md
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/hosts/LICENSE.md</summary>
+
+````text
 MIT License (MIT)
 =====================
 
@@ -2518,13 +2518,13 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
+````
 </details>
 
-
-## syntaxes/02_Extra/http-request-response/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/http-request-response/LICENSE</summary>
+
+````text
 MIT License
 
 Copyright (c) 2021 Keith Hall
@@ -2547,13 +2547,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+````
 </details>
 
-
-## syntaxes/02_Extra/varlink/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>syntaxes/02_Extra/varlink/LICENSE</summary>
+
+````text
 MIT License
 
 Copyright (c) 2019 
@@ -2576,15 +2576,15 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+````
 </details>
-
 
 # Themes
 
-## themes/1337-Scheme/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>themes/1337-Scheme/LICENSE</summary>
+
+````text
 MIT License
 
 Copyright (c) 2017 Mark Herpich
@@ -2607,13 +2607,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+````
 </details>
 
-
-## themes/Coldark/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>themes/Coldark/LICENSE</summary>
+
+````text
 MIT License
 
 Copyright (c) 2020 Armand Philippot
@@ -2636,13 +2636,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+````
 </details>
 
-
-## themes/Solarized/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>themes/Solarized/LICENSE</summary>
+
+````text
 The MIT License (MIT)
 
 Copyright (c) 2016 Koen Lageveen
@@ -2665,13 +2665,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+````
 </details>
 
-
-## themes/TwoDark/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>themes/TwoDark/LICENSE</summary>
+
+````text
 The MIT License (MIT)
 
 Copyright (c) 2013 Gadzhi Kharkharov
@@ -2692,13 +2692,13 @@ FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+````
 </details>
 
-
-## themes/dracula-sublime/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>themes/dracula-sublime/LICENSE</summary>
+
+````text
 The MIT License (MIT)
 
 Copyright (c) 2013-present Dracula Theme
@@ -2721,13 +2721,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+````
 </details>
 
-
-## themes/gruvbox/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>themes/gruvbox/LICENSE</summary>
+
+````text
 MIT License
 
 Copyright (c) 2020 Subhaditya Nath
@@ -2750,13 +2750,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+````
 </details>
 
-
-## themes/onehalf/LICENSE.txt
-
 <details>
-<summary>License text</summary>
+<summary>themes/onehalf/LICENSE.txt</summary>
+
+````text
 MIT License
 
 Copyright (c) 2019 Son A. Pham <sp@sonpham.me>
@@ -2779,13 +2779,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+````
 </details>
 
-
-## themes/sublime-monokai-extended/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>themes/sublime-monokai-extended/LICENSE</summary>
+
+````text
 The MIT License (MIT)
 
 Copyright (c) 2013-2016, Jon Schlinkert.
@@ -2808,13 +2808,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
+````
 </details>
 
-
-## themes/zenburn/LICENSE
-
 <details>
-<summary>License text</summary>
+<summary>themes/zenburn/LICENSE</summary>
+
+````text
 Copyright (c) 2014, Colin T.A. Gray
 All rights reserved.
 
@@ -2842,6 +2842,6 @@ The views and conclusions contained in the software and documentation are those
 of the authors and should not be interpreted as representing official policies,
 either expressed or implied, of this project.
 
+````
 </details>
-
 
