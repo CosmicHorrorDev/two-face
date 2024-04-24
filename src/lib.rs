@@ -97,6 +97,13 @@ two-face = { version = ..., default-features = false, features = ["syntect-fancy
 ///
 /// Available regardless of the `acknowledgement` feature, so that you can give credit without
 /// needing to embed more assets
+///
+/// ```
+/// assert_eq!(
+///     two_face::acknowledgement_url(),
+///     "https://github.com/CosmicHorrorDev/two-face/blob/v0.3.0/generated/acknowledgements_full.md"
+/// );
+/// ```
 pub fn acknowledgement_url() -> &'static str {
     concat!(
         "https://github.com/CosmicHorrorDev/two-face/blob/v",

@@ -148,6 +148,19 @@ impl EmbeddedThemeName {
     /// The name of each embedded theme
     ///
     /// This matches the key used for each theme in [`ThemeSet`]'s `themes`
+    ///
+    /// ```
+    /// use two_face::theme::EmbeddedThemeName;
+    ///
+    /// assert_eq!(
+    ///     EmbeddedThemeName::Leet.as_name(),
+    ///     "1337",
+    /// );
+    /// assert_eq!(
+    ///     EmbeddedThemeName::VisualStudioDarkPlus.as_name(),
+    ///     "Visual Studio Dark+",
+    /// );
+    /// ```
     pub fn as_name(self) -> &'static str {
         match self {
             Self::Ansi => "ansi",
