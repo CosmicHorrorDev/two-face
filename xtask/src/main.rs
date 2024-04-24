@@ -1,5 +1,5 @@
 use std::{
-    env,
+    env, fs,
     path::{Path, PathBuf},
 };
 
@@ -64,7 +64,7 @@ fn main() -> anyhow::Result<()> {
                 cmd!(shell, "git submodule update --init --recursive").run()?;
 
                 // We only want to keep newly generated artifacts
-                std::fs::remove_dir_all("generated")?;
+                let _ = fs::remove_dir_all("generated");
 
                 // Call back into this xtask to generate new assets with multiple syntect features
                 let xtask_args = ["run", "--quiet", "--release", "--package", "xtask"];
