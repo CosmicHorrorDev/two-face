@@ -27,19 +27,22 @@ repository = "https://github.com/CosmicHorrorDev/two-face"
 homepage = "https://github.com/CosmicHorrorDev/two-face"
 
 [package.metadata.docs.rs]
-all-features = true
+features = ["syntect-default-onig"]
 
 [features]
-# TODO: I don't like having to set this as a default, but `syntect` can't
-#       compile without a regex impl
+# `syntect` can't compile without a regex implementation, so we match its
+# default of onig
 default = ["syntect-onig"]
 
+# A minimal set of `syntect` features with the onig regex implementation
 syntect-onig = ["syntect/regex-onig"]
+# A minimal set of `syntect` features with the fancy regex implementation
 syntect-fancy = ["syntect/regex-fancy"]
 
-# Don't like this, but I want to link to the functions provided by this from my
-# documentation
-unstable = ["syntect/default-syntaxes"]
+# Toggles on `syntect`'s `default-onig` feature
+syntect-default-onig = ["syntect-onig", "syntect/default-onig"]
+# Toggles on `syntect`'s `default-fancy` feature
+syntect-default-fancy = ["syntect-fancy", "syntect/default-fancy"]
 
 [dependencies]
 once_cell.workspace = true
