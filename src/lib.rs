@@ -6,13 +6,13 @@
 //!
 //! # Example
 //!
-//! ```toml
-//! [dependencies]
-//! syntect = "0.5.1"
-//! two-face = "0.2.0"
+//! ```text
+//! $ cargo add two-face --features syntect-default-onig
 //! ```
 //!
 //! ```
+//! use two_face::re_exports::syntect;
+//!
 //! const TOML_TEXT: &str = "\
 //! [section]
 //! key = 123
@@ -53,7 +53,7 @@
 //! [dependencies]
 //! # `onig` is the default
 //! syntect = "0.5.1"
-//! two-face = "0.2.0"
+//! two-face = "0.3.1"
 //! ```
 //!
 //! To use [`fancy-regex`](https://github.com/fancy-regex/fancy-regex)
@@ -61,7 +61,7 @@
 //! ```toml
 //! [dependencies]
 //! syntect = { version = "0.5.1", default-features = false, features = ["default-fancy"] }
-//! two-face = { version = "0.2.0", default-features = false, features = ["syntect-fancy"] }
+//! two-face = { version = "0.3.1", default-features = false, features = ["syntect-fancy"] }
 //! ```
 
 #[cfg(doctest)]
@@ -71,6 +71,19 @@ pub struct ReadmeDoctests;
 pub mod acknowledgement;
 pub mod syntax;
 pub mod theme;
+
+/// Dependency re-exports for user's convenience
+///
+/// # `syntect`
+///
+/// By default `two-face` uses the minimal feature set from `syntect` required for things to work,
+/// but the default features can be toggled on with the `syntect-default-onig` and
+/// `syntect-default-fancy` feature flags (depending on which syntect regex implementation you're
+/// using). If you need more granular features than the ones provided then you should probably
+/// depend directly on `syntect` instead
+pub mod re_exports {
+    pub use syntect;
+}
 
 // Compile error if we're using syntaxes without setting fancy vs onig
 #[cfg(not(any(feature = "syntect-onig", feature = "syntect-fancy")))]

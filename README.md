@@ -15,13 +15,13 @@ that are missing from the default set like TOML, TypeScript, and Dockerfile
 
 The following
 
-```toml
-[dependencies]
-syntect = "0.5.1"
-two-face = "0.2.0"
+```cmd
+$ cargo add two-face --features syntect-default-onig
 ```
 
 ```rust
+use two_face::re_exports::syntect;
+
 const TOML_TEXT: &str = "\
 [section]
 key = 123
@@ -61,11 +61,11 @@ implementation with the one you're using from syntect
 
 To use [`Oniguruma`](https://github.com/kkos/oniguruma) aka onig
 
-```toml
+```cmd
 [dependencies]
 # `onig` is the default
 syntect = "0.5.1"
-two-face = "0.2.0"
+two-face = "0.3.1"
 ```
 
 To use [`fancy-regex`](https://github.com/fancy-regex/fancy-regex)
@@ -73,7 +73,7 @@ To use [`fancy-regex`](https://github.com/fancy-regex/fancy-regex)
 ```toml
 [dependencies]
 syntect = { version = "0.5.1", default-features = false, features = ["default-fancy"] }
-two-face = { version = "0.2.0", default-features = false, features = ["syntect-fancy"] }
+two-face = { version = "0.3.1", default-features = false, features = ["syntect-fancy"] }
 ```
 
 ## Legal
