@@ -1,12 +1,15 @@
 //! Dedicated to chasing the [`bat` man](https://github.com/sharkdp)
 //!
 //! Extra syntax and theme definitions for
-//! [`syntect`](https://docs.rs/syntect/latest/syntect/) including many common ones that are missing
-//! from the default set like TOML, TypeScript, and Dockerfile
+//! [`syntect`] including many common ones
+//! that are missing from the default set like TOML, TypeScript, and Dockerfile.
+//! Curated by the [`bat` Project](https://github.com/sharkdp/bat)
 //!
-//! # Example
+//! ## Example
 //!
-//! ```text
+//! The following
+//!
+//! ```cmd
 //! $ cargo add two-face --features syntect-default-onig
 //! ```
 //!
@@ -36,33 +39,119 @@
 //! }
 //! ```
 //!
+//! where `htmlified` displays as
+//!
 //! <pre style="background-color:#2e3440;">
 //! <span style="color:#d8dee9;">[section]
 //! </span><span style="color:#81a1c1;">key </span><span style="color:#d8dee9;">= </span><span style="color:#b48ead;">123
 //! </span></pre>
 //!
-//! # Feature Flags
 //!
-//! Some embedded syntaxes use features that aren't available with `fancy-regex`. To keep regex
-//! compilation infallible it's important to match this library's regex implementation with the one
-//! you're using from syntect
+//! ## Feature Flags
 //!
-//! To use [Oniguruma](https://github.com/kkos/oniguruma) aka `onig`
+//! The feature flags are divided by `syntect`'s underlying regex implementation
+//! with [`Oniguruma`](https://github.com/kkos/oniguruma) aka `onig` being the
+//! default and [`fancy-regex`](https://github.com/fancy-regex/fancy-regex) aka
+//! `fancy` as an alternative pure-Rust implementation. `fancy`: however, doesn't
+//! support all of the features used by some of the syntax definitions, so some of
+//! the defintions are excluded when `fancy` is selected\* to keep the regex
+//! compilation infallible. This means that it's important to match whichever regex
+//! implementation `syntect` is using
 //!
-//! ```toml
-//! [dependencies]
-//! # `onig` is the default
-//! syntect = "0.5.1"
-//! two-face = "0.3.1"
-//! ```
+//! _\* This is also why fancy's bundled syntax definitions are smaller than onig's_
 //!
-//! To use [`fancy-regex`](https://github.com/fancy-regex/fancy-regex)
+//! default: `syntect-onig`
 //!
-//! ```toml
-//! [dependencies]
-//! syntect = { version = "0.5.1", default-features = false, features = ["default-fancy"] }
-//! two-face = { version = "0.3.1", default-features = false, features = ["syntect-fancy"] }
-//! ```
+//! | Feature | Desc. |
+//! | :---: | :--- |
+//! | `syntect-onig` / `syntect-fancy` | Enables the minimal feature set that we require from `syntect` |
+//! | `syntect-default-onig` / `syntect-default-fancy` | The mimimal feature sets along with `syntect`'s default feature set (useful when using the `syntect` re-export) |
+//!
+//! ## Embedded Asset Sizes
+//!
+//! This crate embeds some reasonably large assets in the final binary in order to
+//! work. Luckily the linker is smart enough to discard unused assets, so you
+//! generally only pay for what you use
+//!
+//! For reference here are the sizes associated with their different functions
+//!
+//! | function | `two-face` (KiB) | `syntect` (KiB) |
+//! | ---: | ---: | ---: |
+//! | [`acknowledgement::listing()`] | 10 | - |
+//! | [`syntax::extra_newlines()`] (onig) | 867 | 360 |
+//! | ^^ (fancy) | 812 | 360 |
+//! | [`syntax::extra_no_newlines()`] (onig) | 865 | 359 |
+//! | ^^ (fancy) | 811 | 359 |
+//! | [`theme::extra()`] | 45 | 5 |
+//!
+//! In short the syntax definitions are the real chonky part, and if you're
+//! switching from `syntect` to `two-face`, then you can expect a ~0.5MiB increase
+//! in binary size from them (in exchange for _a lot_ of syntax definitions)
+//!
+//! ## Syntaxes
+//!
+//! The full listing of all syntaxes included in [`syntax`]
+//!
+//! - \* Exluded when using the `fancy-regex` implementation
+//! - † Included in `syntect`'s bundled defaults
+//!
+//! |  | Syntax Definition |
+//! | :---: | :---: |
+//! | A | ActionScript†, Ada, Apache Conf, AppleScript†, AsciiDoc, ASP†, ARM Assembly\*, Assembly (x86_64), AWK |
+//! | B | Bash†, Batch File†, BibTeX† |
+//! | C | C†, C#†, C++†, Cabal, Clojure†, CMake, CoffeeScript, Crontab, Crystal, CSS†, CSV† |
+//! | D | D†, Dart, Dockerfile, DotENV, Diff† |
+//! | E | Elixir, Elm, Email, Erlang† |
+//! | F | F#, Fish, Fortran, fstab |
+//! | G | Git (commit, config, ignore, etc.)†, GLSL, Go†, GraphQL, Graphviz (DOT)†, Groff/troff†, Groovy† |
+//! | H | Haskell†, HTML† |
+//! | I | INI |
+//! | J | Java†, Javadoc†, Java Server Page (JSP)†, JavaScript†, JavaScript (Babel)\*, Jinja2, JQ, JSON†, Julia |
+//! | K | Kotlin |
+//! | L | LaTeX†, LaTeX Log†, Lean, LESS, Lisp†, Literate Haskell†, LiveScript\*, LLVM, Lua† |
+//! | M | Makefile†, Manpage, Markdown†, MATLAB†, Mediawiki, MutliMarkdown† |
+//! | N | NAnt Build File†, Nginx, Nim, Ninja, Nix |
+//! | O | Objective-C†, Objective-C++†, OCaml†, OCamllex†, OCamlyacc†, Org Mode |
+//! | P | Pascal†, Perl†, PHP†, PowerShell\*, Protobuf, Puppet, PureScript, Python† |
+//! | Q | QML |
+//! | R | R†, Racket, Rd†, Rego, Regular Expression†, Requirements.txt, reStructuredText†, Robot Framework, Ruby†, Ruby Haml†, Ruby on Rails†, Ruby Slim, Rust† |
+//! | S | Sass\*, Scala†, SCSS, Salt State SLS\*, SML, Solidity, SQL†, Strace, Stylus, Svelte, Swift, SystemVerilog |
+//! | T | Tcl†, Terraform, TeX†, Textile†, Todo.txt, TOML, TypeScript, TypescriptReact |
+//! | V | Varlink, Verilog, VimL, Vue, Vyper |
+//! | X | XML† |
+//! | Y | YAML† |
+//! | Z | Zig |
+//!
+//! ## Themes
+//!
+//! The full listing of themes provided by [`theme`]. Many of these themes
+//! only make sense situationally, so you'll likely want to only expose a subset
+//!
+//! - † Included in `syntect`'s bundled defaults
+//!
+//! |  | Theme |
+//! | :---: | :---: |
+//! | 1 | 1337 (aka leet) |
+//! | A | Ansi |
+//! | B | Base16, Base16-256, Base16-Eighties (dark)†, Base16-Mocha (dark)†, Base16-Ocean (light/dark)† |
+//! | C | Coldark (cold/dark aka light/dark) |
+//! | D | DarkNeon, Dracula |
+//! | G | GitHub, gruvbox (light/dark) |
+//! | I | InspiredGitHub† |
+//! | M | Monokai Extended (plain, bright, light, and origin) |
+//! | N | Nord |
+//! | O | One Half (light/dark) |
+//! | S | Solarized (light/dark)† |
+//! | T | TwoDark |
+//! | V | Visual Studio Dark+ |
+//! | Z | Zenburn |
+//!
+//! ## Legal
+//!
+//! The embedded syntax definitions and assets also have their own licenses which
+//! are compiled into
+//! [this markdown file](https://github.com/CosmicHorrorDev/two-face/blob/main/generated/acknowledgements_full.md)
+//! along with programmatic in the [`acknowledgement`] module
 
 #[cfg(doctest)]
 #[doc = include_str!("../README.md")]
