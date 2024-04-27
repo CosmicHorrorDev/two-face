@@ -124,6 +124,9 @@
 //!
 //! ## Themes
 //!
+//! _Note: For visual examples of all of the embedded themes look at the docs for
+//! [`theme::EmbeddedThemeName`]_
+//!
 //! The full listing of themes provided by [`theme`]. Many of these themes
 //! only make sense situationally, so you'll likely want to only expose a subset
 //!

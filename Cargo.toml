@@ -53,5 +53,6 @@ workspace = true
 features = ["dump-load", "parsing"]
 
 [dev-dependencies]
+insta = "1.38.0"
 strum = { version = "0.25.0", features = ["derive"] }
 syntect = { workspace = true, features = ["html"] }
