@@ -11,7 +11,7 @@ syntect = { version = "5.1.0", default-features = false }
 
 [package]
 name = "two-face"
-version = "0.3.0"
+version = "0.4.0"
 edition = "2021"
 license = "MIT OR Apache-2.0"
 rust-version = "1.64"
