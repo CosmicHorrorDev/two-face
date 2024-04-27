@@ -26,7 +26,7 @@ impl AssetsDir {
     fn new(input: &Path) -> anyhow::Result<Self> {
         log::info!("Setting up assets dir");
         let tempdir = tempfile::Builder::new()
-            .prefix("syntect-assets-")
+            .prefix("two-face-assets-")
             .tempdir()?;
         let temp_path = tempdir.path();
 
@@ -52,10 +52,18 @@ impl AssetsDir {
             }
         }
 
-        // Apply all patches
+        // Apply bat's patches
         let patch_shell = Shell::new()?;
         patch_shell.change_dir(temp_path);
         for patch in utils::walk_files(&temp_path.join("patches"))? {
+            let patch_contents = fs::read(&patch)?;
+            let output = cmd!(patch_shell, "patch --strip=0")
+                .stdin(&patch_contents)
+                .quiet()
+                .read()?;
+            log::debug!("Patch output:\n{output}");
+        }
+        for patch in utils::walk_files(Path::new("patches"))? {
             let patch_contents = fs::read(&patch)?;
             let output = cmd!(patch_shell, "patch --strip=0")
                 .stdin(&patch_contents)

@@ -1,0 +1,493 @@
+--- syntaxes/01_Packages/Markdown/Markdown.sublime-syntax
++++ syntaxes/01_Packages/Markdown/Markdown.sublime-syntax
+@@ -16,13 +16,13 @@
+ variables:
+     thematic_break: |-
+         (?x:
+-            [ ]{,3}                          # between 0 to 3 spaces
+-            (?:                              # followed by one of the following:
+-                    [-](?:[ ]{,2}[-]){2,}    # - a dash,        followed by the following at least twice: between 0 to 2 spaces followed by a dash
+-                |   [*](?:[ ]{,2}[*]){2,}    # - a star,        followed by the following at least twice: between 0 to 2 spaces followed by a star
+-                |   [_](?:[ ]{,2}[_]){2,}    # - an underscore, followed by the following at least twice: between 0 to 2 spaces followed by an underscore
++            [ ]{,3}
++            (?:
++                    [-](?:[ ]{,2}[-]){2,}
++                |   [*](?:[ ]{,2}[*]){2,}
++                |   [_](?:[ ]{,2}[_]){2,}
+             )
+-            [ \t]*$                          # followed by any number of tabs or spaces, followed by the end of the line
++            [ \t]*$
+         )
+     block_quote: (?:[ ]{,3}>(?:.|$))         # between 0 and 3 spaces, followed by a greater than sign, followed by any character or the end of the line
+     atx_heading: (?:[#]{1,6}\s*)             # between 1 and 6 hashes, followed by any amount of whitespace
+@@ -31,48 +31,48 @@
+     escape: '\\[-`*_#+.!(){}\[\]\\>|~]'
+     backticks: |-
+         (?x:
+-            (`{4})(?![\s`])(?:[^`]+(?=`)|(?!`{4})`+(?!`))+(`{4})(?!`)  # 4 backticks, followed by at least one non whitespace, non backtick character, followed by (less than 4 backticks, or at least one non backtick character) at least once, followed by exactly 4 backticks
+-        |   (`{3})(?![\s`])(?:[^`]+(?=`)|(?!`{3})`+(?!`))+(`{3})(?!`)  # 3 backticks, followed by at least one non whitespace, non backtick character, followed by (less than 3 backticks, or at least one non backtick character) at least once, followed by exactly 3 backticks
+-        |   (`{2})(?![\s`])(?:[^`]+(?=`)|(?!`{2})`+(?!`))+(`{2})(?!`)  # 2 backticks, followed by at least one non whitespace, non backtick character, followed by (less than 2 backticks, or at least one non backtick character) at least once, followed by exactly 2 backticks
+-        |   (`{1})(?![\s`])(?:[^`]+(?=`)|(?!`{1})`+(?!`))+(`{1})(?!`)  # 1 backtick,  followed by at least one non whitespace, non backtick character, followed by (                          at least one non backtick character) at least once, followed by exactly 1 backtick
++            (`{4})(?![\s`])(?:[^`]+(?=`)|(?!`{4})`+(?!`))+(`{4})(?!`)
++        |   (`{3})(?![\s`])(?:[^`]+(?=`)|(?!`{3})`+(?!`))+(`{3})(?!`)
++        |   (`{2})(?![\s`])(?:[^`]+(?=`)|(?!`{2})`+(?!`))+(`{2})(?!`)
++        |   (`{1})(?![\s`])(?:[^`]+(?=`)|(?!`{1})`+(?!`))+(`{1})(?!`)
+         )
+     balance_square_brackets: |-
+         (?x:
+           (?:
+-            {{escape}}+                 # escape characters
+-          | [^\[\]`\\]+(?=[\[\]`\\]|$)  # anything that isn't a square bracket or a backtick or the start of an escape character
+-          | {{backticks}}               # inline code
+-          | \[(?:                       # nested square brackets (one level deep)
+-                [^\[\]`]+(?=[\[\]`])    #  anything that isn't a square bracket or a backtick
+-                {{backticks}}?          #  balanced backticks
+-              )*\]                      #  closing square bracket
+-          )+                            # at least one character
++            {{escape}}+
++          | [^\[\]`\\]+(?=[\[\]`\\]|$)
++          | {{backticks}}
++          | \[(?:
++                [^\[\]`]+(?=[\[\]`])
++                {{backticks}}?
++              )*\]
++          )+
+         )
+     html_entity: '&([a-zA-Z0-9]+|#\d+|#x\h+);'
+     skip_html_tags: (?:<[^>]+>)
+     balance_square_brackets_and_emphasis: |-
+         (?x:
+           (?:
+-            {{escape}}+                     # escape characters
+-          | [^\[\]`\\_*]+(?=[\[\]`\\_*]|$)  # anything that isn't a square bracket, a backtick, the start of an escape character, or an emphasis character
+-          | {{backticks}}                   # inline code
+-          | \[(?:                           # nested square brackets (one level deep)
+-                [^\[\]`]+(?=[\[\]`])        #  anything that isn't a square bracket or a backtick
+-                {{backticks}}?              #  balanced backticks
+-              )*\]                          #  closing square bracket
+-          )+                                # at least one character
++            {{escape}}+
++          | [^\[\]`\\_*]+(?=[\[\]`\\_*]|$)
++          | {{backticks}}
++          | \[(?:
++                [^\[\]`]+(?=[\[\]`])
++                {{backticks}}?
++              )*\]
++          )+
+         )
+     balance_square_brackets_pipes_and_emphasis: |-
+         (?x:
+           (?:
+-            {{escape}}+                     # escape characters
+-          | [^\[\]`\\_*|]+(?=[\[\]`\\_*|]|$)  # anything that isn't a square bracket, a backtick, the start of an escape character, or an emphasis character
+-          | {{backticks}}                   # inline code
+-          | \[(?:                           # nested square brackets (one level deep)
+-                [^\[\]`]+(?=[\[\]`])        #  anything that isn't a square bracket or a backtick
+-                {{backticks}}?              #  balanced backticks
+-              )*\]                          #  closing square bracket
+-          )+                                # at least one character
++            {{escape}}+
++          | [^\[\]`\\_*|]+(?=[\[\]`\\_*|]|$)
++          | {{backticks}}
++          | \[(?:
++                [^\[\]`]+(?=[\[\]`])
++                {{backticks}}?
++              )*\]
++          )+
+         )
+     balanced_emphasis: |-
+       (?x:
+@@ -81,66 +81,66 @@
+       |   _   (?!_) {{balance_square_brackets_and_emphasis}}+_   (?!_)
+       |   __        {{balance_square_brackets_and_emphasis}}+__
+       )
+-    balanced_table_cell: |- # Pipes inside other inline spans (such as emphasis, code, etc.) will not break a cell, emphasis in table cells can't span multiple lines
++    balanced_table_cell: |-
+       (?x:
+         (?:
+           {{balance_square_brackets_pipes_and_emphasis}}
+         | {{balanced_emphasis}}
+-        )+                                # at least one character
++        )+
+       )
+     table_first_row: |-
+         (?x:
+-            (?:{{balanced_table_cell}}?\|){2}           # at least 2 non-escaped pipe chars on the line
+-        |   (?!\s+\|){{balanced_table_cell}}\|(?!\s+$)  # something other than whitespace followed by a pipe char, followed by something other than whitespace and the end of the line
++            (?:{{balanced_table_cell}}?\|){2}
++        |   (?!\s+\|){{balanced_table_cell}}\|(?!\s+$)
+         )
+     fenced_code_block_start: |-
+         (?x:
+           ([ \t]*)
+           (
+-            (`){3,}    #   3 or more backticks
+-            (?![^`]*`) #   not followed by any more backticks on the same line
+-          |            # or
+-            (~){3,}    #   3 or more tildas
+-            (?![^~]*~) #   not followed by any more tildas on the same line
++            (`){3,}
++            (?![^`]*`)
++          |
++            (~){3,}
++            (?![^~]*~)
+           )
+-          \s*          # allow for whitespace between code block start and info string
++          \s*
+         )
+     fenced_code_block_trailing_infostring_characters: |-
+         (?x:
+           (
+-            \s*        # any whitespace, or ..
++            \s*
+           |
+-            \s[^`]*    # any characters (except backticks), separated by whitespace ...
++            \s[^`]*
+           )
+-          $\n?         # ... until EOL
++          $\n?
+         )
+     code_fence_escape: |-
+       (?x:
+-        ^             # the beginning of the line
++        ^
+         [ \t]*
+         (
+-          \2          # the backtick/tilde combination that opened the code fence
+-          (?:\3|\4)*  # plus optional additional closing characters
++          \2
++          (?:\3|\4)*
+         )
+-        \s*$          # any amount of whitespace until EOL
++        \s*$
+       )
+     html_tag_open_commonmark: |-
+       (?xi:
+         <
+-        [a-z]             # A tag name consists of an ASCII letter
+-        [a-z0-9-]*        # followed by zero or more ASCII letters, digits, or hyphens (-)
+-        (?:               # An attribute consists of whitespace, an attribute name, and an optional attribute value specification
++        [a-z]
++        [a-z0-9-]*
++        (?:
+           \s+
+-          [a-z_:]         # An attribute name consists of an ASCII letter, _, or :
+-          [a-z0-9_.:-]*   # followed by zero or more ASCII letters, digits, _, ., :, or -
+-          (?:             # An attribute value specification consists of optional whitespace, a = character, optional whitespace, and an attribute value
++          [a-z_:]
++          [a-z0-9_.:-]*
++          (?:
+             \s*
+             =
+             \s*
+             (?:
+-              [^ @'=<>`]+ # An unquoted attribute value is a nonempty string of characters not including spaces, ", ', =, <, >, or `
+-            | '[^']*'     # A single-quoted attribute value consists of ', zero or more characters not including ', and a final '
+-            | "[^"]*"     # A double-quoted attribute value consists of ", zero or more characters not including ", and a final "
++              [^ @'=<>`]+
++            | '[^']*'
++            | "[^"]*"
+             )
+           )?
+         )*
+@@ -151,8 +151,8 @@
+     html_tag_close_commonmark: |-
+       (?xi:
+         </
+-        [a-z]             # A tag name consists of an ASCII letter
+-        [a-z0-9-]*        # followed by zero or more ASCII letters, digits, or hyphens (-)
++        [a-z]
++        [a-z0-9-]*
+         \s*
+         >
+       )
+@@ -241,9 +241,9 @@
+       push: [disabled-markdown-pop-at-eol, disable-markdown-pop-at-blank-line]
+     - match: |-
+         (?x:
+-            \s*                        # Leading whitespace
+-            (\[)(\^[^]]*)(\])(:)       # Reference name
+-            [ \t]*                     # Optional whitespace
++            \s*
++            (\[)(\^[^]]*)(\])(:)
++            [ \t]*
+         )
+       captures:
+         1: punctuation.definition.constant.begin.markdown
+@@ -257,12 +257,12 @@
+         - include: inline-bold-italic
+     - match: |-
+         (?x:
+-            \s*                        # Leading whitespace
+-            (\[)([^]]*)(\])(:)         # Reference name
+-            [ \t]*                     # Optional whitespace
++            \s*
++            (\[)([^]]*)(\])(:)
++            [ \t]*
+             (?:
+-              (<)([^>]+)(>)            # The url
+-            | (\S+)                    # The url
++              (<)([^>]+)(>)
++            | (\S+)
+             )
+         )
+       captures:
+@@ -279,21 +279,21 @@
+       push:
+         - meta_scope: meta.paragraph.markdown
+         - match: |-
+-            (?x)                         # pop out of this context when one of the following conditions are met:
++            (?x)
+             ^(?:
+-                \s*$                     # the line is blank (or only contains whitespace)
++                \s*$
+             |   (?=
+-                    {{block_quote}}      # a block quote begins the line
+-                |   [ ]{,3}[*+-][ ]      # an unordered list item begins the line
+-                |   [ ]{,3}1[.][ ]       # an ordered list item with number "1" begins the line
+-                |   \#                   # an ATX heading begins the line
+-                |   [ ]{,3}<(            # all types of HTML blocks except type 7 may interrupt a paragraph
+-                      {{html_tag_block_end_at_close_tag}}   # 1
+-                    | !--                                   # 2
+-                    | \?                                    # 3
+-                    | ![A-Z]                                # 4
+-                    | !\[CDATA\[                            # 5
+-                    | {{html_tag_block_end_at_blank_line}}  # 6
++                    {{block_quote}}
++                |   [ ]{,3}[*+-][ ]
++                |   [ ]{,3}1[.][ ]
++                |   \#
++                |   [ ]{,3}<(
++                      {{html_tag_block_end_at_close_tag}}
++                    | !--
++                    | \?
++                    | ![A-Z]
++                    | !\[CDATA\[
++                    | {{html_tag_block_end_at_blank_line}}
+                     )
+                 )
+             )
+@@ -402,9 +402,9 @@
+         - meta_content_scope: markup.italic.markdown
+         - match: |-
+             (?x)
+-                [ \t]*\*{4,}    # if there are more than 3 its not applicable to be bold or italic
+-            |   [ \t]+\*(?!\*)  # whitespace followed by 1 is also not applicable (but whitespace followed by 2 could be bold punctuation)
+-            |   ^\*(?!\*)       # emphasis can't be closed at the start of the line
++                [ \t]*\*{4,}
++            |   [ \t]+\*(?!\*)
++            |   ^\*(?!\*)
+         - match: (\*)(\*\*)
+           captures:
+             1: markup.italic.markdown punctuation.definition.italic.end.markdown
+@@ -416,9 +416,9 @@
+             - meta_content_scope: markup.italic.markdown
+             - match: |-
+                 (?x)
+-                    [ \t]*\*{3,}    # if there are more than 3 its not applicable to be bold or italic
+-                |   [ \t]+\*\*+     # whitespace followed by 1 is also not applicable (but whitespace followed by 2 could be bold punctuation)
+-                |   ^\*\*           # emphasis can't be closed at the start of the line
++                    [ \t]*\*{3,}
++                |   [ \t]+\*\*+
++                |   ^\*\*
+             - match: \*
+               scope: markup.italic.markdown punctuation.definition.italic.end.markdown
+               pop: true
+@@ -431,9 +431,9 @@
+             - meta_content_scope: markup.bold.markdown
+             - match: |-
+                 (?x)
+-                    [ \t]*\*{3,}    # if there are more than 3 its not applicable to be bold or italic
+-                |   [ \t]+\*\*+     # whitespace followed by 1 is also not applicable (but whitespace followed by 2 could be bold punctuation)
+-                |   ^\*\*           # emphasis can't be closed at the start of the line
++                    [ \t]*\*{3,}
++                |   [ \t]+\*\*+
++                |   ^\*\*
+             - match: \*\*
+               scope: markup.bold.markdown punctuation.definition.bold.end.markdown
+               pop: true
+@@ -448,9 +448,9 @@
+         - meta_scope: markup.bold.markdown
+         - match: |-
+             (?x)
+-                [ \t]*\*{4,}     # if there are more than 3 its not applicable to be bold or italic
+-            |   [ \t]+\*\*+      # whitespace followed by 2 or more is also not applicable
+-            |   ^\*\*            # emphasis can't be closed at the start of the line
++                [ \t]*\*{4,}
++            |   [ \t]+\*\*+
++            |   ^\*\*
+         - match: (?:_)?(\*\*)
+           captures:
+             1: punctuation.definition.bold.end.markdown
+@@ -469,9 +469,9 @@
+         - meta_content_scope: markup.italic.markdown
+         - match: |-
+             (?x)
+-                [ \t]*_{4,}   # if there are more than 3 its not applicable to be bold or italic
+-            |   [ \t]+_(?!_)  # whitespace followed by 1 is also not applicable (but whitespace followed by 2 could be bold punctuation)
+-            |   ^_(?!_)       # emphasis can't be closed at the start of the line
++                [ \t]*_{4,}
++            |   [ \t]+_(?!_)
++            |   ^_(?!_)
+         - match: (_)(__)\b
+           captures:
+             1: markup.italic.markdown punctuation.definition.italic.end.markdown
+@@ -483,9 +483,9 @@
+             - meta_content_scope: markup.bold.markdown
+             - match: |-
+                   (?x)
+-                      [ \t]*_{3,}   # if there are more than 3 its not applicable to be bold or italic
+-                  |   [ \t]+__+     # whitespace followed by 1 is also not applicable (but whitespace followed by 2 could be bold punctuation)
+-                  |   ^__           # emphasis can't be closed at the start of the line
++                      [ \t]*_{3,}
++                  |   [ \t]+__+
++                  |   ^__
+             - match: __\b
+               scope: markup.bold.markdown punctuation.definition.bold.end.markdown
+               pop: true
+@@ -498,9 +498,9 @@
+             - meta_content_scope: markup.italic.markdown
+             - match: |-
+                   (?x)
+-                      [ \t]*_{3,}   # if there are more than 3 its not applicable to be bold or italic
+-                  |   [ \t]+__+     # whitespace followed by 1 is also not applicable (but whitespace followed by 2 could be bold punctuation)
+-                  |   ^__           # emphasis can't be closed at the start of the line
++                      [ \t]*_{3,}
++                  |   [ \t]+__+
++                  |   ^__
+             - match: _\b
+               scope: markup.italic.markdown punctuation.definition.italic.end.markdown
+               pop: true
+@@ -515,9 +515,9 @@
+         - meta_scope: markup.bold.markdown
+         - match: |-
+               (?x)
+-                  [ \t]*_{4,}    # if there are more than 3 its not applicable to be bold or italic
+-              |   [ \t]+__+      # whitespace followed by 2 or more is also not applicable
+-              |   ^__            # emphasis can't be closed at the start of the line
++                  [ \t]*_{4,}
++              |   [ \t]+__+
++              |   ^__
+         - match: (?:\*)?(__\b)
+           captures:
+             1: punctuation.definition.bold.end.markdown
+@@ -570,11 +570,11 @@
+   image-inline:
+     - match: |-
+         (?x:
+-            (\!\[)                             # Images start with ![
+-            (?=   {{balance_square_brackets}}? # balanced square brackets, backticks, taking into account escapes etc.
+-                  \]                           # Closing square bracket
+-                  [ ]?                         # Space not allowed, but we check for it anyway to mark it as invalid
+-                  \(                           # Open paren
++            (\!\[)
++            (?=   {{balance_square_brackets}}?
++                  \]
++                  [ ]?
++                  \(
+             )
+          )
+       captures:
+@@ -629,13 +629,13 @@
+   image-ref:
+     - match: |-
+         (?x:
+-          (\!\[)                             # Images start with ![
+-          (?=   {{balance_square_brackets}}? # balanced square brackets, backticks, taking into account escapes etc.
+-                \]                           # Closing square bracket
+-                [ ]?                         # Space
+-                \[                           # [
+-                [^\]]+                       # anything other than ]
+-                \]                           # ]
++          (\!\[)
++          (?=   {{balance_square_brackets}}?
++                \]
++                [ ]?
++                \[
++                [^\]]+
++                \]
+           )
+         )
+       captures:
+@@ -693,9 +693,9 @@
+         - meta_scope: markup.italic.markdown
+         - match: |-
+               (?x)
+-                  [ \t]*\*{4,}   # if there are more than 3 its not applicable to be bold or italic
+-              |   [ \t]+\*(?!\*) # whitespace followed by 1 is also not applicable (but whitespace followed by 2 could be bold punctuation)
+-              |   ^\*(?!\*)      # emphasis can't be closed at the start of the line
++                  [ \t]*\*{4,}
++              |   [ \t]+\*(?!\*)
++              |   ^\*(?!\*)
+         - match: \*(?!\*[^*])
+           scope: punctuation.definition.italic.end.markdown
+           pop: true
+@@ -709,9 +709,9 @@
+         - meta_scope: markup.italic.markdown
+         - match: |-
+               (?x)
+-                  [ \t]*_{4,}   # if there are more than 3 its not applicable to be bold or italic
+-              |   [ \t]+_(?!_)  # whitespace followed by 1 is also not applicable (but whitespace followed by 2 could be bold punctuation)
+-              |   ^_(?!_)       # emphasis can't be closed at the start of the line
++                  [ \t]*_{4,}
++              |   [ \t]+_(?!_)
++              |   ^_(?!_)
+         - match: _\b
+           scope: punctuation.definition.italic.end.markdown
+           pop: true
+@@ -842,12 +842,12 @@
+     - match: |-
+         (?x:
+           (\[)
+-          (?=   {{balance_square_brackets}}? # balanced square brackets, backticks, taking into account escapes etc.
+-                \]                           # Closing square bracket
+-                [ ]?                         # Space
+-                \[                           # [
+-                [^\]]+                       # anything other than ]
+-                \]                           # ]
++          (?=   {{balance_square_brackets}}?
++                \]
++                [ ]?
++                \[
++                [^\]]+
++                \]
+           )
+         )
+       captures:
+@@ -881,11 +881,11 @@
+         (?x:
+           (\[)
+           (?=
+-              {{balance_square_brackets}}? # balanced square brackets, backticks, taking into account escapes etc.
+-              \]                           # Closing square bracket
+-              [ ]?                         # Space
+-              \[                           # [
+-              \]                           # ]
++              {{balance_square_brackets}}?
++              \]
++              [ ]?
++              \[
++              \]
+           )
+         )
+       captures:
+@@ -1290,8 +1290,8 @@
+     - match: |-
+          (?x)
+           {{fenced_code_block_start}}
+-          ([\w-]*)     # any number of word characters or dashes
+-          .*$\n?       # all characters until EOL
++          ([\w-]*)
++          .*$\n?
+       captures:
+         0: meta.code-fence.definition.begin.text.markdown-gfm
+         2: punctuation.definition.raw.code-fence.begin.markdown
+@@ -1503,7 +1503,7 @@
+                 - match: $\n?
+                   set:
+                     - meta_content_scope: meta.table.markdown-gfm
+-                    - match: |- # The table is broken at the first empty line, or beginning of another block-level structure
++                    - match: |-
+                           (?x)^
+                           (?=  {{block_quote}}
+                           |    {{indented_code_block}}(?!$)
