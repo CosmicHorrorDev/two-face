@@ -1,1 +1,2 @@
 mod readme;
+mod theme;

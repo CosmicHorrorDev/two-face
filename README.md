@@ -84,12 +84,12 @@ For reference here are the sizes associated with their different functions
 
 | function | `two-face` (KiB) | `syntect` (KiB) |
 | ---: | ---: | ---: |
-| [`acknowledgement::listing()`](https://docs.rs/two-face/latest/two_face/acknowledgement/fn.listing.html) | 10 | - |
-| [`syntax::extra_newlines()`](https://docs.rs/two-face/latest/two_face/syntax/fn.extra_newlines.html) (onig) | 867 | 360 |
+| [`two_face::acknowledgement::listing()`](https://docs.rs/two-face/latest/two_face/acknowledgement/fn.listing.html) | 10 | - |
+| [`two_face::syntax::extra_newlines()`](https://docs.rs/two-face/latest/two_face/syntax/fn.extra_newlines.html) (onig) | 867 | 360 |
 | ^^ (fancy) | 812 | 360 |
-| [`syntax::extra_no_newlines()`](https://docs.rs/two-face/latest/two_face/syntax/fn.extra_no_newlines.html) (onig) | 865 | 359 |
+| [`two_face::syntax::extra_no_newlines()`](https://docs.rs/two-face/latest/two_face/syntax/fn.extra_no_newlines.html) (onig) | 865 | 359 |
 | ^^ (fancy) | 811 | 359 |
-| [`theme::extra()`](https://docs.rs/two-face/latest/two_face/theme/index.html) | 45 | 5 |
+| [`two_face::theme::extra()`](https://docs.rs/two-face/latest/two_face/theme/index.html) | 45 | 5 |
 
 In short the syntax definitions are the real chonky part, and if you're
 switching from `syntect` to `two-face`, then you can expect a ~0.5MiB increase
@@ -130,6 +130,9 @@ The full listing of all syntaxes included in [`two_face::syntax`](https://docs.r
 | Z | Zig |
 
 ## Themes
+
+_Note: For visual examples of all of the embedded themes look at the docs for
+[`two_face::theme::EmbeddedThemeName`](https://docs.rs/two-face/latest/two_face/theme/enum.EmbeddedThemeName.html)_
 
 The full listing of themes provided by `two_face::theme`. Many of these themes
 only make sense situationally, so you'll likely want to only expose a subset
