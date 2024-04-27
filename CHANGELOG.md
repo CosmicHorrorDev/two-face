@@ -1,3 +1,34 @@
+# Version 0.4.0
+
+## Breaking Changes
+
+- Renamed `EmbeddedThemeName::SubmlimeSnazzy` ->
+  `EmbeddedThemeName::SublimeSnazzy`
+
+## Features
+
+- Our `syntect` dependency is now re-exported under `two_face::re_exports::syntect`
+- New `syntect-default-onig` / `syntect-default-fancy` features toggle on the
+  underlying `default-onig` / `default-fancy` features making the syntect
+  re-export decently useful
+
+## Docs
+
+- Both the README and docs landing page got an overhaul
+- The `theme` module got some TLC including a demo of all of the embedded themes
+- We now have relevant categories in our `Cargo.toml`
+- Our feature flags are now documented in a way that lib.rs understands
+
+## Internal
+
+- Code coverage is now tracked on codecov.io
+- Dependabot now handles updating our CI actions
+- The `unstable` feature flag was removed now that `syntect-default-onig` fills
+  the same purpose in an official capacity
+- The specific markdown acknowledgement format was changed to be more succinct
+- We now support applying patches on top of those provided with `bat` including
+  an initial demo stripping comments from Markdown's regexes
+
 # Version 0.3.0
 
 Only a couple of very small breaking changes:
