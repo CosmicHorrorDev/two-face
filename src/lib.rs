@@ -78,10 +78,10 @@
 //! | function | `two-face` (KiB) | `syntect` (KiB) |
 //! | ---: | ---: | ---: |
 //! | [`acknowledgement::listing()`] | 10 | - |
-//! | [`syntax::extra_newlines()`] (onig) | 867 | 360 |
-//! | ^^ (fancy) | 812 | 360 |
-//! | [`syntax::extra_no_newlines()`] (onig) | 865 | 359 |
-//! | ^^ (fancy) | 811 | 359 |
+//! | [`syntax::extra_newlines()`] (onig) | 859 | 360 |
+//! | ^^ (fancy) | 804 | 360 |
+//! | [`syntax::extra_no_newlines()`] (onig) | 858 | 359 |
+//! | ^^ (fancy) | 803 | 359 |
 //! | [`theme::extra()`] | 45 | 5 |
 //!
 //! In short the syntax definitions are the real chonky part, and if you're
