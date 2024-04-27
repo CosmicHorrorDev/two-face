@@ -10,11 +10,11 @@ fn embedded_asset_sizes() {
 
     assert_eq!(10, kib("generated/acknowledgements_full.bin"));
 
-    assert_eq!(867, kib("generated/syntaxes-onig-newlines.bin"));
-    assert_eq!(812, kib("generated/syntaxes-fancy-newlines.bin"));
+    assert_eq!(859, kib("generated/syntaxes-onig-newlines.bin"));
+    assert_eq!(804, kib("generated/syntaxes-fancy-newlines.bin"));
 
-    assert_eq!(865, kib("generated/syntaxes-onig-no-newlines.bin"));
-    assert_eq!(811, kib("generated/syntaxes-fancy-no-newlines.bin"));
+    assert_eq!(858, kib("generated/syntaxes-onig-no-newlines.bin"));
+    assert_eq!(803, kib("generated/syntaxes-fancy-no-newlines.bin"));
 
     assert_eq!(45, kib("generated/themes.bin"));
 }

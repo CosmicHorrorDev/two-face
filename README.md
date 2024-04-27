@@ -85,10 +85,10 @@ For reference here are the sizes associated with their different functions
 | function | `two-face` (KiB) | `syntect` (KiB) |
 | ---: | ---: | ---: |
 | [`two_face::acknowledgement::listing()`](https://docs.rs/two-face/latest/two_face/acknowledgement/fn.listing.html) | 10 | - |
-| [`two_face::syntax::extra_newlines()`](https://docs.rs/two-face/latest/two_face/syntax/fn.extra_newlines.html) (onig) | 867 | 360 |
-| ^^ (fancy) | 812 | 360 |
-| [`two_face::syntax::extra_no_newlines()`](https://docs.rs/two-face/latest/two_face/syntax/fn.extra_no_newlines.html) (onig) | 865 | 359 |
-| ^^ (fancy) | 811 | 359 |
+| [`two_face::syntax::extra_newlines()`](https://docs.rs/two-face/latest/two_face/syntax/fn.extra_newlines.html) (onig) | 859 | 360 |
+| ^^ (fancy) | 804 | 360 |
+| [`two_face::syntax::extra_no_newlines()`](https://docs.rs/two-face/latest/two_face/syntax/fn.extra_no_newlines.html) (onig) | 858 | 359 |
+| ^^ (fancy) | 803 | 359 |
 | [`two_face::theme::extra()`](https://docs.rs/two-face/latest/two_face/theme/index.html) | 45 | 5 |
 
 In short the syntax definitions are the real chonky part, and if you're
