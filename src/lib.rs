@@ -200,8 +200,7 @@ two-face = { version = ..., default-features = false, features = ["syntect-fancy
 
 /// Returns a link to a page listing acknowledgements for all syntax and theme definitions
 ///
-/// Available regardless of the `acknowledgement` feature, so that you can give credit without
-/// needing to embed more assets
+/// Available without having to bundle all of the acknowledgement info in your binary
 ///
 /// ```
 /// assert_eq!(
