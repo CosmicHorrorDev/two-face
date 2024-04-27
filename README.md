@@ -169,7 +169,7 @@ for license details.
 The embedded syntax definitions and assets also have their own licenses which
 are compiled into
 [this markdown file](https://github.com/CosmicHorrorDev/two-face/blob/main/generated/acknowledgements_full.md)
-along with programmatic in the `acknowledgement` module.
+along with programmatic access in the `acknowledgement` module.
 
 ### `bat`'s NOTICE
 
