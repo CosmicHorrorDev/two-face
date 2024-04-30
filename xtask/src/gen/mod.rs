@@ -63,7 +63,7 @@ impl AssetsDir {
                 .read()?;
             log::debug!("Patch output:\n{output}");
         }
-        for patch in utils::walk_files(Path::new("patches"))? {
+        for patch in utils::walk_files(Path::new("patches")).unwrap_or_default() {
             let patch_contents = fs::read(&patch)?;
             let output = cmd!(patch_shell, "patch --strip=0")
                 .stdin(&patch_contents)
@@ -164,10 +164,14 @@ pub fn gen(only_fancy_syntaxes: bool) -> anyhow::Result<()> {
         syntect::dumps::dump_to_file(&needs_ack, output_dir.join(ack_full_bin_name))?;
     }
 
-    log::info!("Copying output data");
+    log::info!("Copying from {}", output_dir.display());
     let generated_dir = Path::new("generated");
     fs::create_dir_all(generated_dir)?;
     for file in utils::walk_files(&output_dir)? {
+        fs::copy(&file, generated_dir.join(file.file_name().unwrap()))?;
+    }
+    log::info!("Copying from `assets/`");
+    for file in utils::walk_files(Path::new("assets"))? {
         fs::copy(&file, generated_dir.join(file.file_name().unwrap()))?;
     }
 
