@@ -2,8 +2,6 @@
 
 use syntect::{dumps, parsing::SyntaxSet};
 
-// TODO: can we rely on linker garbage collection to prune embedded data instead of features
-
 /// Akin to [`SyntaxSet::load_defaults_nonewlines()`], but with extra syntax definitions
 ///
 /// # Example

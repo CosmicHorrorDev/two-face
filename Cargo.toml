@@ -1,6 +1,7 @@
 [workspace]
 members = [
     ".",
+    "fuzz",
     "xtask",
 ]
 
@@ -16,6 +17,8 @@ edition = "2021"
 license = "MIT OR Apache-2.0"
 rust-version = "1.64"
 exclude = [
+    "/assets",
+    "/codecov.yml",
     "/.github/*",
     # We generate some large markdown files that are only linked by URL
     "/generated/*.md",

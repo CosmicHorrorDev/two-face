@@ -1,0 +1,23 @@
+[package]
+name = "two-face-fuzz"
+version = "0.0.0"
+publish = false
+edition = "2021"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+
+[dependencies.two-face]
+path = ".."
+default-features = false
+features = ["syntect-default-fancy"]
+
+[[bin]]
+name = "markdown_eq"
+path = "fuzz_targets/markdown_eq.rs"
+test = false
+doc = false
+bench = false
