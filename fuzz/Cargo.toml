@@ -10,14 +10,18 @@ cargo-fuzz = true
 [dependencies]
 libfuzzer-sys = "0.4"
 
+[dependencies.arbitrary]
+version = "1.3.2"
+features = ["derive"]
+
 [dependencies.two-face]
 path = ".."
 default-features = false
 features = ["syntect-default-fancy"]
 
 [[bin]]
-name = "markdown_eq"
-path = "fuzz_targets/markdown_eq.rs"
+name = "patched_eq"
+path = "fuzz_targets/patched_eq.rs"
 test = false
 doc = false
 bench = false
