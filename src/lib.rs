@@ -92,17 +92,17 @@
 //!
 //! The full listing of all syntaxes included in [`syntax`]
 //!
-//! - \* Exluded when using the `fancy-regex` implementation
+//! - \* Excluded when using the `fancy-regex` implementation
 //! - † Included in `syntect`'s bundled defaults
 //!
 //! |  | Syntax Definition |
 //! | :---: | :---: |
-//! | A | ActionScript†, Ada, Apache Conf, AppleScript†, AsciiDoc, ASP†, ARM Assembly\*, Assembly (x86_64), AWK |
+//! | A | ActionScript†, Ada, Apache Conf, AppleScript†, AsciiDoc, ASP†, ARM Assembly\*, Assembly (x86\_64), AWK |
 //! | B | Bash†, Batch File†, BibTeX† |
 //! | C | C†, C#†, C++†, Cabal, Clojure†, CMake, CoffeeScript, Crontab, Crystal, CSS†, CSV† |
 //! | D | D†, Dart, Dockerfile, DotENV, Diff† |
 //! | E | Elixir, Elm, Email, Erlang† |
-//! | F | F#, Fish, Fortran, fstab |
+//! | F | F#, Fish, Fortran |
 //! | G | Git (commit, config, ignore, etc.)†, GLSL, Go†, GraphQL, Graphviz (DOT)†, Groff/troff†, Groovy† |
 //! | H | Haskell†, HTML† |
 //! | I | INI |
@@ -144,7 +144,7 @@
 //! | M | Monokai Extended (plain, bright, light, and origin) |
 //! | N | Nord |
 //! | O | One Half (light/dark) |
-//! | S | Solarized (light/dark)† |
+//! | S | Solarized (light/dark)†, Sublime Snazzy |
 //! | T | TwoDark |
 //! | V | Visual Studio Dark+ |
 //! | Z | Zenburn |
