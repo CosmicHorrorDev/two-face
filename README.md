@@ -84,12 +84,12 @@ For reference here are the sizes associated with their different functions
 
 | function | `two-face` (KiB) | `syntect` (KiB) |
 | ---: | ---: | ---: |
-| [`two_face::acknowledgement::listing()`](https://docs.rs/two-face/latest/two_face/acknowledgement/fn.listing.html) | 10 | - |
-| [`two_face::syntax::extra_newlines()`](https://docs.rs/two-face/latest/two_face/syntax/fn.extra_newlines.html) (onig) | 859 | 360 |
+| [`acknowledgement::listing()`](https://docs.rs/two-face/latest/two_face/acknowledgement/fn.listing.html) | 10 | - |
+| [`syntax::extra_newlines()`](https://docs.rs/two-face/latest/two_face/syntax/fn.extra_newlines.html) (onig) | 859 | 360 |
 | ^^ (fancy) | 804 | 360 |
-| [`two_face::syntax::extra_no_newlines()`](https://docs.rs/two-face/latest/two_face/syntax/fn.extra_no_newlines.html) (onig) | 858 | 359 |
+| [`syntax::extra_no_newlines()`](https://docs.rs/two-face/latest/two_face/syntax/fn.extra_no_newlines.html) (onig) | 858 | 359 |
 | ^^ (fancy) | 803 | 359 |
-| [`two_face::theme::extra()`](https://docs.rs/two-face/latest/two_face/theme/index.html) | 45 | 5 |
+| [`theme::extra()`](https://docs.rs/two-face/latest/two_face/theme/index.html) | 45 | 5 |
 
 In short the syntax definitions are the real chonky part, and if you're
 switching from `syntect` to `two-face`, then you can expect a ~0.5MiB increase
@@ -99,17 +99,17 @@ in binary size from them (in exchange for _a lot_ of syntax definitions)
 
 The full listing of all syntaxes included in [`two_face::syntax`](https://docs.rs/two-face/latest/two_face/syntax/index.html)
 
-- \* Exluded when using the `fancy-regex` implementation
+- \* Excluded when using the `fancy-regex` implementation
 - † Included in `syntect`'s bundled defaults
 
 |  | Syntax Definition |
 | :---: | :---: |
-| A | ActionScript†, Ada, Apache Conf, AppleScript†, AsciiDoc, ASP†, ARM Assembly\*, Assembly (x86_64), AWK |
+| A | ActionScript†, Ada, Apache Conf, AppleScript†, AsciiDoc, ASP†, ARM Assembly\*, Assembly (x86\_64), AWK |
 | B | Bash†, Batch File†, BibTeX† |
 | C | C†, C#†, C++†, Cabal, Clojure†, CMake, CoffeeScript, Crontab, Crystal, CSS†, CSV† |
 | D | D†, Dart, Dockerfile, DotENV, Diff† |
 | E | Elixir, Elm, Email, Erlang† |
-| F | F#, Fish, Fortran, fstab |
+| F | F#, Fish, Fortran |
 | G | Git (commit, config, ignore, etc.)†, GLSL, Go†, GraphQL, Graphviz (DOT)†, Groff/troff†, Groovy† |
 | H | Haskell†, HTML† |
 | I | INI |
@@ -151,7 +151,7 @@ only make sense situationally, so you'll likely want to only expose a subset
 | M | Monokai Extended (plain, bright, light, and origin) |
 | N | Nord |
 | O | One Half (light/dark) |
-| S | Solarized (light/dark)† |
+| S | Solarized (light/dark)†, Sublime Snazzy |
 | T | TwoDark |
 | V | Visual Studio Dark+ |
 | Z | Zenburn |

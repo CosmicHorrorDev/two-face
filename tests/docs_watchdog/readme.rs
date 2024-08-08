@@ -1,22 +1,24 @@
 use std::{collections::BTreeSet, fs};
 
+use crate::utils::GeneratedFiles as Gen;
+
 #[test]
 fn embedded_asset_sizes() {
     #[track_caller]
-    fn kib(path: &str) -> usize {
-        let meta = fs::metadata(path).unwrap();
+    fn kib(gen: Gen) -> usize {
+        let meta = fs::metadata(gen.rel_path()).unwrap();
         (meta.len() as f64 / 1_024.0).round() as usize
     }
 
-    assert_eq!(10, kib("generated/acknowledgements_full.bin"));
+    assert_eq!(10, kib(Gen::AckFull));
 
-    assert_eq!(859, kib("generated/syntaxes-onig-newlines.bin"));
-    assert_eq!(804, kib("generated/syntaxes-fancy-newlines.bin"));
+    assert_eq!(859, kib(Gen::SynOnigNewlines));
+    assert_eq!(804, kib(Gen::SynFancyNewlines));
 
-    assert_eq!(858, kib("generated/syntaxes-onig-no-newlines.bin"));
-    assert_eq!(803, kib("generated/syntaxes-fancy-no-newlines.bin"));
+    assert_eq!(858, kib(Gen::SynOnigNoNewlines));
+    assert_eq!(803, kib(Gen::SynFancyNoNewlines));
 
-    assert_eq!(45, kib("generated/themes.bin"));
+    assert_eq!(45, kib(Gen::Themes));
 }
 
 #[rustfmt::skip]
