@@ -77,7 +77,7 @@ default: `syntect-onig`
 ## Embedded Asset Sizes
 
 This crate embeds some reasonably large assets in the final binary in order to
-work. Luckily the linker is smart enough to discard unused assets, so you
+work. Luckily [the linker is smart enough to discard unused assets](https://github.com/CosmicHorrorDev/two-face/blob/0979a0dd5faf2197f6c37ee2194e20bbf0b77ce7/tests/linker_smarts_mixed_partial.rs#L11-L25), so you
 generally only pay for what you use
 
 For reference here are the sizes associated with their different functions
