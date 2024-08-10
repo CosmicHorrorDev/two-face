@@ -56,9 +56,12 @@ workspace = true
 features = ["dump-load", "parsing"]
 
 [dev-dependencies]
+cargo-lock = "9.0.0"
 insta = "1.38.0"
+object = "0.34.0"
 strum = { version = "0.25.0", features = ["derive"] }
 syntect = { workspace = true, features = ["html"] }
+twox-hash = "1.6.3"
 
 [lints.rust.unexpected_cfgs]
 level = "warn"

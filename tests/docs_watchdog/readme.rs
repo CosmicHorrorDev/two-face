@@ -1,24 +1,24 @@
 use std::{collections::BTreeSet, fs};
 
-use crate::utils::GeneratedFiles as Gen;
+use crate::utils::TwoFaceAsset;
 
 #[test]
 fn embedded_asset_sizes() {
     #[track_caller]
-    fn kib(gen: Gen) -> usize {
+    fn kib(gen: TwoFaceAsset) -> usize {
         let meta = fs::metadata(gen.rel_path()).unwrap();
         (meta.len() as f64 / 1_024.0).round() as usize
     }
 
-    assert_eq!(10, kib(Gen::AckFull));
+    assert_eq!(10, kib(TwoFaceAsset::AckFull));
 
-    assert_eq!(859, kib(Gen::SynOnigNewlines));
-    assert_eq!(804, kib(Gen::SynFancyNewlines));
+    assert_eq!(859, kib(TwoFaceAsset::SynOnigNewlines));
+    assert_eq!(804, kib(TwoFaceAsset::SynFancyNewlines));
 
-    assert_eq!(858, kib(Gen::SynOnigNoNewlines));
-    assert_eq!(803, kib(Gen::SynFancyNoNewlines));
+    assert_eq!(858, kib(TwoFaceAsset::SynOnigNoNewlines));
+    assert_eq!(803, kib(TwoFaceAsset::SynFancyNoNewlines));
 
-    assert_eq!(45, kib(Gen::Themes));
+    assert_eq!(45, kib(TwoFaceAsset::Themes));
 }
 
 #[rustfmt::skip]
