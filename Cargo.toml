@@ -58,10 +58,10 @@ features = ["dump-load", "parsing"]
 [dev-dependencies]
 cargo-lock = "9.0.0"
 insta = "1.38.0"
-object = "0.34.0"
+object = { version = "0.34.0", default-features = false, features = ["read"] }
 strum = { version = "0.25.0", features = ["derive"] }
 syntect = { workspace = true, features = ["html"] }
-twox-hash = "1.6.3"
+twox-hash = { version = "1.6.3", default-features = false }
 
 [lints.rust.unexpected_cfgs]
 level = "warn"
