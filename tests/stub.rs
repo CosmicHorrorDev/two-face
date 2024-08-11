@@ -3,5 +3,6 @@
 //! !!NOTE!!: Any test that's not intentionally trying to run in it's own separate binary should be
 //! included within here
 
+mod acknowledgements;
 mod docs_watchdog;
 mod utils;

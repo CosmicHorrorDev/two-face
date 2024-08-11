@@ -57,6 +57,10 @@ impl TwoFaceAsset {
             Self::Themes => "generated/themes.bin",
         }
     }
+
+    pub fn contents(self) -> Vec<u8> {
+        fs::read(self.rel_path()).unwrap()
+    }
 }
 
 #[derive(Clone, Copy, Debug, EnumIter, PartialEq, Eq)]
@@ -133,7 +137,7 @@ impl From<Asset> for AssetFingerprint {
 impl From<TwoFaceAsset> for AssetFingerprint {
     fn from(asset: TwoFaceAsset) -> Self {
         // Our "prefix" is just the whole thing because we can
-        let prefix = fs::read(asset.rel_path()).unwrap();
+        let prefix = asset.contents();
         let hash = xxhash(&prefix);
         let size = prefix.len();
         Self { prefix, hash, size }
