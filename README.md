@@ -16,7 +16,7 @@ Curated by the [`bat` Project](https://github.com/sharkdp/bat)
 
 The following
 
-```cmd
+```console
 $ cargo add two-face --features syntect-default-onig
 ```
 
