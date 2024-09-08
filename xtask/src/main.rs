@@ -7,6 +7,8 @@ use clap::{Parser, Subcommand};
 use xshell::{cmd, Shell};
 
 mod gen;
+mod test_meta;
+mod utils;
 
 #[derive(Parser, Debug)]
 struct Cli {
@@ -32,6 +34,8 @@ enum Commands {
         #[arg(long)]
         calling_self: bool,
     },
+    /// Update the `syntect-meta.toml` file that's used for tests
+    TestMeta,
 }
 
 // TODO: add context everywhere
@@ -78,6 +82,7 @@ fn main() -> anyhow::Result<()> {
                 .run()?;
             }
         }
+        Commands::TestMeta => test_meta::update_test_metadata(),
     }
 
     Ok(())

@@ -1,4 +1,6 @@
-use cargo_lock::{Lockfile, Version};
+use crate::utils;
+
+use cargo_lock::Lockfile;
 
 #[test]
 fn locked_version() {
@@ -13,7 +15,10 @@ fn locked_version() {
         [] => panic!("`syntect` wasn't found in the lockfile"),
         two_or_more => panic!("Found multiple distinct `syntect` versions: {two_or_more:?}"),
     };
-    // !!IMPORTANT!!: if you change the version number here then make sure you also update all of
-    // the relevant values for `syntect`'s assets under `tests/utils`
-    assert_eq!(syntect_version, &Version::new(5, 2, 0));
+
+    let meta = utils::SyntectMeta::load();
+    assert_eq!(
+        syntect_version, &meta.version,
+        "If this fails then run `$ cargo xtask test-meta` to refresh the metadata"
+    );
 }
