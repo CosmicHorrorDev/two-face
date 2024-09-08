@@ -1,13 +1,20 @@
 use std::{env, fs, hash::Hasher};
 
 use object::{Object, ObjectSection};
+use serde::{Deserialize, Serialize};
 use strum::{EnumIter, IntoEnumIterator};
 use twox_hash::XxHash64;
 
-fn xxhash(bytes: &[u8]) -> u64 {
+fn u32_from_last_half_u64(uint: u64) -> u32 {
+    let [_, _, _, _, b1, b2, b3, b4] = uint.to_le_bytes();
+    u32::from_le_bytes([b1, b2, b3, b4])
+}
+
+fn xxhash(bytes: &[u8]) -> u32 {
     let mut hasher = XxHash64::default();
     hasher.write(bytes);
-    hasher.finish()
+    let uint = hasher.finish();
+    u32_from_last_half_u64(uint)
 }
 
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
@@ -63,6 +70,34 @@ impl TwoFaceAsset {
     }
 }
 
+#[derive(Debug, Deserialize, Serialize)]
+pub struct SyntectMeta {
+    pub version: cargo_lock::Version,
+    assets: SyntectAssetMeta,
+}
+
+impl SyntectMeta {
+    pub fn load() -> Self {
+        let contents = include_str!("../assets/syntect-meta.toml");
+        toml::from_str(contents).unwrap()
+    }
+
+    fn get(&self, asset: SyntectAsset) -> &AssetFingerprint {
+        match asset {
+            SyntectAsset::SynNewlines => &self.assets.syn_newlines,
+            SyntectAsset::SynNoNewlines => &self.assets.syn_no_newlines,
+            SyntectAsset::Themes => &self.assets.themes,
+        }
+    }
+}
+
+#[derive(Debug, Deserialize, Serialize)]
+struct SyntectAssetMeta {
+    syn_newlines: AssetFingerprint,
+    syn_no_newlines: AssetFingerprint,
+    themes: AssetFingerprint,
+}
+
 #[derive(Clone, Copy, Debug, EnumIter, PartialEq, Eq)]
 pub enum SyntectAsset {
     SynNewlines,
@@ -70,37 +105,10 @@ pub enum SyntectAsset {
     Themes,
 }
 
-impl SyntectAsset {
-    pub fn hash(self) -> u64 {
-        match self {
-            Self::SynNewlines => 0x8f97ab237626d33c,
-            Self::SynNoNewlines => 0x899137e916ab33af,
-            Self::Themes => 0xbf492c8ad330229e,
-        }
-    }
-
-    pub fn prefix(self) -> &'static [u8] {
-        match self {
-            Self::SynNewlines | Self::SynNoNewlines => {
-                b"\x4b\0\0\0\0\0\0\0\x0a\0\0\0\0\0\0\0Plain Text\x01"
-            }
-            Self::Themes => b"\x78\xda\xed\x5d\x6d\xac\x5c\x45",
-        }
-    }
-
-    pub fn size(self) -> usize {
-        match self {
-            Self::SynNewlines => 368467,
-            Self::SynNoNewlines => 368082,
-            Self::Themes => 5035,
-        }
-    }
-}
-
-#[derive(PartialEq, Eq)]
+#[derive(Clone, Debug, PartialEq, Eq, Deserialize, Serialize)]
 pub struct AssetFingerprint {
     prefix: Vec<u8>,
-    hash: u64,
+    hash: u32,
     size: usize,
 }
 
@@ -146,11 +154,7 @@ impl From<TwoFaceAsset> for AssetFingerprint {
 
 impl From<SyntectAsset> for AssetFingerprint {
     fn from(asset: SyntectAsset) -> Self {
-        Self {
-            prefix: asset.prefix().to_owned(),
-            hash: asset.hash(),
-            size: asset.size(),
-        }
+        SyntectMeta::load().get(asset).to_owned()
     }
 }
 
