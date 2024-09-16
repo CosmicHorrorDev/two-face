@@ -24,11 +24,6 @@ enum Commands {
         yes_update_submodules: bool,
         /// Should only be set by `cargo xtask gen` running. Never set manually
         ///
-        /// Only generate the syntax dumps for fancy-regex
-        #[arg(long)]
-        only_fancy_syntaxes: bool,
-        /// Should only be set by `cargo xtask gen` running. Never set manually
-        ///
         /// Weird hack because `cargo xtask gen` calls back into itself to run. This is done, so
         /// that we can have a single "run" that sets different features for `syntect`
         #[arg(long)]
@@ -53,11 +48,10 @@ fn main() -> anyhow::Result<()> {
     match cli.command {
         Commands::Gen {
             yes_update_submodules,
-            only_fancy_syntaxes,
             calling_self,
         } => {
             if calling_self {
-                gen::gen(only_fancy_syntaxes)?;
+                gen::gen()?;
             } else {
                 anyhow::ensure!(
                     yes_update_submodules,
@@ -77,7 +71,7 @@ fn main() -> anyhow::Result<()> {
                 cmd!(shell, "cargo {xtask_args...} -- {args...}").run()?;
                 cmd!(
                     shell,
-                    "cargo {xtask_args...} {fancy_feature...} -- {args...} --only-fancy-syntaxes"
+                    "cargo {xtask_args...} {fancy_feature...} -- {args...}"
                 )
                 .run()?;
             }
