@@ -1,4 +1,7 @@
-use std::path::{Path, PathBuf};
+use std::{
+    fs,
+    path::{Path, PathBuf},
+};
 
 use anyhow::Context;
 use syntect::parsing::SyntaxDefinition;
@@ -12,7 +15,7 @@ pub enum IncludeNewlines {
 
 // Helper function copied from syntect internals
 pub fn load_syntax_file(p: &Path, newlines: IncludeNewlines) -> anyhow::Result<SyntaxDefinition> {
-    let s = std::fs::read_to_string(p)?;
+    let s = fs::read_to_string(p)?;
 
     let include_newlines = newlines == IncludeNewlines::Yes;
     SyntaxDefinition::load_from_str(&s, include_newlines, p.file_stem().and_then(|x| x.to_str()))
