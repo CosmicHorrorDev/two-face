@@ -28,7 +28,7 @@ impl RegexImpl {
     ///
     /// # Panics
     ///
-    /// Panics when zero or mutliple implementations are active
+    /// Panics when zero or multiple implementations are active
     fn detect() -> Self {
         let onig = cfg!(feature = "syntect-onig");
         let fancy = cfg!(feature = "syntect-fancy");
