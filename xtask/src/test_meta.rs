@@ -20,7 +20,7 @@ pub fn update_test_metadata() {
     let assets = AssetMeta::from_syntect_source(&source);
     let meta = Meta { version, assets };
     let header_comment = r"# !! generated content: Update by running `$ cargo xtask test-meta` !!";
-    let meta_toml = toml::to_string_pretty(&meta).unwrap();
+    let meta_toml = toml::to_string(&meta).unwrap();
     let out_path = Path::new("tests").join("assets").join("syntect-meta.toml");
     log::info!("Storing new syntect metadata at: {}", out_path.display());
     fs::write(&out_path, format!("{header_comment}\n\n{meta_toml}")).unwrap();
