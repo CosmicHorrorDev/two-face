@@ -36,7 +36,7 @@ pub fn extra() -> EmbeddedLazyThemeSet {
     EmbeddedLazyThemeSet(theme_set)
 }
 
-/// A `LazyThemeSet` where we know all themes that are included
+/// A [`LazyThemeSet`] where we know all of the themes that are included
 pub struct EmbeddedLazyThemeSet(LazyThemeSet);
 
 impl EmbeddedLazyThemeSet {
