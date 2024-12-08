@@ -11,7 +11,7 @@ cargo-fuzz = true
 libfuzzer-sys = "0.4"
 
 [dependencies.arbitrary]
-version = "1.3.2"
+version = "1.4.1"
 features = ["derive"]
 
 [dependencies.two-face]
