@@ -11,7 +11,7 @@ fn full_matches_prebuilt() {
     let diff = TextDiff::from_lines(&rendered, &prebuilt);
     // The only extra lines should be from assets that don't require acknowledgements which still
     // gets included in the prebuilt listing and not the embedded
-    insta::assert_snapshot!(diff.unified_diff(), @r###"
+    insta::assert_snapshot!(diff.unified_diff(), @r#"
     @@ -5,6 +5,22 @@
      # Syntaxes
      
@@ -35,7 +35,7 @@ fn full_matches_prebuilt() {
      <summary>syntaxes/01_Packages/Rust/LICENSE.txt</summary>
      
      ````text
-    @@ -479,6 +495,58 @@
+    @@ -507,6 +523,58 @@
      </details>
      
      <details>
@@ -94,7 +94,7 @@ fn full_matches_prebuilt() {
      <summary>syntaxes/02_Extra/Groff/LICENSE</summary>
      
      ````text
-    @@ -1485,6 +1553,38 @@
+    @@ -1722,6 +1790,38 @@
      </details>
      
      <details>
@@ -133,5 +133,5 @@ fn full_matches_prebuilt() {
      <summary>syntaxes/02_Extra/PureScript/NOTICE</summary>
      
      ````text
-    "###);
+    "#);
 }

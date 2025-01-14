@@ -12,11 +12,11 @@ fn embedded_asset_sizes() {
 
     assert_eq!(10, kib(TwoFaceAsset::AckFull));
 
-    assert_eq!(859, kib(TwoFaceAsset::SynOnigNewlines));
-    assert_eq!(804, kib(TwoFaceAsset::SynFancyNewlines));
+    assert_eq!(920, kib(TwoFaceAsset::SynOnigNewlines));
+    assert_eq!(865, kib(TwoFaceAsset::SynFancyNewlines));
 
-    assert_eq!(858, kib(TwoFaceAsset::SynOnigNoNewlines));
-    assert_eq!(803, kib(TwoFaceAsset::SynFancyNoNewlines));
+    assert_eq!(919, kib(TwoFaceAsset::SynOnigNoNewlines));
+    assert_eq!(864, kib(TwoFaceAsset::SynFancyNoNewlines));
 
     assert_eq!(45, kib(TwoFaceAsset::Themes));
 }
@@ -29,7 +29,7 @@ const EXPECTED: &[&str] = &[
     // B
     "Bourne Again Shell (bash)", "Batch File", "BibTeX",
     // C
-    "C", "C#", "C++", "Cabal", "Clojure", "CMake", "CoffeeScript", "Comma Separated Values",
+    "C", "C#", "C++", "Cabal", "CFML", "Clojure", "CMake", "CoffeeScript", "Comma Separated Values",
     "Crontab", "Crystal", "CSS",
     // D
     "D", "Dart", "Diff", "Dockerfile", "DotENV",
@@ -54,7 +54,7 @@ const EXPECTED: &[&str] = &[
     // M
     "Makefile", "Manpage", "Markdown", "MATLAB", "MediaWiki", "MultiMarkdown",
     // N
-    "NAnt Build File", "nginx", "Nim", "Ninja", "Nix",
+    "NAnt Build File", "nginx", "Nim", "Ninja", "Nix", "NSIS",
     // O
     "Objective-C", "Objective-C++", "OCaml", "OCamllex", "OCamlyacc", "orgmode",
     // P
@@ -72,6 +72,8 @@ const EXPECTED: &[&str] = &[
     "Tcl", "Terraform", "TeX", "Textile", "Todo.txt", "TOML", "TypeScript", "TypeScriptReact",
     // V
     "varlink", "Verilog", "VimL", "Vyper",
+    // W
+    "WGSL",
     // X
     "XML",
     // Y
@@ -95,7 +97,7 @@ const EXPECTED: &[&str] = &[
     // Misc
     "Java Properties", "JavaScript (Rails)", "jsonnet", "Vue Component", "camlp4", "Plain Text",
     "R Console", "SQL (Rails)", "Protocol Buffer (TEXT)", "gnuplot", "HTTP Request and Response",
-    "log", "syslog", "Highlight non-printables",
+    "log", "syslog", "Highlight non-printables", "Dockerfile (with bash)",
 ];
 
 /// Some syntax definitions use regex features that aren't supported by `fancy-regex`

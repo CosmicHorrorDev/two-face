@@ -85,10 +85,10 @@ For reference here are the sizes associated with their different functions
 | function | `two-face` (KiB) | `syntect` (KiB) |
 | ---: | ---: | ---: |
 | [`acknowledgement::listing()`](https://docs.rs/two-face/latest/two_face/acknowledgement/fn.listing.html) | 10 | - |
-| [`syntax::extra_newlines()`](https://docs.rs/two-face/latest/two_face/syntax/fn.extra_newlines.html) (onig) | 859 | 360 |
-| ^^ (fancy) | 804 | 360 |
-| [`syntax::extra_no_newlines()`](https://docs.rs/two-face/latest/two_face/syntax/fn.extra_no_newlines.html) (onig) | 858 | 359 |
-| ^^ (fancy) | 803 | 359 |
+| [`syntax::extra_newlines()`](https://docs.rs/two-face/latest/two_face/syntax/fn.extra_newlines.html) (onig) | 920 | 360 |
+| ^^ (fancy) | 865 | 360 |
+| [`syntax::extra_no_newlines()`](https://docs.rs/two-face/latest/two_face/syntax/fn.extra_no_newlines.html) (onig) | 919 | 359 |
+| ^^ (fancy) | 864 | 359 |
 | [`theme::extra()`](https://docs.rs/two-face/latest/two_face/theme/index.html) | 45 | 5 |
 
 In short the syntax definitions are the real chonky part, and if you're
@@ -106,7 +106,7 @@ The full listing of all syntaxes included in [`two_face::syntax`](https://docs.r
 | :---: | :---: |
 | A | ActionScript†, Ada, Apache Conf, AppleScript†, AsciiDoc, ASP†, ARM Assembly\*, Assembly (x86\_64), AWK |
 | B | Bash†, Batch File†, BibTeX† |
-| C | C†, C#†, C++†, Cabal, Clojure†, CMake, CoffeeScript, Crontab, Crystal, CSS†, CSV† |
+| C | C†, C#†, C++†, Cabal, CFML, Clojure†, CMake, CoffeeScript, Crontab, Crystal, CSS†, CSV† |
 | D | D†, Dart, Dockerfile, DotENV, Diff† |
 | E | Elixir, Elm, Email, Erlang† |
 | F | F#, Fish, Fortran |
@@ -117,7 +117,7 @@ The full listing of all syntaxes included in [`two_face::syntax`](https://docs.r
 | K | Kotlin |
 | L | LaTeX†, LaTeX Log†, Lean, LESS, Lisp†, Literate Haskell†, LiveScript\*, LLVM, Lua† |
 | M | Makefile†, Manpage, Markdown†, MATLAB†, Mediawiki, MutliMarkdown† |
-| N | NAnt Build File†, Nginx, Nim, Ninja, Nix |
+| N | NAnt Build File†, Nginx, Nim, Ninja, Nix, NSIS |
 | O | Objective-C†, Objective-C++†, OCaml†, OCamllex†, OCamlyacc†, Org Mode |
 | P | Pascal†, Perl†, PHP†, PowerShell\*, Protobuf, Puppet, PureScript, Python† |
 | Q | QML |
@@ -125,6 +125,7 @@ The full listing of all syntaxes included in [`two_face::syntax`](https://docs.r
 | S | Sass\*, Scala†, SCSS, Salt State SLS\*, SML, Solidity, SQL†, Strace, Stylus, Svelte, Swift, SystemVerilog |
 | T | Tcl†, Terraform, TeX†, Textile†, Todo.txt, TOML, TypeScript, TypescriptReact |
 | V | Varlink, Verilog, VimL, Vue, Vyper |
+| W | WGSL |
 | X | XML† |
 | Y | YAML† |
 | Z | Zig |
