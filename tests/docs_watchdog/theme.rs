@@ -410,12 +410,12 @@ fn visual_studio_dark_plus() {
 fn zenburn() {
     insta::assert_snapshot!(
         sample_html(EmbeddedThemeName::Zenburn),
-        @r###"
-    <pre style="background-color:#393939;">
+        @r#"
+    <pre style="background-color:#3f3f3f;">
     <span style="color:#a0cfa1;">#</span><span style="color:#87ae86;"> There currently is no ternary operator like  true ? &quot;yes&quot; : &quot;no&quot;
     </span><span style="color:#a0cfa1;">#</span><span style="color:#87ae86;"> So the following is suggested
-    </span><span style="color:#d6d6d680;">&quot;</span><span style="color:#d68686;">no</span><span style="color:#d6d6d680;">&quot; </span><span style="color:#ececec;">= </span><span style="color:#fed6af;">if </span><span style="font-weight:bold;color:#87d6d5;">1 </span><span style="color:#ececec;">== </span><span style="font-weight:bold;color:#87d6d5;">0</span><span style="color:#dedede;">, </span><span style="font-weight:bold;color:#cc9495;">do: </span><span style="color:#d6d6d680;">&quot;</span><span style="color:#d68686;">yes</span><span style="color:#d6d6d680;">&quot;</span><span style="color:#dedede;">, </span><span style="font-weight:bold;color:#cc9495;">else: </span><span style="color:#d6d6d680;">&quot;</span><span style="color:#d68686;">no</span><span style="color:#d6d6d680;">&quot;
+    </span><span style="color:#d6d6d680;">&quot;</span><span style="color:#d68686;">no</span><span style="color:#d6d6d680;">&quot; </span><span style="color:#ececec;">= </span><span style="color:#fed6af;">if </span><span style="font-weight:bold;color:#87d6d5;">1 </span><span style="color:#ececec;">== </span><span style="font-weight:bold;color:#87d6d5;">0</span><span style="color:#dedede;">, </span><span style="font-weight:bold;color:#d58684;">do: </span><span style="color:#d6d6d680;">&quot;</span><span style="color:#d68686;">yes</span><span style="color:#d6d6d680;">&quot;</span><span style="color:#dedede;">, </span><span style="font-weight:bold;color:#d58684;">else: </span><span style="color:#d6d6d680;">&quot;</span><span style="color:#d68686;">no</span><span style="color:#d6d6d680;">&quot;
     </span></pre>
-    "###
+    "#
     );
 }
