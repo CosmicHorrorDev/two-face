@@ -4,11 +4,11 @@ The process for cutting a new release
   - `$ cargo +nightly udeps`
 - [ ] Bump the `version` in `Cargo.toml`
 - [ ] Propagate the change to `Cargo.lock`
-  - `$ cargo check -p inlyne`
+  - `$ cargo check -p two-face`
 - [ ] Update the generated assets
   - `$ cargo xtask gen -y`
 - [ ] Update `rust-version` in `Cargo.toml`
-  - `$ cargo msrv --min 1.60 -- cargo check`
+  - `$ cargo msrv find -- cargo check`
 - [ ] Update the `CHANGELOG.md` to reflect any of the changes
 - [ ] Merge changes through a PR or directly to make sure CI passes
 - [ ] Publish on crates.io
