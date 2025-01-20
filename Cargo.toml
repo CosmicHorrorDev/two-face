@@ -21,14 +21,15 @@ version = "0.4.1"
 edition = "2021"
 license = "MIT OR Apache-2.0"
 rust-version = "1.71.1"
-exclude = [
-    "/assets",
-    "/codecov.yml",
-    "/.github/*",
-    # We generate some large markdown files that are only linked by URL
-    "/generated/*.md",
-    # Only used for running the fuzzer
-    "generated/fuzzer-syntaxes.bin",
+include = [
+    "src",
+    "generated/acknowledgements_full.bin",
+    "generated/syntaxes-{fancy,fancy-no,onig,onig-no}-newlines.bin",
+    "generated/themes.bin",
+    "Cargo.lock",
+    "CHANGELOG.md",
+    "LICENSE-APACHE",
+    "LICENSE-MIT",
 ]
 keywords = ["syntect", "extra", "syntaxes", "themes"]
 categories = ["parser-implementations", "text-processing"]
