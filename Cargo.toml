@@ -6,14 +6,14 @@ members = [
 ]
 
 [workspace.dependencies]
-cargo-lock = "9.0.0"
+cargo-lock = "10.1.0"
 object = { version = "0.36.4", default-features = false, features = ["read"] }
 once_cell = "1.20.2"
 serde = { version = "1.0.215", features = ["derive"] }
 strum = { version = "0.26.3", features = ["derive"] }
 syntect = { version = "5.2.0", default-features = false }
-toml = "0.7.8"
-twox-hash = { version = "1.6.3", default-features = false }
+toml = "0.8.19"
+twox-hash = { version = "2.1.0", default-features = false, features = ["std", "xxhash64"] }
 
 [package]
 name = "two-face"
