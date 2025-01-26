@@ -10,7 +10,7 @@ The process for cutting a new release
 - [ ] Update `rust-version` in `Cargo.toml`
   - Comment out the existing `rust-version`
   - Isolate our package from the workspace
-    - `$ cargo package`
+    - `$ cargo package --allow-dirty`
     - Navigate to `target/package/two-face-*/`
   - `$ cargo msrv find [--ignore-lockfile]`
 - [ ] Update the `CHANGELOG.md` to reflect any of the changes
