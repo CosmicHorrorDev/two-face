@@ -1,3 +1,22 @@
+# Version 0.4.2
+
+Just a small docs / internal changes update
+
+## Deps
+
+- Update outdated dependencies #54
+
+## Docs
+
+- Sync docs with README tables #51
+- Bump our MSRV down to 1.65.0 #55
+
+## Internal
+
+- Bump codecov CI action #52
+- Slim down files `include`d in crates.io uploads #53
+- Remove dead internal code #56
+
 # Version 0.4.1
 
 ## Features
