@@ -210,7 +210,7 @@ two-face = { version = ..., default-features = false, features = ["syntect-fancy
 /// ```
 /// assert_eq!(
 ///     two_face::acknowledgement_url(),
-///     "https://github.com/CosmicHorrorDev/two-face/blob/v0.4.2/generated/acknowledgements_full.md"
+///     "https://github.com/CosmicHorrorDev/two-face/blob/v0.4.3/generated/acknowledgements_full.md"
 /// );
 /// ```
 pub fn acknowledgement_url() -> &'static str {
