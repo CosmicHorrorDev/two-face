@@ -164,6 +164,7 @@ pub struct ReadmeDoctests;
 pub mod acknowledgement;
 // Unstable extra code that we use for fuzzing
 #[cfg(fuzzing)]
+#[doc(hidden)]
 pub mod fuzz;
 pub mod syntax;
 pub mod theme;
