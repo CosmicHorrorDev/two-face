@@ -1,3 +1,11 @@
+# Version 0.4.3
+
+Fixes builds for dependents that use set `#[cfg(fuzzing)]`
+
+## Fix
+
+- Fix external `#[cfg(fuzzing)]` builds (#61)
+
 # Version 0.4.2
 
 Just a small docs / internal changes update
