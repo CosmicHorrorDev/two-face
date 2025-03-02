@@ -2,15 +2,16 @@
 
 use std::sync::OnceLock;
 
-use arbitrary::Arbitrary;
 use libfuzzer_sys::fuzz_target;
 use two_face::re_exports::syntect::parsing::{ParseState, SyntaxReference, SyntaxSet};
 use two_face::{fuzz::fuzzer_syntaxes, syntax::extra_newlines};
 
 // TODO: make fuzzing generic over the syntax, so that we don't have one target per syntax
 
-fuzz_target!(|input: (Syntax, &str)| {
-    let (syn, md_text) = input;
+fuzz_target!(|input: &str| {
+    let Some((syn @ "md", md_text)) = input.split_once('\n') else {
+        return;
+    };
     let fuzzer_syn_set = fuzzer_syn_set();
     let mut fuzzer_syn_state = ParseState::new(fuzzer_syn_ref(syn));
     let patched_syn_set = patched_syn_set();
@@ -30,19 +31,6 @@ fuzz_target!(|input: (Syntax, &str)| {
     }
 });
 
-#[derive(Arbitrary, Clone, Copy, Debug)]
-enum Syntax {
-    Markdown,
-}
-
-impl Syntax {
-    fn as_extension(self) -> &'static str {
-        match self {
-            Self::Markdown => "md",
-        }
-    }
-}
-
 // --- The syntax set stuff is very expensive to load, so cache it ---
 
 fn fuzzer_syn_set() -> &'static SyntaxSet {
@@ -50,9 +38,8 @@ fn fuzzer_syn_set() -> &'static SyntaxSet {
     SET.get_or_init(fuzzer_syntaxes)
 }
 
-fn fuzzer_syn_ref(syn: Syntax) -> &'static SyntaxReference {
-    let ext = syn.as_extension();
-    fuzzer_syn_set().find_syntax_by_extension(ext).unwrap()
+fn fuzzer_syn_ref(syn_ext: &str) -> &'static SyntaxReference {
+    fuzzer_syn_set().find_syntax_by_extension(syn_ext).unwrap()
 }
 
 fn patched_syn_set() -> &'static SyntaxSet {
@@ -60,9 +47,8 @@ fn patched_syn_set() -> &'static SyntaxSet {
     SET.get_or_init(extra_newlines)
 }
 
-fn patched_syn_ref(syn: Syntax) -> &'static SyntaxReference {
-    let ext = syn.as_extension();
-    patched_syn_set().find_syntax_by_extension(ext).unwrap()
+fn patched_syn_ref(syn_ext: &str) -> &'static SyntaxReference {
+    patched_syn_set().find_syntax_by_extension(syn_ext).unwrap()
 }
 
 // --- ^^ ---
