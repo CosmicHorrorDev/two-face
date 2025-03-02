@@ -54,3 +54,23 @@ jobs:
         env:
           RUSTDOCFLAGS: -D warnings
         run: cargo doc --no-deps --package two-face --all-features
+
+  fuzz:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install nightly toolchain
+        run: |
+          rustup toolchain install --profile minimal nightly-2025-03-01
+          rustup default nightly-2025-03-01
+
+      - name: Cache
+        uses: Swatinem/rust-cache@v2
+
+      - name: Run fuzzers
+        run: |
+          cargo --locked install cargo-fuzz
+          cargo --locked fuzz run --jobs=4 patched_eq -- -max_total_time=90 -timeout=30
