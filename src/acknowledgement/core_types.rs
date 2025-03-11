@@ -3,7 +3,7 @@ use std::{fmt::Write, path::PathBuf};
 use serde::{Deserialize, Serialize};
 
 /// Holds the license type, text, and relative path for a syntax or theme definition
-#[derive(Deserialize, Serialize)]
+#[derive(Clone, Debug, Deserialize, Serialize, Hash, PartialEq, Eq, PartialOrd, Ord)]
 pub struct License {
     pub ty: LicenseType,
     pub text: String,
@@ -45,7 +45,7 @@ impl License {
 /// The full range of included licenses
 ///
 /// Disclaimer: I am not a lawyer
-#[derive(Deserialize, Serialize, Debug)]
+#[derive(Clone, Copy, Debug, Deserialize, Serialize, Hash, PartialEq, Eq, PartialOrd, Ord)]
 #[non_exhaustive]
 pub enum LicenseType {
     /// Sublime's custom license
@@ -88,7 +88,7 @@ impl LicenseType {
 }
 
 /// Holds all the license information for embedded syntaxes and themes
-#[derive(Deserialize, Serialize)]
+#[derive(Clone, Debug, Deserialize, Serialize, Hash, PartialEq, Eq, PartialOrd, Ord)]
 pub struct Acknowledgements {
     pub(crate) for_syntaxes: Vec<License>,
     pub(crate) for_themes: Vec<License>,

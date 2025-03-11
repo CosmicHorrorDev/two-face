@@ -9,6 +9,8 @@
 
 mod core_types;
 
+use std::{fmt, ops::Index};
+
 pub use core_types::LazyThemeSet;
 
 use syntect::highlighting::{Theme, ThemeSet};
@@ -116,6 +118,20 @@ impl From<&EmbeddedLazyThemeSet> for ThemeSet {
     }
 }
 
+impl From<EmbeddedLazyThemeSet> for ThemeSet {
+    fn from(embedded: EmbeddedLazyThemeSet) -> Self {
+        (&embedded).into()
+    }
+}
+
+impl Index<EmbeddedThemeName> for EmbeddedLazyThemeSet {
+    type Output = Theme;
+
+    fn index(&self, theme_name: EmbeddedThemeName) -> &Self::Output {
+        self.get(theme_name)
+    }
+}
+
 // NOTE: doc comment HTML is copied from the tests/docs_watchdog/theme.rs tests
 /// An enum that represents all themes included in [`EmbeddedLazyThemeSet`]
 ///
@@ -126,7 +142,7 @@ impl From<&EmbeddedLazyThemeSet> for ThemeSet {
 /// # So the following is suggested
 /// "no" = if 1 == 0, do: "yes", else: "no"
 /// ```
-#[derive(Clone, Copy, Debug, PartialEq, Eq, PartialOrd, Ord)]
+#[derive(Clone, Copy, Debug, Hash, PartialEq, Eq, PartialOrd, Ord)]
 #[cfg_attr(test, derive(strum::EnumIter))]
 pub enum EmbeddedThemeName {
     /// ANSI
@@ -400,6 +416,12 @@ impl EmbeddedThemeName {
             Self::VisualStudioDarkPlus => "Visual Studio Dark+",
             Self::Zenburn => "zenburn",
         }
+    }
+}
+
+impl fmt::Display for EmbeddedThemeName {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        f.write_str(self.as_name())
     }
 }
 
