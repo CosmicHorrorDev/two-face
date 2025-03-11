@@ -95,6 +95,12 @@ impl From<&LazyThemeSet> for ThemeSet {
     }
 }
 
+impl From<LazyThemeSet> for ThemeSet {
+    fn from(lazy: LazyThemeSet) -> Self {
+        (&lazy).into()
+    }
+}
+
 #[derive(Serialize, Deserialize)]
 pub(crate) struct LazyTheme {
     serialized: Vec<u8>,
