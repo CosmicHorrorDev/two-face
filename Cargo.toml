@@ -65,7 +65,7 @@ features = ["dump-load", "parsing"]
 
 [dev-dependencies]
 cargo-lock.workspace = true
-insta = "1.41.1"
+insta = "1.43.1"
 object.workspace = true
 similar = "2.7.0"
 strum.workspace = true
