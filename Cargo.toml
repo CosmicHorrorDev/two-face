@@ -67,7 +67,7 @@ features = ["dump-load", "parsing"]
 cargo-lock.workspace = true
 insta = "1.41.1"
 object.workspace = true
-similar = "2.6.0"
+similar = "2.7.0"
 strum.workspace = true
 syntect = { workspace = true, features = ["html"] }
 toml.workspace = true
