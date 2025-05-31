@@ -80,6 +80,10 @@ impl EmbeddedLazyThemeSet {
             EmbeddedThemeName::Base16OceanDark,
             EmbeddedThemeName::Base16OceanLight,
             EmbeddedThemeName::Base16_256,
+            EmbeddedThemeName::CatppuccinFrappe,
+            EmbeddedThemeName::CatppuccinLatte,
+            EmbeddedThemeName::CatppuccinMacchiato,
+            EmbeddedThemeName::CatppuccinMocha,
             EmbeddedThemeName::ColdarkCold,
             EmbeddedThemeName::ColdarkDark,
             EmbeddedThemeName::DarkNeon,
@@ -189,6 +193,38 @@ pub enum EmbeddedThemeName {
     ///
     /// _Doesn't display as HTML well_
     Base16_256,
+    /// Catppuccin Frappe
+    ///
+    /// <pre style="background-color:#303446;">
+    /// <span style="color:#737994;"># There currently is no ternary operator like  true ? &quot;yes&quot; : &quot;no&quot;
+    /// </span><span style="color:#737994;"># So the following is suggested
+    /// </span><span style="color:#a6d189;">&quot;</span><span style="color:#a6d189;">no</span><span style="color:#a6d189;">&quot;</span><span style="color:#c6d0f5;"> </span><span style="color:#81c8be;">=</span><span style="color:#c6d0f5;"> </span><span style="color:#ca9ee6;">if</span><span style="color:#c6d0f5;"> </span><span style="color:#ef9f76;">1</span><span style="color:#c6d0f5;"> </span><span style="color:#81c8be;">==</span><span style="color:#c6d0f5;"> </span><span style="color:#ef9f76;">0</span><span style="color:#949cbb;">,</span><span style="color:#c6d0f5;"> </span><span style="color:#c6d0f5;">do</span><span style="color:#949cbb;">:</span><span style="color:#c6d0f5;"> </span><span style="color:#a6d189;">&quot;</span><span style="color:#a6d189;">yes</span><span style="color:#a6d189;">&quot;</span><span style="color:#949cbb;">,</span><span style="color:#c6d0f5;"> </span><span style="color:#c6d0f5;">else</span><span style="color:#949cbb;">:</span><span style="color:#c6d0f5;"> </span><span style="color:#a6d189;">&quot;</span><span style="color:#a6d189;">no</span><span style="color:#a6d189;">&quot;
+    /// </span></pre>
+    CatppuccinFrappe,
+    /// Catppuccin Latte
+    ///
+    /// <pre style="background-color:#eff1f5;">
+    /// <span style="font-style:italic;color:#9ca0b0;"># There currently is no ternary operator like  true ? &quot;yes&quot; : &quot;no&quot;
+    /// </span><span style="font-style:italic;color:#9ca0b0;"># So the following is suggested
+    /// </span><span style="color:#40a02b;">&quot;no&quot; </span><span style="color:#179299;">= </span><span style="color:#8839ef;">if </span><span style="color:#fe640b;">1 </span><span style="color:#179299;">== </span><span style="color:#fe640b;">0</span><span style="color:#7c7f93;">, </span><span style="color:#4c4f69;">do</span><span style="color:#7c7f93;">: </span><span style="color:#40a02b;">&quot;yes&quot;</span><span style="color:#7c7f93;">, </span><span style="color:#4c4f69;">else</span><span style="color:#7c7f93;">: </span><span style="color:#40a02b;">&quot;no&quot;
+    /// </span></pre>
+    CatppuccinLatte,
+    /// Catppuccin Macchiato
+    ///
+    /// <pre style="background-color:#24273a;">
+    /// <span style="font-style:italic;color:#6e738d;"># There currently is no ternary operator like  true ? &quot;yes&quot; : &quot;no&quot;
+    /// </span><span style="font-style:italic;color:#6e738d;"># So the following is suggested
+    /// </span><span style="color:#a6da95;">&quot;no&quot; </span><span style="color:#8bd5ca;">= </span><span style="color:#c6a0f6;">if </span><span style="color:#f5a97f;">1 </span><span style="color:#8bd5ca;">== </span><span style="color:#f5a97f;">0</span><span style="color:#939ab7;">, </span><span style="color:#cad3f5;">do</span><span style="color:#939ab7;">: </span><span style="color:#a6da95;">&quot;yes&quot;</span><span style="color:#939ab7;">, </span><span style="color:#cad3f5;">else</span><span style="color:#939ab7;">: </span><span style="color:#a6da95;">&quot;no&quot;
+    /// </span></pre>
+    CatppuccinMacchiato,
+    /// Catppuccin Mocha
+    ///
+    /// <pre style="background-color:#1e1e2e;">
+    /// <span style="font-style:italic;color:#6c7086;"># There currently is no ternary operator like  true ? &quot;yes&quot; : &quot;no&quot;
+    /// </span><span style="font-style:italic;color:#6c7086;"># So the following is suggested
+    /// </span><span style="color:#a6e3a1;">&quot;no&quot; </span><span style="color:#94e2d5;">= </span><span style="color:#cba6f7;">if </span><span style="color:#fab387;">1 </span><span style="color:#94e2d5;">== </span><span style="color:#fab387;">0</span><span style="color:#9399b2;">, </span><span style="color:#cdd6f4;">do</span><span style="color:#9399b2;">: </span><span style="color:#a6e3a1;">&quot;yes&quot;</span><span style="color:#9399b2;">, </span><span style="color:#cdd6f4;">else</span><span style="color:#9399b2;">: </span><span style="color:#a6e3a1;">&quot;no&quot;
+    /// </span></pre>
+    CatppuccinMocha,
     /// Coldark-Cold
     ///
     /// <pre style="background-color:#e3eaf2;">
@@ -362,7 +398,7 @@ pub enum EmbeddedThemeName {
     /// <pre style="background-color:#3f3f3f;">
     /// <span style="color:#a0cfa1;">#</span><span style="color:#87ae86;"> There currently is no ternary operator like  true ? &quot;yes&quot; : &quot;no&quot;
     /// </span><span style="color:#a0cfa1;">#</span><span style="color:#87ae86;"> So the following is suggested
-    /// </span><span style="color:#d6d6d680;">&quot;</span><span style="color:#d68686;">no</span><span style="color:#d6d6d680;">&quot; </span><span style="color:#ececec;">= </span><span style="color:#fed6af;">if </span><span style="font-weight:bold;color:#87d6d5;">1 </span><span style="color:#ececec;">== </span><span style="font-weight:bold;color:#87d6d5;">0</span><span style="color:#dedede;">, </span><span style="font-weight:bold;color:#d58684;">do: </span><span style="color:#d6d6d680;">&quot;</span><span style="color:#d68686;">yes</span><span style="color:#d6d6d680;">&quot;</span><span style="color:#dedede;">, </span><span style="font-weight:bold;color:#d58684;">else: </span><span style="color:#d6d6d680;">&quot;</span><span style="color:#d68686;">no</span><span style="color:#d6d6d680;">&quot;
+    /// </span><span style="color:#d6d6d680;">&quot;</span><span style="color:#d68686;">no</span><span style="color:#d6d6d680;">&quot; </span><span style="color:#ececec;">= </span><span style="color:#fed6af;">if </span><span style="color:#87d6d5;">1 </span><span style="color:#ececec;">== </span><span style="color:#87d6d5;">0</span><span style="color:#dedede;">, </span><span style="color:#cc9495;">do: </span><span style="color:#d6d6d680;">&quot;</span><span style="color:#d68686;">yes</span><span style="color:#d6d6d680;">&quot;</span><span style="color:#dedede;">, </span><span style="color:#cc9495;">else: </span><span style="color:#d6d6d680;">&quot;</span><span style="color:#d68686;">no</span><span style="color:#d6d6d680;">&quot;
     /// </span></pre>
     Zenburn,
 }
@@ -393,6 +429,10 @@ impl EmbeddedThemeName {
             Self::Base16OceanDark => "base16-ocean.dark",
             Self::Base16OceanLight => "base16-ocean.light",
             Self::Base16_256 => "base16-256",
+            Self::CatppuccinFrappe => "Catppuccin Frappe",
+            Self::CatppuccinLatte => "Catppuccin Latte",
+            Self::CatppuccinMacchiato => "Catppuccin Macchiato",
+            Self::CatppuccinMocha => "Catppuccin Mocha",
             Self::ColdarkCold => "Coldark-Cold",
             Self::ColdarkDark => "Coldark-Dark",
             Self::DarkNeon => "DarkNeon",

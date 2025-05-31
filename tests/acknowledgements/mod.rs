@@ -35,7 +35,7 @@ fn full_matches_prebuilt() {
      <summary>syntaxes/01_Packages/Rust/LICENSE.txt</summary>
      
      ````text
-    @@ -507,6 +523,58 @@
+    @@ -522,6 +538,58 @@
      </details>
      
      <details>
@@ -94,7 +94,7 @@ fn full_matches_prebuilt() {
      <summary>syntaxes/02_Extra/Groff/LICENSE</summary>
      
      ````text
-    @@ -1722,6 +1790,38 @@
+    @@ -2041,6 +2109,38 @@
      </details>
      
      <details>
