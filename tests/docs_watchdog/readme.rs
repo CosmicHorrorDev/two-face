@@ -12,13 +12,13 @@ fn embedded_asset_sizes() {
 
     assert_eq!(10, kib(TwoFaceAsset::AckFull));
 
-    assert_eq!(920, kib(TwoFaceAsset::SynOnigNewlines));
-    assert_eq!(865, kib(TwoFaceAsset::SynFancyNewlines));
+    assert_eq!(939, kib(TwoFaceAsset::SynOnigNewlines));
+    assert_eq!(884, kib(TwoFaceAsset::SynFancyNewlines));
 
-    assert_eq!(919, kib(TwoFaceAsset::SynOnigNoNewlines));
-    assert_eq!(864, kib(TwoFaceAsset::SynFancyNoNewlines));
+    assert_eq!(938, kib(TwoFaceAsset::SynOnigNoNewlines));
+    assert_eq!(883, kib(TwoFaceAsset::SynFancyNoNewlines));
 
-    assert_eq!(45, kib(TwoFaceAsset::Themes));
+    assert_eq!(62, kib(TwoFaceAsset::Themes));
 }
 
 #[rustfmt::skip]
@@ -32,19 +32,19 @@ const EXPECTED: &[&str] = &[
     "C", "C#", "C++", "Cabal", "CFML", "Clojure", "CMake", "CoffeeScript", "Comma Separated Values",
     "Crontab", "Crystal", "CSS",
     // D
-    "D", "Dart", "Diff", "Dockerfile", "DotENV",
+    "D", "Dart", "debsources", "Diff", "Dockerfile", "DotENV",
     // E
     "Elixir", "Elm", "Email", "Erlang",
     // F
     "F#", "Fish", "Fortran (Fixed Form)",
     // G
-    "Git Attributes", "Git Commit", "Git Config", "Git Ignore", "Git Link", "Git Log",
-    "Git Mailmap", "Git Rebase Todo",
-    "GLSL", "Go", "GraphQL", "Graphviz (DOT)", "Groff/troff", "Groovy",
+    "GDScript (Godot Engine)", "Git Attributes", "Git Commit", "Git Config", "Git Ignore",
+    "Git Link", "Git Log", "Git Mailmap", "Git Rebase Todo", "GLSL", "Go", "GraphQL",
+    "Graphviz (DOT)", "Groff/troff", "Groovy",
     // H
     "Haskell", "HTML",
     // I
-    "INI",
+    "Idris", "INI",
     // J
     "Java", "Java Server Page (JSP)", "JavaScript", "Jinja2", "JQ", "JSON", "Julia",
     // K
@@ -56,7 +56,7 @@ const EXPECTED: &[&str] = &[
     // N
     "NAnt Build File", "nginx", "Nim", "Ninja", "Nix", "NSIS",
     // O
-    "Objective-C", "Objective-C++", "OCaml", "OCamllex", "OCamlyacc", "orgmode",
+    "Objective-C", "Objective-C++", "OCaml", "OCamllex", "OCamlyacc", "Odin", "orgmode",
     // P
     "Pascal", "Perl", "PHP", "Protocol Buffer", "Puppet", "PureScript", "Python",
     // Q
@@ -70,6 +70,7 @@ const EXPECTED: &[&str] = &[
     "SystemVerilog",
     // T
     "Tcl", "Terraform", "TeX", "Textile", "Todo.txt", "TOML", "TypeScript", "TypeScriptReact",
+    "Typst",
     // V
     "varlink", "Verilog", "VimL", "Vyper",
     // W
@@ -94,6 +95,9 @@ const EXPECTED: &[&str] = &[
     "HTML (Twig)",
     // SSH
     "Authorized Keys", "Known Hosts", "Private Key", "SSH Config", "SSHD Config",
+    // CSV-like
+    "Pipe Separated Values", "Semi-Colon Separated Values", "Separated Values",
+    "Tab Separated Values",
     // Misc
     "Java Properties", "JavaScript (Rails)", "jsonnet", "Vue Component", "camlp4", "Plain Text",
     "R Console", "SQL (Rails)", "Protocol Buffer (TEXT)", "gnuplot", "HTTP Request and Response",
