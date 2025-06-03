@@ -94,7 +94,7 @@ fn full_matches_prebuilt() {
      <summary>syntaxes/02_Extra/Groff/LICENSE</summary>
      
      ````text
-    @@ -2041,6 +2109,38 @@
+    @@ -1918,6 +1986,38 @@
      </details>
      
      <details>
