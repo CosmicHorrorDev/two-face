@@ -1221,7 +1221,6 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "askalono",
- "bincode",
  "cargo-lock",
  "clap",
  "env_logger",
