@@ -1,6 +1,5 @@
-use std::collections::BTreeMap;
+use std::{collections::BTreeMap, sync::OnceLock};
 
-use once_cell::sync::OnceCell;
 use serde::{Deserialize, Serialize};
 use syntect::{
     dumps::{dump_binary, from_binary},
@@ -106,7 +105,7 @@ pub(crate) struct LazyTheme {
     serialized: Vec<u8>,
 
     #[serde(skip, default)]
-    deserialized: OnceCell<Theme>,
+    deserialized: OnceLock<Theme>,
 }
 
 impl LazyTheme {
@@ -126,7 +125,7 @@ impl From<&Theme> for LazyTheme {
         let serialized = dump_binary(theme);
         Self {
             serialized,
-            deserialized: OnceCell::new(),
+            deserialized: OnceLock::new(),
         }
     }
 }
