@@ -3,8 +3,11 @@
 use std::sync::OnceLock;
 
 use libfuzzer_sys::fuzz_target;
-use two_face::re_exports::syntect::parsing::{ParseState, SyntaxReference, SyntaxSet};
-use two_face::{fuzz::fuzzer_syntaxes, syntax::extra_newlines};
+use two_face::re_exports::syntect::{
+    dumps,
+    parsing::{ParseState, SyntaxReference, SyntaxSet},
+};
+use two_face::syntax::extra_newlines;
 
 // TODO: make fuzzing generic over the syntax, so that we don't have one target per syntax
 
@@ -35,7 +38,10 @@ fuzz_target!(|input: &str| {
 
 fn fuzzer_syn_set() -> &'static SyntaxSet {
     static SET: OnceLock<SyntaxSet> = OnceLock::new();
-    SET.get_or_init(fuzzer_syntaxes)
+    SET.get_or_init(|| {
+        let bytes = include_bytes!("../../generated/fuzzer-syntaxes.bin");
+        dumps::from_uncompressed_data(bytes).unwrap()
+    })
 }
 
 fn fuzzer_syn_ref(syn_ext: &str) -> &'static SyntaxReference {
