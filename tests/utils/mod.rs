@@ -1,7 +1,7 @@
 use std::{env, fs, hash::Hasher};
 
 use object::{Object, ObjectSection};
-use serde::{Deserialize, Serialize};
+use serde_derive::{Deserialize, Serialize};
 use strum::{EnumIter, IntoEnumIterator};
 use twox_hash::XxHash64;
 
