@@ -8,7 +8,8 @@ members = [
 [workspace.dependencies]
 cargo-lock = "10.1.0"
 object = { version = "0.36.7", default-features = false, features = ["read"] }
-serde = { version = "1.0.219", features = ["derive"] }
+serde = "1.0.219"
+serde_derive = "1.0.219"
 strum = { version = "0.26.3", features = ["derive"] }
 syntect = { version = "5.2.0", default-features = false }
 toml = "0.8.23"
@@ -56,6 +57,7 @@ syntect-default-fancy = ["syntect-fancy", "syntect/default-fancy"]
 
 [dependencies]
 serde.workspace = true
+serde_derive.workspace = true
 
 [dependencies.syntect]
 workspace = true

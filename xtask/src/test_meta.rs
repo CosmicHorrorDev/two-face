@@ -6,7 +6,7 @@ use std::{
 use crate::utils;
 
 use cargo_lock::{Lockfile, Version};
-use serde::{Deserialize, Serialize};
+use serde_derive::{Deserialize, Serialize};
 
 #[derive(Debug, Deserialize, Serialize)]
 struct Meta {

@@ -1,6 +1,6 @@
 use std::{collections::BTreeMap, sync::OnceLock};
 
-use serde::{Deserialize, Serialize};
+use serde_derive::{Deserialize, Serialize};
 use syntect::{
     dumps::{dump_binary, from_binary},
     highlighting::{Theme, ThemeSet},
