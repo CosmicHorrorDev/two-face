@@ -1,6 +1,6 @@
 use std::{fmt::Write, path::PathBuf};
 
-use serde::{Deserialize, Serialize};
+use serde_derive::{Deserialize, Serialize};
 
 /// Holds the license type, text, and relative path for a syntax or theme definition
 #[derive(Clone, Debug, Deserialize, Serialize, Hash, PartialEq, Eq, PartialOrd, Ord)]
