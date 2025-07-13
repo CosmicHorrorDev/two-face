@@ -86,9 +86,9 @@ For reference here are the sizes associated with their different functions
 | ---: | ---: | ---: |
 | [`acknowledgement::listing()`](https://docs.rs/two-face/latest/two_face/acknowledgement/fn.listing.html) | 10 | - |
 | [`syntax::extra_newlines()`](https://docs.rs/two-face/latest/two_face/syntax/fn.extra_newlines.html) (onig) | 939 | 360 |
-| ^^ (fancy) | 884 | 360 |
+| ^^ (fancy) | 884 | ^^ |
 | [`syntax::extra_no_newlines()`](https://docs.rs/two-face/latest/two_face/syntax/fn.extra_no_newlines.html) (onig) | 938 | 359 |
-| ^^ (fancy) | 883 | 359 |
+| ^^ (fancy) | 883 | ^^ |
 | [`theme::extra()`](https://docs.rs/two-face/latest/two_face/theme/index.html) | 62 | 5 |
 
 In short the syntax definitions are the real chonky part, and if you're

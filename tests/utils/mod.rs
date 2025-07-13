@@ -107,9 +107,9 @@ pub enum SyntectAsset {
 
 #[derive(Clone, Debug, PartialEq, Eq, Deserialize, Serialize)]
 pub struct AssetFingerprint {
-    prefix: Vec<u8>,
-    hash: u32,
-    size: usize,
+    pub prefix: Vec<u8>,
+    pub hash: u32,
+    pub size: usize,
 }
 
 impl AssetFingerprint {
