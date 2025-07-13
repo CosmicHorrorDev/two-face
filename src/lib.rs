@@ -79,9 +79,9 @@
 //! | ---: | ---: | ---: |
 //! | [`acknowledgement::listing()`] | 10 | - |
 //! | [`syntax::extra_newlines()`] (onig) | 939 | 360 |
-//! | ^^ (fancy) | 884 | 360 |
+//! | ^^ (fancy) | 884 | ^^ |
 //! | [`syntax::extra_no_newlines()`] (onig) | 938 | 359 |
-//! | ^^ (fancy) | 883 | 359 |
+//! | ^^ (fancy) | 883 | ^^ |
 //! | [`theme::extra()`] | 62 | 5 |
 //!
 //! In short the syntax definitions are the real chonky part, and if you're

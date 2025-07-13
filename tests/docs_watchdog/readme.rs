@@ -1,24 +1,52 @@
-use std::{collections::BTreeSet, fs};
+use std::collections::BTreeSet;
 
-use crate::utils::TwoFaceAsset;
+use crate::utils::{Asset, AssetFingerprint, SyntectAsset, TwoFaceAsset};
 
 #[test]
 fn embedded_asset_sizes() {
     #[track_caller]
-    fn kib(gen: TwoFaceAsset) -> usize {
-        let meta = fs::metadata(gen.rel_path()).unwrap();
-        (meta.len() as f64 / 1_024.0).round() as usize
+    fn kib(gen: Asset) -> usize {
+        let fingerprint: AssetFingerprint = gen.into();
+        (fingerprint.size as f64 / 1_024.0).round() as usize
     }
 
-    assert_eq!(10, kib(TwoFaceAsset::AckFull));
+    let tf_ack = kib(TwoFaceAsset::AckFull.into());
+    let tf_son = kib(TwoFaceAsset::SynOnigNewlines.into());
+    let tf_sfn = kib(TwoFaceAsset::SynFancyNewlines.into());
+    let tf_sonn = kib(TwoFaceAsset::SynOnigNoNewlines.into());
+    let tf_sfnn = kib(TwoFaceAsset::SynFancyNoNewlines.into());
+    let tf_themes = kib(TwoFaceAsset::Themes.into());
 
-    assert_eq!(939, kib(TwoFaceAsset::SynOnigNewlines));
-    assert_eq!(884, kib(TwoFaceAsset::SynFancyNewlines));
+    let syn_sn = kib(SyntectAsset::SynNewlines.into());
+    let syn_snn = kib(SyntectAsset::SynNoNewlines.into());
+    let syn_themes = kib(SyntectAsset::Themes.into());
 
-    assert_eq!(938, kib(TwoFaceAsset::SynOnigNoNewlines));
-    assert_eq!(883, kib(TwoFaceAsset::SynFancyNoNewlines));
+    let table = format!(
+        "\
+        | function | `two-face` (KiB) | `syntect` (KiB) |\n\
+        | ---: | ---: | ---: |\n\
+        | [`acknowledgement::listing()`] | {tf_ack} | - |\n\
+        | [`syntax::extra_newlines()`] (onig) | {tf_son} | {syn_sn} |\n\
+        | ^^ (fancy) | {tf_sfn} | ^^ |\n\
+        | [`syntax::extra_no_newlines()`] (onig) | {tf_sonn} | {syn_snn} |\n\
+        | ^^ (fancy) | {tf_sfnn} | ^^ |\n\
+        | [`theme::extra()`] | {tf_themes} | {syn_themes} |\n\
+        "
+    );
 
-    assert_eq!(62, kib(TwoFaceAsset::Themes));
+    insta::assert_snapshot!(
+        table,
+        @r"
+        | function | `two-face` (KiB) | `syntect` (KiB) |
+        | ---: | ---: | ---: |
+        | [`acknowledgement::listing()`] | 10 | - |
+        | [`syntax::extra_newlines()`] (onig) | 939 | 360 |
+        | ^^ (fancy) | 884 | ^^ |
+        | [`syntax::extra_no_newlines()`] (onig) | 938 | 359 |
+        | ^^ (fancy) | 883 | ^^ |
+        | [`theme::extra()`] | 62 | 5 |
+        "
+    );
 }
 
 #[rustfmt::skip]
