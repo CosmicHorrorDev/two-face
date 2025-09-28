@@ -1,3 +1,16 @@
+# Version 0.4.4
+
+This update includes the underlying update to `fancy-regex@0.16.2` which adds
+support for `LiveScript` and `Sass` when using the `fancy-regex` backend.
+
+## Deps
+
+- Update outdated dependencies #131
+
+## Internal
+
+- Depend on `serde` and `serde_derive` separately #107
+
 # Version 0.4.3
 
 Fixes builds for dependents that use set `#[cfg(fuzzing)]`
