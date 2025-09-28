@@ -17,7 +17,7 @@ twox-hash = { version = "2.1.1", default-features = false, features = ["std", "x
 
 [package]
 name = "two-face"
-version = "0.4.3"
+version = "0.4.4"
 edition = "2021"
 license = "MIT OR Apache-2.0"
 rust-version = "1.70.0"
