@@ -160,6 +160,7 @@ pub enum EmbeddedThemeName {
     /// </span><span style="color:#747369;"># So the following is suggested
     /// </span><span style="color:#d3d0c8;">&quot;</span><span style="color:#99cc99;">no</span><span style="color:#d3d0c8;">&quot; = </span><span style="color:#cc99cc;">if </span><span style="color:#f99157;">1 </span><span style="color:#d3d0c8;">== </span><span style="color:#f99157;">0</span><span style="color:#d3d0c8;">, </span><span style="color:#f99157;">do: </span><span style="color:#d3d0c8;">&quot;</span><span style="color:#99cc99;">yes</span><span style="color:#d3d0c8;">&quot;, </span><span style="color:#f99157;">else: </span><span style="color:#d3d0c8;">&quot;</span><span style="color:#99cc99;">no</span><span style="color:#d3d0c8;">&quot;
     /// </span></pre>
+    #[deprecated = "this theme will be removed in a future version"]
     Base16EightiesDark,
     /// Base16 Mocha Dark Theme
     ///
@@ -168,6 +169,7 @@ pub enum EmbeddedThemeName {
     /// </span><span style="color:#7e705a;"># So the following is suggested
     /// </span><span style="color:#d0c8c6;">&quot;</span><span style="color:#beb55b;">no</span><span style="color:#d0c8c6;">&quot; = </span><span style="color:#a89bb9;">if </span><span style="color:#d28b71;">1 </span><span style="color:#d0c8c6;">== </span><span style="color:#d28b71;">0</span><span style="color:#d0c8c6;">, </span><span style="color:#d28b71;">do: </span><span style="color:#d0c8c6;">&quot;</span><span style="color:#beb55b;">yes</span><span style="color:#d0c8c6;">&quot;, </span><span style="color:#d28b71;">else: </span><span style="color:#d0c8c6;">&quot;</span><span style="color:#beb55b;">no</span><span style="color:#d0c8c6;">&quot;
     /// </span></pre>
+    #[deprecated = "this theme will be removed in a future version"]
     Base16MochaDark,
     /// Base16 Ocean Dark
     ///
@@ -176,6 +178,7 @@ pub enum EmbeddedThemeName {
     /// </span><span style="color:#65737e;"># So the following is suggested
     /// </span><span style="color:#c0c5ce;">&quot;</span><span style="color:#a3be8c;">no</span><span style="color:#c0c5ce;">&quot; = </span><span style="color:#b48ead;">if </span><span style="color:#d08770;">1 </span><span style="color:#c0c5ce;">== </span><span style="color:#d08770;">0</span><span style="color:#c0c5ce;">, </span><span style="color:#d08770;">do: </span><span style="color:#c0c5ce;">&quot;</span><span style="color:#a3be8c;">yes</span><span style="color:#c0c5ce;">&quot;, </span><span style="color:#d08770;">else: </span><span style="color:#c0c5ce;">&quot;</span><span style="color:#a3be8c;">no</span><span style="color:#c0c5ce;">&quot;
     /// </span></pre>
+    #[deprecated = "this theme will be removed in a future version"]
     Base16OceanDark,
     /// Base16 Ocean Light
     ///
@@ -184,6 +187,7 @@ pub enum EmbeddedThemeName {
     /// </span><span style="color:#a7adba;"># So the following is suggested
     /// </span><span style="color:#4f5b66;">&quot;</span><span style="color:#a3be8c;">no</span><span style="color:#4f5b66;">&quot; = </span><span style="color:#b48ead;">if </span><span style="color:#d08770;">1 </span><span style="color:#4f5b66;">== </span><span style="color:#d08770;">0</span><span style="color:#4f5b66;">, </span><span style="color:#d08770;">do: </span><span style="color:#4f5b66;">&quot;</span><span style="color:#a3be8c;">yes</span><span style="color:#4f5b66;">&quot;, </span><span style="color:#d08770;">else: </span><span style="color:#4f5b66;">&quot;</span><span style="color:#a3be8c;">no</span><span style="color:#4f5b66;">&quot;
     /// </span></pre>
+    #[deprecated = "this theme will be removed in a future version"]
     Base16OceanLight,
     /// Base16 256
     ///
@@ -252,6 +256,7 @@ pub enum EmbeddedThemeName {
     /// </span><span style="font-style:italic;color:#969896;"># So the following is suggested
     /// </span><span style="color:#183691;">&quot;no&quot; </span><span style="font-weight:bold;color:#a71d5d;">= if </span><span style="color:#0086b3;">1 </span><span style="font-weight:bold;color:#a71d5d;">== </span><span style="color:#0086b3;">0</span><span style="color:#323232;">, </span><span style="color:#0086b3;">do: </span><span style="color:#183691;">&quot;yes&quot;</span><span style="color:#323232;">, </span><span style="color:#0086b3;">else: </span><span style="color:#183691;">&quot;no&quot;
     /// </span></pre>
+    #[deprecated = "this theme will be removed in a future version"]
     InspiredGithub,
     /// 1337
     ///
