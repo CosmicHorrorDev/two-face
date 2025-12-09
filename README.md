@@ -86,9 +86,9 @@ For reference here are the sizes associated with their different functions
 | ---: | ---: | ---: |
 | [`acknowledgement::listing()`](https://docs.rs/two-face/latest/two_face/acknowledgement/fn.listing.html) | 11 | - |
 | [`syntax::extra_newlines()`](https://docs.rs/two-face/latest/two_face/syntax/fn.extra_newlines.html) (onig) | 961 | 360 |
-| ^^ (fancy) | 905 | ^^ |
+| ^^ (fancy) | 937 | ^^ |
 | [`syntax::extra_no_newlines()`](https://docs.rs/two-face/latest/two_face/syntax/fn.extra_no_newlines.html) (onig) | 959 | 359 |
-| ^^ (fancy) | 904 | ^^ |
+| ^^ (fancy) | 935 | ^^ |
 | [`theme::extra()`](https://docs.rs/two-face/latest/two_face/theme/index.html) | 62 | 5 |
 
 In short the syntax definitions are the real chonky part, and if you're
@@ -115,14 +115,14 @@ The full listing of all syntaxes included in [`two_face::syntax`](https://docs.r
 | I | Idris, INI |
 | J | Java†, Javadoc†, Java Server Page (JSP)†, JavaScript†, JavaScript (Babel)\*, Jinja2, JQ, JSON†, Julia |
 | K | Kotlin |
-| L | LaTeX†, LaTeX Log†, Lean, LESS, Lisp†, Literate Haskell†, LiveScript\*, LLVM, Lua† |
+| L | LaTeX†, LaTeX Log†, Lean, LESS, Lisp†, Literate Haskell†, LiveScript, LLVM, Lua† |
 | M | Makefile†, Manpage, Markdown†, MATLAB†, Mediawiki, MutliMarkdown† |
 | N | NAnt Build File†, Nginx, Nim, Ninja, Nix, NSIS |
 | O | Objective-C†, Objective-C++†, OCaml†, OCamllex†, OCamlyacc†, Odin, Org Mode |
 | P | Pascal†, Perl†, PHP†, PowerShell\*, Protobuf, Puppet, PureScript, Python† |
 | Q | QML |
 | R | R†, Racket, Rd†, Rego, Regular Expression†, Requirements.txt, reStructuredText†, Robot Framework, Ruby†, Ruby Haml†, Ruby on Rails†, Ruby Slim, Rust† |
-| S | Sass\*, Scala†, SCSS, Salt State SLS\*, SML, Solidity, SQL†, Strace, Stylus, Svelte, Swift, SystemVerilog |
+| S | Sass, Scala†, SCSS, Salt State SLS\*, SML, Solidity, SQL†, Strace, Stylus, Svelte, Swift, SystemVerilog |
 | T | Tcl†, Terraform, TeX†, Textile†, Todo.txt, TOML, TypeScript, TypescriptReact, Typst |
 | V | Varlink, Verilog, VHDL, VimL, Vue, Vyper |
 | W | WGSL |
