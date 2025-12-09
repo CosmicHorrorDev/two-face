@@ -446,6 +446,7 @@ fn two_dark() {
 }
 
 #[test]
+#[expect(deprecated)]
 fn visual_studio_dark_plus() {
     insta::assert_snapshot!(
         sample_html(EmbeddedThemeName::VisualStudioDarkPlus),
