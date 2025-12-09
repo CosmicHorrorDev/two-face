@@ -19,3 +19,21 @@ impl Acknowledgements {
 pub fn listing() -> Acknowledgements {
     syntect::dumps::from_binary(include_bytes!("../../generated/acknowledgements_full.bin",))
 }
+
+/// Returns a link to a page listing acknowledgements for all syntax and theme definitions
+///
+/// Available without having to bundle all of the acknowledgement info in your binary
+///
+/// ```
+/// assert_eq!(
+///     two_face::acknowledgement::url(),
+///     "https://github.com/CosmicHorrorDev/two-face/blob/v0.4.4/generated/acknowledgements_full.md"
+/// );
+/// ```
+pub const fn url() -> &'static str {
+    concat!(
+        "https://github.com/CosmicHorrorDev/two-face/blob/v",
+        env!("CARGO_PKG_VERSION"),
+        "/generated/acknowledgements_full.md",
+    )
+}
