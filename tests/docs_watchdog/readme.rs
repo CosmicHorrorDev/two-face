@@ -41,9 +41,9 @@ fn embedded_asset_sizes() {
     | ---: | ---: | ---: |
     | [`acknowledgement::listing()`] | 11 | - |
     | [`syntax::extra_newlines()`] (onig) | 961 | 360 |
-    | ^^ (fancy) | 905 | ^^ |
+    | ^^ (fancy) | 937 | ^^ |
     | [`syntax::extra_no_newlines()`] (onig) | 959 | 359 |
-    | ^^ (fancy) | 904 | ^^ |
+    | ^^ (fancy) | 935 | ^^ |
     | [`theme::extra()`] | 62 | 5 |
     "
     );
@@ -77,7 +77,7 @@ const EXPECTED: &[&str] = &[
     // K
     "Kotlin",
     // L
-    "LaTeX", "LaTeX Log", "Less", "Lisp", "Literate Haskell", "LLVM", "Lua",
+    "LaTeX", "LaTeX Log", "Less", "Lisp", "Literate Haskell", "LiveScript", "LLVM", "Lua",
     // M
     "Makefile", "Manpage", "Markdown", "MATLAB", "MediaWiki", "MultiMarkdown",
     // N
@@ -93,7 +93,7 @@ const EXPECTED: &[&str] = &[
     "reStructuredText", "Robot Framework", "Ruby", "Ruby Haml", "Ruby Slim", "Ruby on Rails",
     "Rust",
     // S
-    "Scala", "SCSS", "Solidity", "SML", "SQL", "Strace", "Stylus", "Svelte", "Swift",
+    "Sass", "Scala", "SCSS", "Solidity", "SML", "SQL", "Strace", "Stylus", "Svelte", "Swift",
     "SystemVerilog",
     // T
     "Tcl", "Terraform", "TeX", "Textile", "Todo.txt", "TOML", "TypeScript", "TypeScriptReact",
@@ -132,7 +132,7 @@ const EXPECTED: &[&str] = &[
     // Misc
     "Java Properties", "JavaScript (Rails)", "jsonnet", "Vue Component", "camlp4", "Plain Text",
     "R Console", "SQL (Rails)", "Protocol Buffer (TEXT)", "gnuplot", "HTTP Request and Response",
-    "log", "syslog", "Highlight non-printables", "Dockerfile (with bash)", "Hosts File",
+    "log", "syslog", "Highlight non-printables", "Dockerfile (with bash)", "Command Help",
 ];
 
 /// Some syntax definitions use regex features that aren't supported by `fancy-regex`
@@ -142,17 +142,15 @@ const ONIG_ONLY: &[&str] = &[
     "ARM Assembly",
     // J
     "JavaScript (Babel)",
-    // L
-    "LiveScript",
     // P
     "PowerShell",
     // S
-    "Salt State (SLS)", "Sass",
+    "Salt State (SLS)",
 
     // -- Not worth displaying in docs --
 
     // Misc
-    "Command Help", "VimHelp",
+    "VimHelp", "Hosts File",
 ];
 
 #[test]
