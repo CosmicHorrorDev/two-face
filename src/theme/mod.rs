@@ -104,7 +104,7 @@ impl EmbeddedLazyThemeSet {
             EmbeddedThemeName::SolarizedLight,
             EmbeddedThemeName::SublimeSnazzy,
             EmbeddedThemeName::TwoDark,
-            #[expect(deprecated)]
+            #[allow(deprecated)]
             EmbeddedThemeName::VisualStudioDarkPlus,
             EmbeddedThemeName::Zenburn,
         ]
@@ -422,7 +422,7 @@ impl EmbeddedThemeName {
             Self::SolarizedLight => "Solarized (light)",
             Self::SublimeSnazzy => "Sublime Snazzy",
             Self::TwoDark => "TwoDark",
-            #[expect(deprecated)]
+            #[allow(deprecated)]
             Self::VisualStudioDarkPlus => "Visual Studio Dark+",
             Self::Zenburn => "zenburn",
         }

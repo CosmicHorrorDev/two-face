@@ -1,3 +1,15 @@
+# Version 0.4.5 | 2025-12-08
+
+Just a couple of deprecations in preparation for the upcoming `0.5.0` release
+
+## Refactor
+
+- Move `two_face::acknowledgement_url()` to `two_face::acknowledgement::url()` #143
+
+## Docs
+
+- Deprecate `EmbeddedThemeName::VisualStudioDarkPlus` for removal in the next release #144
+
 # Version 0.4.4
 
 This update includes the underlying update to `fancy-regex@0.16.2` which adds
