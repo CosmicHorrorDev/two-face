@@ -1,7 +1,3 @@
-// TODO(cosmic): some macro generated code causing issues, remove after `VisualStudioDarkPlus` is
-// gone
-#![allow(deprecated)]
-
 //! Contains extra theme definitions and the [`LazyThemeSet`] type
 //!
 //! The extra themes are provided in an [`EmbeddedLazyThemeSet`] which is just a newtype around a
@@ -108,8 +104,6 @@ impl EmbeddedLazyThemeSet {
             EmbeddedThemeName::SolarizedLight,
             EmbeddedThemeName::SublimeSnazzy,
             EmbeddedThemeName::TwoDark,
-            #[allow(deprecated)]
-            EmbeddedThemeName::VisualStudioDarkPlus,
             EmbeddedThemeName::Zenburn,
         ]
     }
@@ -390,18 +384,6 @@ pub enum EmbeddedThemeName {
     /// </span><span style="color:#98c379;">&quot;no&quot; </span><span style="color:#abb2bf;">= </span><span style="color:#c678dd;">if </span><span style="color:#d19a66;">1 </span><span style="color:#abb2bf;">== </span><span style="color:#d19a66;">0</span><span style="color:#abb2bf;">, </span><span style="color:#d19a66;">do: </span><span style="color:#98c379;">&quot;yes&quot;</span><span style="color:#abb2bf;">, </span><span style="color:#d19a66;">else: </span><span style="color:#98c379;">&quot;no&quot;
     /// </span></pre>
     TwoDark,
-    /// Visual Studio Dark+
-    ///
-    /// <pre style="background-color:#1e1e1e;">
-    /// <span style="color:#608b4e;"># There currently is no ternary operator like  true ? &quot;yes&quot; : &quot;no&quot;
-    /// </span><span style="color:#608b4e;"># So the following is suggested
-    /// </span><span style="color:#d69d85;">&quot;no&quot; </span><span style="color:#dcdcdc;">= </span><span style="color:#c586c0;">if </span><span style="color:#b5cea8;">1 </span><span style="color:#dcdcdc;">== </span><span style="color:#b5cea8;">0</span><span style="color:#dcdcdc;">, </span><span style="color:#b4cea8;">do: </span><span style="color:#d69d85;">&quot;yes&quot;</span><span style="color:#dcdcdc;">, </span><span style="color:#b4cea8;">else: </span><span style="color:#d69d85;">&quot;no&quot;
-    /// </span></pre>
-    #[deprecated(
-        since = "0.4.5",
-        note = "This theme will be removed from this enum in 0.5.0, then removed entirely sometime later"
-    )]
-    VisualStudioDarkPlus,
     /// zenburn
     ///
     /// <pre style="background-color:#3f3f3f;">
@@ -425,8 +407,8 @@ impl EmbeddedThemeName {
     ///     "1337",
     /// );
     /// assert_eq!(
-    ///     EmbeddedThemeName::VisualStudioDarkPlus.as_name(),
-    ///     "Visual Studio Dark+",
+    ///     EmbeddedThemeName::SolarizedDark.as_name(),
+    ///     "Solarized (dark)",
     /// );
     /// ```
     pub fn as_name(self) -> &'static str {
@@ -462,8 +444,6 @@ impl EmbeddedThemeName {
             Self::SolarizedLight => "Solarized (light)",
             Self::SublimeSnazzy => "Sublime Snazzy",
             Self::TwoDark => "TwoDark",
-            #[allow(deprecated)]
-            Self::VisualStudioDarkPlus => "Visual Studio Dark+",
             Self::Zenburn => "zenburn",
         }
     }
@@ -491,7 +471,12 @@ mod tests {
             let _ = theme_set.get(theme_name);
         }
 
-        assert_eq!(theme_set.0.themes.len(), EmbeddedThemeName::iter().len());
+        // ignoring `Visual Studio Dark+` as it will be removed later
+        const NUM_IGNORED: usize = 1;
+        assert_eq!(
+            theme_set.0.themes.len() - NUM_IGNORED,
+            EmbeddedThemeName::iter().len()
+        );
         assert_eq!(
             EmbeddedLazyThemeSet::theme_names().len(),
             EmbeddedThemeName::iter().len()

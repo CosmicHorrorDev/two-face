@@ -199,21 +199,6 @@ syntect = { version = ..., default-features = false, features = ["default-fancy"
 two-face = { version = ..., default-features = false, features = ["syntect-fancy"] }"#
 );
 
-/// Returns a link to a page listing acknowledgements for all syntax and theme definitions
-///
-/// Available without having to bundle all of the acknowledgement info in your binary
-///
-/// ```
-/// assert_eq!(
-///     two_face::acknowledgement_url(),
-///     "https://github.com/CosmicHorrorDev/two-face/blob/v0.5.0-rc1/generated/acknowledgements_full.md"
-/// );
-/// ```
-#[deprecated(since = "0.4.5", note = "Moved to `two_face::acknowledgement::url()`")]
-pub fn acknowledgement_url() -> &'static str {
-    acknowledgement::url()
-}
-
 // TODO: add more extensive tests later
 #[cfg(test)]
 mod tests {
