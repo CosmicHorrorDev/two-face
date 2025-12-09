@@ -1,3 +1,7 @@
+// TODO(cosmic): some macro generated code causing issues, remove after `VisualStudioDarkPlus` is
+// gone
+#![allow(deprecated)]
+
 //! Contains extra theme definitions and the [`LazyThemeSet`] type
 //!
 //! The extra themes are provided in an [`EmbeddedLazyThemeSet`] which is just a newtype around a
@@ -100,6 +104,7 @@ impl EmbeddedLazyThemeSet {
             EmbeddedThemeName::SolarizedLight,
             EmbeddedThemeName::SublimeSnazzy,
             EmbeddedThemeName::TwoDark,
+            #[expect(deprecated)]
             EmbeddedThemeName::VisualStudioDarkPlus,
             EmbeddedThemeName::Zenburn,
         ]
@@ -356,6 +361,10 @@ pub enum EmbeddedThemeName {
     /// </span><span style="color:#608b4e;"># So the following is suggested
     /// </span><span style="color:#d69d85;">&quot;no&quot; </span><span style="color:#dcdcdc;">= </span><span style="color:#c586c0;">if </span><span style="color:#b5cea8;">1 </span><span style="color:#dcdcdc;">== </span><span style="color:#b5cea8;">0</span><span style="color:#dcdcdc;">, </span><span style="color:#b4cea8;">do: </span><span style="color:#d69d85;">&quot;yes&quot;</span><span style="color:#dcdcdc;">, </span><span style="color:#b4cea8;">else: </span><span style="color:#d69d85;">&quot;no&quot;
     /// </span></pre>
+    #[deprecated(
+        since = "0.4.5",
+        note = "This theme will be removed from this enum in 0.5.0, then removed entirely sometime later"
+    )]
     VisualStudioDarkPlus,
     /// zenburn
     ///
@@ -413,6 +422,7 @@ impl EmbeddedThemeName {
             Self::SolarizedLight => "Solarized (light)",
             Self::SublimeSnazzy => "Sublime Snazzy",
             Self::TwoDark => "TwoDark",
+            #[expect(deprecated)]
             Self::VisualStudioDarkPlus => "Visual Studio Dark+",
             Self::Zenburn => "zenburn",
         }
