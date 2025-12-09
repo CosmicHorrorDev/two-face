@@ -206,7 +206,7 @@ two-face = { version = ..., default-features = false, features = ["syntect-fancy
 /// ```
 /// assert_eq!(
 ///     two_face::acknowledgement_url(),
-///     "https://github.com/CosmicHorrorDev/two-face/blob/v0.4.4/generated/acknowledgements_full.md"
+///     "https://github.com/CosmicHorrorDev/two-face/blob/v0.4.5/generated/acknowledgements_full.md"
 /// );
 /// ```
 #[deprecated(since = "0.4.5", note = "Moved to `two_face::acknowledgement::url()`")]
