@@ -209,12 +209,9 @@ two-face = { version = ..., default-features = false, features = ["syntect-fancy
 ///     "https://github.com/CosmicHorrorDev/two-face/blob/v0.5.0-rc1/generated/acknowledgements_full.md"
 /// );
 /// ```
+#[deprecated(since = "0.4.5", note = "Moved to `two_face::acknowledgement::url()`")]
 pub fn acknowledgement_url() -> &'static str {
-    concat!(
-        "https://github.com/CosmicHorrorDev/two-face/blob/v",
-        env!("CARGO_PKG_VERSION"),
-        "/generated/acknowledgements_full.md",
-    )
+    acknowledgement::url()
 }
 
 // TODO: add more extensive tests later
