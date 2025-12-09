@@ -195,24 +195,24 @@ pub enum EmbeddedThemeName {
     /// Catppuccin Frappe
     ///
     /// <pre style="background-color:#303446;">
-    /// <span style="color:#737994;"># There currently is no ternary operator like  true ? &quot;yes&quot; : &quot;no&quot;
-    /// </span><span style="color:#737994;"># So the following is suggested
+    /// <span style="font-style:italic;color:#7c7f93;"># There currently is no ternary operator like  true ? &quot;yes&quot; : &quot;no&quot;
+    /// </span><span style="font-style:italic;color:#7c7f93;"># So the following is suggested
     /// </span><span style="color:#a6d189;">&quot;</span><span style="color:#a6d189;">no</span><span style="color:#a6d189;">&quot;</span><span style="color:#c6d0f5;"> </span><span style="color:#81c8be;">=</span><span style="color:#c6d0f5;"> </span><span style="color:#ca9ee6;">if</span><span style="color:#c6d0f5;"> </span><span style="color:#ef9f76;">1</span><span style="color:#c6d0f5;"> </span><span style="color:#81c8be;">==</span><span style="color:#c6d0f5;"> </span><span style="color:#ef9f76;">0</span><span style="color:#949cbb;">,</span><span style="color:#c6d0f5;"> </span><span style="color:#c6d0f5;">do</span><span style="color:#949cbb;">:</span><span style="color:#c6d0f5;"> </span><span style="color:#a6d189;">&quot;</span><span style="color:#a6d189;">yes</span><span style="color:#a6d189;">&quot;</span><span style="color:#949cbb;">,</span><span style="color:#c6d0f5;"> </span><span style="color:#c6d0f5;">else</span><span style="color:#949cbb;">:</span><span style="color:#c6d0f5;"> </span><span style="color:#a6d189;">&quot;</span><span style="color:#a6d189;">no</span><span style="color:#a6d189;">&quot;
     /// </span></pre>
     CatppuccinFrappe,
     /// Catppuccin Latte
     ///
     /// <pre style="background-color:#eff1f5;">
-    /// <span style="font-style:italic;color:#9ca0b0;"># There currently is no ternary operator like  true ? &quot;yes&quot; : &quot;no&quot;
-    /// </span><span style="font-style:italic;color:#9ca0b0;"># So the following is suggested
+    /// <span style="font-style:italic;color:#7c7f93;"># There currently is no ternary operator like  true ? &quot;yes&quot; : &quot;no&quot;
+    /// </span><span style="font-style:italic;color:#7c7f93;"># So the following is suggested
     /// </span><span style="color:#40a02b;">&quot;no&quot; </span><span style="color:#179299;">= </span><span style="color:#8839ef;">if </span><span style="color:#fe640b;">1 </span><span style="color:#179299;">== </span><span style="color:#fe640b;">0</span><span style="color:#7c7f93;">, </span><span style="color:#4c4f69;">do</span><span style="color:#7c7f93;">: </span><span style="color:#40a02b;">&quot;yes&quot;</span><span style="color:#7c7f93;">, </span><span style="color:#4c4f69;">else</span><span style="color:#7c7f93;">: </span><span style="color:#40a02b;">&quot;no&quot;
     /// </span></pre>
     CatppuccinLatte,
     /// Catppuccin Macchiato
     ///
     /// <pre style="background-color:#24273a;">
-    /// <span style="font-style:italic;color:#6e738d;"># There currently is no ternary operator like  true ? &quot;yes&quot; : &quot;no&quot;
-    /// </span><span style="font-style:italic;color:#6e738d;"># So the following is suggested
+    /// <span style="font-style:italic;color:#939ab7;"># There currently is no ternary operator like  true ? &quot;yes&quot; : &quot;no&quot;
+    /// </span><span style="font-style:italic;color:#939ab7;"># So the following is suggested
     /// </span><span style="color:#a6da95;">&quot;no&quot; </span><span style="color:#8bd5ca;">= </span><span style="color:#c6a0f6;">if </span><span style="color:#f5a97f;">1 </span><span style="color:#8bd5ca;">== </span><span style="color:#f5a97f;">0</span><span style="color:#939ab7;">, </span><span style="color:#cad3f5;">do</span><span style="color:#939ab7;">: </span><span style="color:#a6da95;">&quot;yes&quot;</span><span style="color:#939ab7;">, </span><span style="color:#cad3f5;">else</span><span style="color:#939ab7;">: </span><span style="color:#a6da95;">&quot;no&quot;
     /// </span></pre>
     CatppuccinMacchiato,

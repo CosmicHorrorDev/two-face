@@ -118,8 +118,8 @@ fn catppuccin_frappe() {
         sample_html(EmbeddedThemeName::CatppuccinFrappe),
         @r#"
     <pre style="background-color:#303446;">
-    <span style="font-style:italic;color:#737994;"># There currently is no ternary operator like  true ? &quot;yes&quot; : &quot;no&quot;
-    </span><span style="font-style:italic;color:#737994;"># So the following is suggested
+    <span style="font-style:italic;color:#949cbb;"># There currently is no ternary operator like  true ? &quot;yes&quot; : &quot;no&quot;
+    </span><span style="font-style:italic;color:#949cbb;"># So the following is suggested
     </span><span style="color:#a6d189;">&quot;no&quot; </span><span style="color:#81c8be;">= </span><span style="color:#ca9ee6;">if </span><span style="color:#ef9f76;">1 </span><span style="color:#81c8be;">== </span><span style="color:#ef9f76;">0</span><span style="color:#949cbb;">, </span><span style="color:#c6d0f5;">do</span><span style="color:#949cbb;">: </span><span style="color:#a6d189;">&quot;yes&quot;</span><span style="color:#949cbb;">, </span><span style="color:#c6d0f5;">else</span><span style="color:#949cbb;">: </span><span style="color:#a6d189;">&quot;no&quot;
     </span></pre>
     "#
@@ -131,8 +131,8 @@ fn catppuccin_latte() {
     insta::assert_snapshot!(sample_html(EmbeddedThemeName::CatppuccinLatte),
         @r#"
     <pre style="background-color:#eff1f5;">
-    <span style="font-style:italic;color:#9ca0b0;"># There currently is no ternary operator like  true ? &quot;yes&quot; : &quot;no&quot;
-    </span><span style="font-style:italic;color:#9ca0b0;"># So the following is suggested
+    <span style="font-style:italic;color:#7c7f93;"># There currently is no ternary operator like  true ? &quot;yes&quot; : &quot;no&quot;
+    </span><span style="font-style:italic;color:#7c7f93;"># So the following is suggested
     </span><span style="color:#40a02b;">&quot;no&quot; </span><span style="color:#179299;">= </span><span style="color:#8839ef;">if </span><span style="color:#fe640b;">1 </span><span style="color:#179299;">== </span><span style="color:#fe640b;">0</span><span style="color:#7c7f93;">, </span><span style="color:#4c4f69;">do</span><span style="color:#7c7f93;">: </span><span style="color:#40a02b;">&quot;yes&quot;</span><span style="color:#7c7f93;">, </span><span style="color:#4c4f69;">else</span><span style="color:#7c7f93;">: </span><span style="color:#40a02b;">&quot;no&quot;
     </span></pre>
     "#
@@ -144,8 +144,8 @@ fn catppuccin_macchiato() {
     insta::assert_snapshot!(sample_html(EmbeddedThemeName::CatppuccinMacchiato),
         @r#"
     <pre style="background-color:#24273a;">
-    <span style="font-style:italic;color:#6e738d;"># There currently is no ternary operator like  true ? &quot;yes&quot; : &quot;no&quot;
-    </span><span style="font-style:italic;color:#6e738d;"># So the following is suggested
+    <span style="font-style:italic;color:#939ab7;"># There currently is no ternary operator like  true ? &quot;yes&quot; : &quot;no&quot;
+    </span><span style="font-style:italic;color:#939ab7;"># So the following is suggested
     </span><span style="color:#a6da95;">&quot;no&quot; </span><span style="color:#8bd5ca;">= </span><span style="color:#c6a0f6;">if </span><span style="color:#f5a97f;">1 </span><span style="color:#8bd5ca;">== </span><span style="color:#f5a97f;">0</span><span style="color:#939ab7;">, </span><span style="color:#cad3f5;">do</span><span style="color:#939ab7;">: </span><span style="color:#a6da95;">&quot;yes&quot;</span><span style="color:#939ab7;">, </span><span style="color:#cad3f5;">else</span><span style="color:#939ab7;">: </span><span style="color:#a6da95;">&quot;no&quot;
     </span></pre>
     "#
@@ -157,8 +157,8 @@ fn catppuccin_mocha() {
     insta::assert_snapshot!(sample_html(EmbeddedThemeName::CatppuccinMocha),
         @r#"
     <pre style="background-color:#1e1e2e;">
-    <span style="font-style:italic;color:#6c7086;"># There currently is no ternary operator like  true ? &quot;yes&quot; : &quot;no&quot;
-    </span><span style="font-style:italic;color:#6c7086;"># So the following is suggested
+    <span style="font-style:italic;color:#9399b2;"># There currently is no ternary operator like  true ? &quot;yes&quot; : &quot;no&quot;
+    </span><span style="font-style:italic;color:#9399b2;"># So the following is suggested
     </span><span style="color:#a6e3a1;">&quot;no&quot; </span><span style="color:#94e2d5;">= </span><span style="color:#cba6f7;">if </span><span style="color:#fab387;">1 </span><span style="color:#94e2d5;">== </span><span style="color:#fab387;">0</span><span style="color:#9399b2;">, </span><span style="color:#cdd6f4;">do</span><span style="color:#9399b2;">: </span><span style="color:#a6e3a1;">&quot;yes&quot;</span><span style="color:#9399b2;">, </span><span style="color:#cdd6f4;">else</span><span style="color:#9399b2;">: </span><span style="color:#a6e3a1;">&quot;no&quot;
     </span></pre>
     "#

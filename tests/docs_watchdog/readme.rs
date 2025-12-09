@@ -37,23 +37,22 @@ fn embedded_asset_sizes() {
     insta::assert_snapshot!(
         table,
         @r"
-        | function | `two-face` (KiB) | `syntect` (KiB) |
-        | ---: | ---: | ---: |
-        | [`acknowledgement::listing()`] | 10 | - |
-        | [`syntax::extra_newlines()`] (onig) | 939 | 360 |
-        | ^^ (fancy) | 884 | ^^ |
-        | [`syntax::extra_no_newlines()`] (onig) | 938 | 359 |
-        | ^^ (fancy) | 883 | ^^ |
-        | [`theme::extra()`] | 62 | 5 |
-        "
+    | function | `two-face` (KiB) | `syntect` (KiB) |
+    | ---: | ---: | ---: |
+    | [`acknowledgement::listing()`] | 11 | - |
+    | [`syntax::extra_newlines()`] (onig) | 961 | 360 |
+    | ^^ (fancy) | 905 | ^^ |
+    | [`syntax::extra_no_newlines()`] (onig) | 959 | 359 |
+    | ^^ (fancy) | 904 | ^^ |
+    | [`theme::extra()`] | 62 | 5 |
+    "
     );
 }
 
 #[rustfmt::skip]
 const EXPECTED: &[&str] = &[
     // A
-    "ActionScript", "Ada", "Apache Conf", "AppleScript", "AsciiDoc (Asciidoctor)",
-    "Assembly (x86_64)", "ASP", "AWK",
+    "ActionScript", "Ada", "Apache Conf", "AppleScript", "AsciiDoc (Asciidoctor)", "ASP", "AWK",
     // B
     "Bourne Again Shell (bash)", "Batch File", "BibTeX",
     // C
@@ -78,7 +77,7 @@ const EXPECTED: &[&str] = &[
     // K
     "Kotlin",
     // L
-    "LaTeX", "LaTeX Log", "Lean", "Less", "Lisp", "Literate Haskell", "LLVM", "Lua",
+    "LaTeX", "LaTeX Log", "Less", "Lisp", "Literate Haskell", "LLVM", "Lua",
     // M
     "Makefile", "Manpage", "Markdown", "MATLAB", "MediaWiki", "MultiMarkdown",
     // N
@@ -100,11 +99,11 @@ const EXPECTED: &[&str] = &[
     "Tcl", "Terraform", "TeX", "Textile", "Todo.txt", "TOML", "TypeScript", "TypeScriptReact",
     "Typst",
     // V
-    "varlink", "Verilog", "VimL", "Vyper",
+    "varlink", "Verilog", "VHDL", "VimL", "Vyper",
     // W
     "WGSL",
     // X
-    "XML",
+    "x86_64 Assembly", "XML",
     // Y
     "YAML",
     // Z
@@ -113,7 +112,7 @@ const EXPECTED: &[&str] = &[
     // -- Not worth displaying in docs --
 
     // Various linux files
-    "CpuInfo", "fstab", "group", "hosts", "MemInfo", "passwd", "resolv",
+    "CpuInfo", "fstab", "group", "MemInfo", "passwd", "resolv",
     // Cmake stuff beyond the base
     "CMakeCache", "CMake C Header", "CMake C++ Header",
     // Fortran stuff beyond the base
@@ -126,10 +125,14 @@ const EXPECTED: &[&str] = &[
     // CSV-like
     "Pipe Separated Values", "Semi-Colon Separated Values", "Separated Values",
     "Tab Separated Values",
+    // Go stuff beyond the base
+    "Gomod", "Gosum",
+    // Lean stuff beyond the base
+    "Lean 4",
     // Misc
     "Java Properties", "JavaScript (Rails)", "jsonnet", "Vue Component", "camlp4", "Plain Text",
     "R Console", "SQL (Rails)", "Protocol Buffer (TEXT)", "gnuplot", "HTTP Request and Response",
-    "log", "syslog", "Highlight non-printables", "Dockerfile (with bash)",
+    "log", "syslog", "Highlight non-printables", "Dockerfile (with bash)", "Hosts File",
 ];
 
 /// Some syntax definitions use regex features that aren't supported by `fancy-regex`

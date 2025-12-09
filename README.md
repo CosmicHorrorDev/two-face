@@ -84,11 +84,11 @@ For reference here are the sizes associated with their different functions
 
 | function | `two-face` (KiB) | `syntect` (KiB) |
 | ---: | ---: | ---: |
-| [`acknowledgement::listing()`](https://docs.rs/two-face/latest/two_face/acknowledgement/fn.listing.html) | 10 | - |
-| [`syntax::extra_newlines()`](https://docs.rs/two-face/latest/two_face/syntax/fn.extra_newlines.html) (onig) | 939 | 360 |
-| ^^ (fancy) | 884 | ^^ |
-| [`syntax::extra_no_newlines()`](https://docs.rs/two-face/latest/two_face/syntax/fn.extra_no_newlines.html) (onig) | 938 | 359 |
-| ^^ (fancy) | 883 | ^^ |
+| [`acknowledgement::listing()`](https://docs.rs/two-face/latest/two_face/acknowledgement/fn.listing.html) | 11 | - |
+| [`syntax::extra_newlines()`](https://docs.rs/two-face/latest/two_face/syntax/fn.extra_newlines.html) (onig) | 961 | 360 |
+| ^^ (fancy) | 905 | ^^ |
+| [`syntax::extra_no_newlines()`](https://docs.rs/two-face/latest/two_face/syntax/fn.extra_no_newlines.html) (onig) | 959 | 359 |
+| ^^ (fancy) | 904 | ^^ |
 | [`theme::extra()`](https://docs.rs/two-face/latest/two_face/theme/index.html) | 62 | 5 |
 
 In short the syntax definitions are the real chonky part, and if you're
@@ -124,7 +124,7 @@ The full listing of all syntaxes included in [`two_face::syntax`](https://docs.r
 | R | R†, Racket, Rd†, Rego, Regular Expression†, Requirements.txt, reStructuredText†, Robot Framework, Ruby†, Ruby Haml†, Ruby on Rails†, Ruby Slim, Rust† |
 | S | Sass\*, Scala†, SCSS, Salt State SLS\*, SML, Solidity, SQL†, Strace, Stylus, Svelte, Swift, SystemVerilog |
 | T | Tcl†, Terraform, TeX†, Textile†, Todo.txt, TOML, TypeScript, TypescriptReact, Typst |
-| V | Varlink, Verilog, VimL, Vue, Vyper |
+| V | Varlink, Verilog, VHDL, VimL, Vue, Vyper |
 | W | WGSL |
 | X | XML† |
 | Y | YAML† |
