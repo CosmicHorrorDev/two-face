@@ -446,21 +446,6 @@ fn two_dark() {
 }
 
 #[test]
-#[expect(deprecated)]
-fn visual_studio_dark_plus() {
-    insta::assert_snapshot!(
-        sample_html(EmbeddedThemeName::VisualStudioDarkPlus),
-        @r###"
-    <pre style="background-color:#1e1e1e;">
-    <span style="color:#608b4e;"># There currently is no ternary operator like  true ? &quot;yes&quot; : &quot;no&quot;
-    </span><span style="color:#608b4e;"># So the following is suggested
-    </span><span style="color:#d69d85;">&quot;no&quot; </span><span style="color:#dcdcdc;">= </span><span style="color:#c586c0;">if </span><span style="color:#b5cea8;">1 </span><span style="color:#dcdcdc;">== </span><span style="color:#b5cea8;">0</span><span style="color:#dcdcdc;">, </span><span style="color:#b4cea8;">do: </span><span style="color:#d69d85;">&quot;yes&quot;</span><span style="color:#dcdcdc;">, </span><span style="color:#b4cea8;">else: </span><span style="color:#d69d85;">&quot;no&quot;
-    </span></pre>
-    "###
-    );
-}
-
-#[test]
 fn zenburn() {
     insta::assert_snapshot!(
         sample_html(EmbeddedThemeName::Zenburn),
