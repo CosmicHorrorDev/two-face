@@ -77,11 +77,11 @@
 //!
 //! | function | `two-face` (KiB) | `syntect` (KiB) |
 //! | ---: | ---: | ---: |
-//! | [`acknowledgement::listing()`] | 10 | - |
-//! | [`syntax::extra_newlines()`] (onig) | 939 | 360 |
-//! | ^^ (fancy) | 884 | ^^ |
-//! | [`syntax::extra_no_newlines()`] (onig) | 938 | 359 |
-//! | ^^ (fancy) | 883 | ^^ |
+//! | [`acknowledgement::listing()`] | 11 | - |
+//! | [`syntax::extra_newlines()`] (onig) | 961 | 360 |
+//! | ^^ (fancy) | 905 | ^^ |
+//! | [`syntax::extra_no_newlines()`] (onig) | 959 | 359 |
+//! | ^^ (fancy) | 904 | ^^ |
 //! | [`theme::extra()`] | 62 | 5 |
 //!
 //! In short the syntax definitions are the real chonky part, and if you're
@@ -117,7 +117,7 @@
 //! | R | R†, Racket, Rd†, Rego, Regular Expression†, Requirements.txt, reStructuredText†, Robot Framework, Ruby†, Ruby Haml†, Ruby on Rails†, Ruby Slim, Rust† |
 //! | S | Sass\*, Scala†, SCSS, Salt State SLS\*, SML, Solidity, SQL†, Strace, Stylus, Svelte, Swift, SystemVerilog |
 //! | T | Tcl†, Terraform, TeX†, Textile†, Todo.txt, TOML, TypeScript, TypescriptReact, Typst |
-//! | V | Varlink, Verilog, VimL, Vue, Vyper |
+//! | V | Varlink, Verilog, VHDL, VimL, Vue, Vyper |
 //! | W | WGSL |
 //! | X | XML† |
 //! | Y | YAML† |

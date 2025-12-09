@@ -80,6 +80,18 @@ fn load_acknowledgements(
                 .join("NOTICE"),
             0x432a39028e111f67,
         ),
+        // the Lean submodule includes a vs-code plugin with assets that are not included in this
+        // library's assets
+        (
+            Path::new("syntaxes")
+                .join("02_Extra")
+                .join("Lean")
+                .join("vscode-lean4")
+                .join("media")
+                .join("diagnostic-gutter-icons")
+                .join("LICENSE"),
+            0xa1a501a99de80480,
+        ),
     ]
     .into_iter()
     .collect();

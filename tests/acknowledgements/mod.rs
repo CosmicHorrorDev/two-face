@@ -94,7 +94,7 @@ fn full_matches_prebuilt() {
      <summary>syntaxes/02_Extra/Groff/LICENSE</summary>
      
      ````text
-    @@ -1918,6 +1986,38 @@
+    @@ -2473,6 +2541,38 @@
      </details>
      
      <details>
@@ -131,6 +131,35 @@ fn full_matches_prebuilt() {
     +
     +<details>
      <summary>syntaxes/02_Extra/PureScript/NOTICE</summary>
+     
+     ````text
+    @@ -3964,6 +4064,28 @@
+     </details>
+     
+     <details>
+    +<summary>themes/github-sublime-theme/LICENSE</summary>
+    +
+    +````text
+    +            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+    +                    Version 2, December 2004
+    +
+    + Copyright (C) 2024 Alexander Ekdahl
+    +
+    + Everyone is permitted to copy and distribute verbatim or modified
+    + copies of this license document, and changing it is allowed as long
+    + as the name is changed.
+    +
+    +            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+    +   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+    +
+    +  0. You just DO WHAT THE FUCK YOU WANT TO.
+    +
+    +
+    +````
+    +</details>
+    +
+    +<details>
+     <summary>themes/gruvbox/LICENSE</summary>
      
      ````text
     "#);
