@@ -406,8 +406,9 @@ impl EmbeddedThemeName {
     ///     EmbeddedThemeName::Leet.as_name(),
     ///     "1337",
     /// );
+    /// // `.as_name()` is used for `Display` too!
     /// assert_eq!(
-    ///     EmbeddedThemeName::SolarizedDark.as_name(),
+    ///     EmbeddedThemeName::SolarizedDark.to_string(),
     ///     "Solarized (dark)",
     /// );
     /// ```
@@ -462,6 +463,19 @@ mod tests {
     use super::*;
 
     use strum::IntoEnumIterator;
+
+    #[test]
+    fn theme_set_roundtrip() {
+        let theme_set: ThemeSet = extra().into();
+        let lazy: LazyThemeSet = (&theme_set).into();
+        let theme_set_again: ThemeSet = lazy.into();
+        let eq = theme_set
+            .themes
+            .into_iter()
+            .zip(theme_set_again.themes.into_iter())
+            .all(|(pair1, pair2)| pair1 == pair2);
+        assert!(eq);
+    }
 
     #[test]
     fn embedded_theme_is_exhaustive() {
