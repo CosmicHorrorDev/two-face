@@ -49,6 +49,13 @@ impl License {
 #[non_exhaustive]
 pub enum LicenseType {
     /// Sublime's custom license
+    ///
+    /// ```text
+    /// Permission to copy, use, modify, sell and distribute this
+    /// software is granted. This software is provided "as is" without
+    /// express or implied warranty, and with no claim as to its
+    /// suitability for any purpose.
+    /// ```
     Sublime,
     /// [MIT License](https://choosealicense.com/licenses/mit/)
     Mit,
@@ -103,7 +110,10 @@ curation of said themes and syntaxes is taken from the
 impl Acknowledgements {
     /// Display the license information as Markdown
     ///
-    /// The output is roughly as follows
+    /// _Note: A full set of acknowledgements is posted for each version at the URL returned by
+    /// [`two_face::acknowledgement::url()`][crate::acknowledgement::url]_
+    ///
+    /// The output looks roughly as follows
     ///
     /// ```md
     /// Most of the code for generating both theme and syntax dumps along with the

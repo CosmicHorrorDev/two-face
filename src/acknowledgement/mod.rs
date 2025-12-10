@@ -22,7 +22,9 @@ pub fn listing() -> Acknowledgements {
 
 /// Returns a link to a page listing acknowledgements for all syntax and theme definitions
 ///
-/// Available without having to bundle all of the acknowledgement info in your binary
+/// Unlike the embedded acknowledgements which only include the licenses which _require_
+/// acknowledgement this listing contains _all_ of the licenses of the syntaxes and themes included
+/// with this crate. All without having to bundle the acknowledgement info into your final binary!
 ///
 /// ```
 /// assert_eq!(
