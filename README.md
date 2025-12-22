@@ -1,11 +1,8 @@
-# _two-face_
+# _two-face — regex lover club :mouse:_
 
 [![build status](https://img.shields.io/github/actions/workflow/status/CosmicHorrorDev/two-face/CI.yml?branch=main)](https://github.com/CosmicHorrorDev/two-face/actions)
 [![Crates.io](https://img.shields.io/crates/v/two-face.svg)](https://crates.io/crates/two-face)
 [![codecov](https://codecov.io/gh/CosmicHorrorDev/two-face/graph/badge.svg?token=MUORSBCHF2)](https://codecov.io/gh/CosmicHorrorDev/two-face)
-
-
-Dedicated to chasing the [`bat` man](https://github.com/sharkdp)
 
 Extra syntax and theme definitions for
 [`syntect`](https://docs.rs/syntect/latest/syntect/) including many common ones
