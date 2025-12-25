@@ -1,3 +1,32 @@
+# Version 0.5.0 | 2025-12-25
+
+This update matches `bat`'s recent 0.26.1 release :tada:
+
+## Breaking Changes
+
+- Remove deprecated APIs #148
+  - The `Visual Studio Dark+` theme #155
+  - `two_face::acknowledgement_url()` which was moved to `two_face::acknowledgement::url()`
+
+## Features
+
+- Update to match `bat@0.26.1` #91 #149
+  - Added `debsources`, `GDScript`, `Idris`, `Odin`, `Typst`, `VHDL` syntaxes
+  - Added support for Lean 4 to the `Lean` syntax
+  - Added `Catppuccin`'s frappe, latte, macchiato and mocha themes
+  - Removed the `Visual Studio Dark+` theme
+
+## Deps
+
+- Update outdated dependencies #150 #153
+
+## Docs
+
+- Flesh out some acknowledgments docs #151
+- Miscellaneous cleanup #152
+- Update motto #154
+- Tidy up landing page and license docs #156
+
 # Version 0.4.5 | 2025-12-08
 
 Just a couple of deprecations in preparation for the upcoming `0.5.0` release
