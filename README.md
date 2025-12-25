@@ -86,7 +86,7 @@ For reference here are the sizes associated with their different functions
 | ^^ (fancy) | 937 | ^^ |
 | [`syntax::extra_no_newlines()`](https://docs.rs/two-face/latest/two_face/syntax/fn.extra_no_newlines.html) (onig) | 959 | 359 |
 | ^^ (fancy) | 935 | ^^ |
-| [`theme::extra()`](https://docs.rs/two-face/latest/two_face/theme/index.html) | 62 | 5 |
+| [`theme::extra()`](https://docs.rs/two-face/latest/two_face/theme/index.html) | 61 | 5 |
 
 In short the syntax definitions are the real chonky part, and if you're
 switching from `syntect` to `two-face`, then you can expect a ~0.5MiB increase
@@ -151,7 +151,6 @@ only make sense situationally, so you'll likely want to only expose a subset
 | O | One Half (light/dark) |
 | S | Solarized (light/dark)†, Sublime Snazzy |
 | T | TwoDark |
-| V | Visual Studio Dark+ |
 | Z | Zenburn |
 
 ## Legal

@@ -485,12 +485,7 @@ mod tests {
             let _ = theme_set.get(theme_name);
         }
 
-        // ignoring `Visual Studio Dark+` as it will be removed later
-        const NUM_IGNORED: usize = 1;
-        assert_eq!(
-            theme_set.0.themes.len() - NUM_IGNORED,
-            EmbeddedThemeName::iter().len()
-        );
+        assert_eq!(theme_set.0.themes.len(), EmbeddedThemeName::iter().len());
         assert_eq!(
             EmbeddedLazyThemeSet::theme_names().len(),
             EmbeddedThemeName::iter().len()

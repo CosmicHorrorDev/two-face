@@ -82,7 +82,7 @@
 //! | ^^ (fancy) | 937 | ^^ |
 //! | [`syntax::extra_no_newlines()`] (onig) | 959 | 359 |
 //! | ^^ (fancy) | 935 | ^^ |
-//! | [`theme::extra()`] | 62 | 5 |
+//! | [`theme::extra()`] | 61 | 5 |
 //!
 //! In short the syntax definitions are the real chonky part, and if you're
 //! switching from `syntect` to `two-face`, then you can expect a ~0.5MiB increase
@@ -147,7 +147,6 @@
 //! | O | One Half (light/dark) |
 //! | S | Solarized (light/dark)†, Sublime Snazzy |
 //! | T | TwoDark |
-//! | V | Visual Studio Dark+ |
 //! | Z | Zenburn |
 //!
 //! ## Legal
