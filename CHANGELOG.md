@@ -1,3 +1,9 @@
+# Version 0.5.1 | 2025-12-25
+
+## Docs
+
+- crates doesnt recognize the :mouse: shortcode *shakes fist* #158
+
 # Version 0.5.0 | 2025-12-25
 
 This update matches `bat`'s recent 0.26.1 release :tada:

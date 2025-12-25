@@ -29,7 +29,7 @@ pub fn listing() -> Acknowledgements {
 /// ```
 /// assert_eq!(
 ///     two_face::acknowledgement::url(),
-///     "https://github.com/CosmicHorrorDev/two-face/blob/v0.5.0/generated/acknowledgements_full.md"
+///     "https://github.com/CosmicHorrorDev/two-face/blob/v0.5.1/generated/acknowledgements_full.md"
 /// );
 /// ```
 pub const fn url() -> &'static str {
