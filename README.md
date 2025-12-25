@@ -1,4 +1,4 @@
-# _two-face — regex lover club :mouse:_
+# _two-face — regex lover club 🐭_
 
 [![build status](https://img.shields.io/github/actions/workflow/status/CosmicHorrorDev/two-face/CI.yml?branch=main)](https://github.com/CosmicHorrorDev/two-face/actions)
 [![Crates.io](https://img.shields.io/crates/v/two-face.svg)](https://crates.io/crates/two-face)
