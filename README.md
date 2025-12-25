@@ -2,6 +2,7 @@
 
 [![build status](https://img.shields.io/github/actions/workflow/status/CosmicHorrorDev/two-face/CI.yml?branch=main)](https://github.com/CosmicHorrorDev/two-face/actions)
 [![Crates.io](https://img.shields.io/crates/v/two-face.svg)](https://crates.io/crates/two-face)
+[![Documentation](https://img.shields.io/docsrs/two-face/latest)](https://docs.rs/two-face/latest/two-face/)
 [![codecov](https://codecov.io/gh/CosmicHorrorDev/two-face/graph/badge.svg?token=MUORSBCHF2)](https://codecov.io/gh/CosmicHorrorDev/two-face)
 
 Extra syntax and theme definitions for
@@ -89,7 +90,7 @@ For reference here are the sizes associated with their different functions
 | [`theme::extra()`](https://docs.rs/two-face/latest/two_face/theme/index.html) | 61 | 5 |
 
 In short the syntax definitions are the real chonky part, and if you're
-switching from `syntect` to `two-face`, then you can expect a ~0.5MiB increase
+switching from `syntect` to `two-face`, then you can expect a ~0.6MiB increase
 in binary size from them (in exchange for _a lot_ of syntax definitions)
 
 ## Syntaxes
@@ -113,7 +114,7 @@ The full listing of all syntaxes included in [`two_face::syntax`](https://docs.r
 | J | Java†, Javadoc†, Java Server Page (JSP)†, JavaScript†, JavaScript (Babel)\*, Jinja2, JQ, JSON†, Julia |
 | K | Kotlin |
 | L | LaTeX†, LaTeX Log†, Lean, LESS, Lisp†, Literate Haskell†, LiveScript, LLVM, Lua† |
-| M | Makefile†, Manpage, Markdown†, MATLAB†, Mediawiki, MutliMarkdown† |
+| M | Makefile†, Manpage, Markdown†, MATLAB†, Mediawiki, MultiMarkdown† |
 | N | NAnt Build File†, Nginx, Nim, Ninja, Nix, NSIS |
 | O | Objective-C†, Objective-C++†, OCaml†, OCamllex†, OCamlyacc†, Odin, Org Mode |
 | P | Pascal†, Perl†, PHP†, PowerShell\*, Protobuf, Puppet, PureScript, Python† |
