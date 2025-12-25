@@ -36,7 +36,7 @@ fn embedded_asset_sizes() {
 
     insta::assert_snapshot!(
         table,
-        @r"
+        @"
     | function | `two-face` (KiB) | `syntect` (KiB) |
     | ---: | ---: | ---: |
     | [`acknowledgement::listing()`] | 11 | - |
@@ -44,7 +44,7 @@ fn embedded_asset_sizes() {
     | ^^ (fancy) | 937 | ^^ |
     | [`syntax::extra_no_newlines()`] (onig) | 959 | 359 |
     | ^^ (fancy) | 935 | ^^ |
-    | [`theme::extra()`] | 62 | 5 |
+    | [`theme::extra()`] | 61 | 5 |
     "
     );
 }

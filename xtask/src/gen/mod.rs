@@ -149,6 +149,11 @@ impl AssetsDir {
         let mut full_set = ThemeSet::load_defaults();
         full_set.themes.append(&mut theme_set.themes);
 
+        // TODO(cosmic): remove vs-dark+ here until it's gone upstream too
+        if full_set.themes.remove("Visual Studio Dark+").is_none() {
+            log::warn!("visual studio dark+ not found. this code can be removed now");
+        }
+
         let lazy_theme_set = LazyThemeSet::from(&full_set);
         Ok(lazy_theme_set)
     }
