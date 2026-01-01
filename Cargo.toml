@@ -6,7 +6,7 @@ members = [
 ]
 
 [workspace.dependencies]
-cargo-lock = "10.1.0"
+cargo-lock = "11.0.0"
 object = { version = "0.36.7", default-features = false, features = ["read"] }
 serde = "1.0.228"
 serde_derive = "1.0.228"
