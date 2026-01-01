@@ -1,3 +1,10 @@
+> [!IMPORTANT]
+> Moved to codeberg. Issues still open here for people who want to use them :)
+>
+> <https://codeberg.org/CosmicHarper/two-face>
+
+---
+
 # _two-face — regex lover club 🐭_
 
 [![build status](https://img.shields.io/github/actions/workflow/status/CosmicHorrorDev/two-face/CI.yml?branch=main)](https://github.com/CosmicHorrorDev/two-face/actions)
